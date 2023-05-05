@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@500&family=Noto+Sans&display=swap');
+
+
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;  
+}
+
+.atras{
+    display: block;
+    padding-left: 30px;
+    width: 13px;
+ }
+
+.subtitulo{
+    font-family: 'Catamaran';
+    font-size:24px;
+    
+}
+
+.tarifas__container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 35px;
+    line-height: 0;
+    padding-left: 30px;
+    
+}
+.selecciona__container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 0;
+    padding-left: 30px;
+    padding-top: 10px;
+
+
+}
+
+
+
+
+
+.select__container--caja{
+    width: 90%;
+    height: 55px;
+    box-shadow: 1px 1px 1px 1px rgb(204, 204, 204);
+    border-style: none;
+    border-radius: 5px;
+    position: relative;
+}
+
+
+.tarifas__tarjetas{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 60%;
+}
+
+.tarifas__tarjeta01{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0;
+    max-height: 190px;
+    background-color: rgb(255, 130, 0);
+    color: white;
+    border-radius: 5px;
+    padding-top: 3%;
+    padding-bottom: 5%;
+
+}
+
+.tarifas__tarjeta02{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0;
+    max-height: 190px;
+    background-color: rgb(1, 181, 230);
+    color: white;
+    border-radius: 5px;
+    padding-top: 3%;
+    padding-bottom: 5%;
+}
+
+.tarifas__tarjeta--numero{
+    font-family: Noto Sans;
+    font-size: 40px;
+
+}
+
+.tarifas__tarjeta--texto{
+    font-family: Noto Sans;
+    font-size: 18px;
+}
+
+select{
+    font-family: Noto Sans;
+    font-size: 18px;
+    color: rgb(60, 60, 60);
+    padding-left: 10px;
+    position: relative;
+
+    option{
+        font-family: Noto Sans;
+        font-size: 18px;
+    }
+
+}
+
+
