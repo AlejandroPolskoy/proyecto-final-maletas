@@ -1,3 +1,3 @@
 export default function Usuario() {
-    return ;
+    return "Esto es usuario";
 }

@@ -1,3 +1,3 @@
 export default function Tarifas() {
-    return ;
+    return "Esto es tarifas";
 }

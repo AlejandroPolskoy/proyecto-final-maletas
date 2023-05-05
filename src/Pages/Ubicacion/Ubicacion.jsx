@@ -1,3 +1,3 @@
 export default function Ubicacion() {
-    return ;
+    return "Esto es ubicacion";
 }
