@@ -1,3 +1,9 @@
+import Footer from "../../Componentes/Footer/Footer";
+
 export default function Usuario() {
-    return "Esto es usuario";
+    return (
+    <div>
+        "Esto es usuario"
+        <Footer/>
+    </div>);
 }
