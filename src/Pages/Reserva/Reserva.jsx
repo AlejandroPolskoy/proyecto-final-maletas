@@ -1,3 +1,3 @@
 export default function Reserva() {
-    return ;
+    return "Esto es reserva";
 }

@@ -1,3 +1,3 @@
 export default function Chat() {
-    return ;
+    return "Esto es chat";
 }
