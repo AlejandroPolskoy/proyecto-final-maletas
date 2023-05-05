@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap');
+
 .search-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    .search-title {
+        margin-left: 15px;
+        font-family: 'Catamaran', sans-serif; 
+        font-weight: 400;
+        font-size: 28px;
+    }
 
     .form-search {
         display: grid;
@@ -10,6 +19,7 @@
         justify-content: center;
         align-items: center;
         margin-left: 20px;
+        font-family: 'Noto Sans', sans-serif;
 
         &_big {
             grid-column: 1 / 3;
@@ -27,6 +37,11 @@
                 background-color: transparent;
                 color: rgb(0 0 0);
                 opacity: 80%;
+                font-family: 'Noto Sans', sans-serif;
+            }
+
+            .search-big:focus {
+               outline: none;
             }
 
             .search-bimg {
@@ -56,6 +71,11 @@
                 background-color: transparent;
                 color: rgb(0 0 0);
                 opacity: 80%;
+                font-family: 'Noto Sans', sans-serif;
+            }
+
+            .search-input:focus {
+                outline: none;
             }
 
             .search-img {
@@ -73,6 +93,8 @@
                 color: rgb(255 255 255);
                 border-radius: 4px;
                 margin: 11px;
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 15px;
             }
     }
 }
