@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink} from 'react-router-dom';
 import backI from '../../assets/icons8Back100Copy@2x.png'
-import './Register.css';
+import './Register.scss';
 import fb from '../../assets/fbMid.png';
 import google from '../../assets/googleMid.png';
 
