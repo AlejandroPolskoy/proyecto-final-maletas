@@ -1,9 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import backI from '../../assets/icons8Back100Copy@2x.png';
 import './Login.scss';
-import fb from '../../assets/fbMid.png';
-import google from '../../assets/googleMid.png';
+
 
 const Login = () => {
 
@@ -11,7 +9,7 @@ const Login = () => {
   return (
     <>
         <div className='back-icon'>
-            <img src={backI} alt='back' />
+            <img src='/assets/icons8Back100Copy@2x.png' alt='back' />
         </div>
         <nav className='navbar'>
             <NavLink to='/login' className='route-link'> Iniciar sesión </NavLink>   
@@ -20,8 +18,8 @@ const Login = () => {
         <h1 className='login-title'>Inicia sesión ahora</h1>
             <div className='socials'>
                 <div className='btns'>
-                    <div className='button-social facebook'> <img src={fb} alt='fb'/> <p>Facebook</p></div>
-                    <div className='button-social google'> <img src={google} alt='fb'/> <p>Google</p> </div>
+                    <div className='button-social facebook'> <img src='/assets/fbMid.png' alt='fb'/> <p>Facebook</p></div>
+                    <div className='button-social google'> <img src='/assets/googleMid.png' alt='fb'/> <p>Google</p> </div>
                 </div>
                 
                 <p className='login-p'>o utiliza tu correo electrónico</p>
