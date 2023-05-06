@@ -28,6 +28,7 @@
             grid-row: 1;
             width: 95%;
             background-color: #efefef89;
+            box-shadow: 2px 2px 3px 1px #edebeb;
             margin-bottom: 20px;
 
             .search-big {
@@ -59,6 +60,7 @@
             padding: 12px 5px;
             display: flex;
             background-color: #efefef89;
+            box-shadow: 2px 2px 3px 1px #edebeb;
             border-radius: 3px;
             color: rgb(0 0 0);
             align-items: center;
@@ -68,12 +70,13 @@
                 width: 100%;
                 margin-left: 15px;
                 position: relative;
-                padding: 5px  8px 5px 35px;
+                padding: 5px  8px 5px 25.6px;
                 border: none;
                 background-color: transparent;
                 color: rgb(0 0 0);
                 opacity: 80%;
                 font-family: 'Noto Sans', sans-serif;
+                font-size: 15px;
             }
 
             .search-input:focus {

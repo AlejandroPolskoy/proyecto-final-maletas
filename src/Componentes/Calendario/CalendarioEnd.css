@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap");
+.content {
+  position: absolute;
+  background-color: white;
+  width: 100vw;
+  height: 550vh;
+  z-index: 2;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.content img {
+  margin-left: 25px;
+}
+
+.react-calendar {
+  margin: 20px;
+}
+.react-calendar .react-calendar__navigation button {
+  border: none;
+  background-color: transparent;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 17px;
+}
+.react-calendar__navigation__arrow {
+  opacity: 0;
+}
+.react-calendar__month-view__weekdays {
+  margin: 9px 0;
+}
+.react-calendar__month-view__weekdays abbr {
+  text-decoration: none;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bolder;
+}
+.react-calendar__navigation__label__labelText {
+  font-family: "Catamaran", sans-serif;
+  font-size: 23px;
+  letter-spacing: -1px;
+}
+.react-calendar__tile {
+  border: none;
+  background-color: transparent;
+  margin: 9px 0;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bolder;
+  font-size: 17px;
+  width: 40px;
+  height: 50px;
+}
+.react-calendar .react-calendar__tile.selected {
+  background-color: rgb(254, 176, 48);
+  border-radius: 50%;
+  color: white;
+}
+
+.btn-div {
+  margin-left: 21%;
+}
+.btn-div .calendar_btnEnd {
+  margin: 20px 0 80px 0;
+  width: 250px;
+  height: 50px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(246, 143, 36);
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bolder;
+  font-size: 17px;
+  letter-spacing: 1px;
+}/*# sourceMappingURL=CalendarioEnd.css.map */
