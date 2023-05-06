@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.scss';
 import Novedades from '../../Componentes/Novedades/Novedades';
 import Experiencias from '../../Componentes/Experiencias/Experiencias';
+// import Footer from "../../Componentes/Footer/Footer";
 
 const Home = () => {
   return (
@@ -32,6 +33,7 @@ const Home = () => {
         </div>
         <Novedades />
         <Experiencias />
+        {/* <Footer/> */}
     </>
   )
 }
