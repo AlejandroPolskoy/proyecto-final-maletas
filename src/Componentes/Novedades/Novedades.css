@@ -1,1 +1,82 @@
-/*# sourceMappingURL=Novedades.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap");
+.news-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-x: hidden;
+  max-width: 414px;
+}
+.news-container-title {
+  margin-left: 15px;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  margin-bottom: 0;
+}
+.news-container .slider-container {
+  margin: 0 auto;
+  min-width: 100%;
+}
+.news-container .slider-container .slider {
+  width: 100%;
+  display: flex;
+  cursor: grab;
+}
+.news-container .slider-container .slider .item {
+  position: relative;
+  border-radius: 5px;
+  margin: 2px 15px;
+}
+.news-container .slider-container .slider .item-cont {
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  height: 150px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+.news-container .slider-container .slider .item-cont_title {
+  width: 100%;
+  font-family: "Catamaran", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin: 0 9px;
+  z-index: 1;
+}
+.news-container .slider-container .slider .item-cont_p {
+  width: 200px;
+  margin: 0;
+  font-size: 12px;
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  z-index: 1;
+}
+.news-container .slider-container .slider .item-cont_a {
+  width: 200px;
+  border-top: 1px solid white;
+  padding: 10px 0 0 0px;
+  text-align: justify;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
+  font-family: "Noto Sans", sans-serif;
+}
+.news-container .slider-container .slider .item-cont:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, rgba(225, 137, 196, 0.508), rgba(77, 189, 201, 0.465));
+}
+.news-container .slider-container .slider img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}/*# sourceMappingURL=Novedades.css.map */

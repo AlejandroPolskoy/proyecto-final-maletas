@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.scss';
 import Novedades from '../../Componentes/Novedades/Novedades';
+import Experiencias from '../../Componentes/Experiencias/Experiencias';
 
 const Home = () => {
   return (
@@ -30,6 +31,7 @@ const Home = () => {
         </form>
         </div>
         <Novedades />
+        <Experiencias />
     </>
   )
 }

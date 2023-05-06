@@ -30,8 +30,8 @@ const Novedades = () => {
             {images.map(image =>{ return (
                 <motion.div className='item-cont item' style={{'background-image': `url(${image.src})`}}>
                     <h4 className='item-cont_title'> Blog </h4>
-                    <p className='item-cont_p'> Un nuevo articulo de nuestro viajero empedernido.</p>
-                    <p className='item-cont_a'> Leer mas </p>
+                    <p className='item-cont_p'> Un nuevo artículo de nuestro viajero empedernido.</p>
+                    <p className='item-cont_a'> Leer más </p>
               </motion.div>
             )})}
           </motion.div>
