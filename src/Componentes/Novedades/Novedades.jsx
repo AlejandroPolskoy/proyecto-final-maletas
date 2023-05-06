@@ -27,8 +27,8 @@ const Novedades = () => {
         <h1 className='news-container-title'>Novedades</h1>
         <motion.div className='slider-container'>
           <motion.div className='slider' drag='x' dragConstraints={{right: 2, left: -504}}>
-            {images.map(image =>{ return (
-                <motion.div className='item-cont item' style={{'background-image': `url(${image.src})`}}>
+            {images.map((image, index) =>{ return (
+                <motion.div key={index} className='item-cont item' style={{'backgroundImage': `url(${image.src})`}}>
                     <h4 className='item-cont_title'> Blog </h4>
                     <p className='item-cont_p'> Un nuevo artículo de nuestro viajero empedernido.</p>
                     <p className='item-cont_a'> Leer más </p>
