@@ -1,5 +1,6 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { Search } from './Search';
 import './Maps.scss'
 
 
@@ -16,7 +17,7 @@ export const Maps = () => {
           lat: 40.4165000,
           lng: -3.7025600
         },
-        zoom:12
+        zoom:10
       };
 
     const { isLoaded } = useJsApiLoader({
@@ -38,7 +39,7 @@ export const Maps = () => {
 
   return (
     <div className='map'>
-    <input type="text" placeholder="Busca una zona" className='map_input'></input>
+    <Search/>
     {isLoaded ? (
         <GoogleMap
          mapContainerStyle={containerStyle}
