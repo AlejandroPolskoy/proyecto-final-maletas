@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './Calendario.scss';
 import Calendar from 'react-calendar';
+import Footer from '../Footer/Footer';
 
 const Calendario = ({setStartDate, closeCal}) => {
 
@@ -38,7 +39,7 @@ const Calendario = ({setStartDate, closeCal}) => {
   return (
     <>
         <div className='content'>
-            <img onClick={closeCal} src='/assets/icons8Back100Copy@2x.png' alt='back' />
+            <img className='cal-img' onClick={closeCal} src='/assets/icons8Back100Copy@2x.png' alt='back' />
             <div className='calendar-container'>
                 {months.map((month) => (
                     <Calendar
@@ -54,6 +55,7 @@ const Calendario = ({setStartDate, closeCal}) => {
             <div className='btn-div'>
                 <button onClick={closeCal} className='calendar_btn'> Continuar </button> 
             </div>
+            <Footer />
         </div>
     </>
   )

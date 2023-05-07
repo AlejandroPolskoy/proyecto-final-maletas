@@ -6,12 +6,12 @@ import Calendario from "../../Componentes/Calendario/Calendario";
 import CalendarioEnd from "../../Componentes/Calendario/CalendarioEnd";
 import ModalHorario from "../../Componentes/ModalHorario/ModalHorario";
 import Busqueda from "../../Componentes/Busqueda/Busqueda";
-// import Footer from "../../Componentes/Footer/Footer";
-//import { useNavigate } from 'react-router-dom';
+import Footer from "../../Componentes/Footer/Footer";
+// import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  // const navigate = useNavigate();
-  // if(!localStorage.getItem("user")) navigate("/bienvenida");
+//   const navigate = useNavigate();
+//   if(!localStorage.getItem("user")) navigate("/bienvenida");
 
   //Datos de calendario
   const [startDate, setStartDate] = useState(null);
@@ -58,6 +58,7 @@ const Home = () => {
               className="search-big"
               type="text"
               placeholder="¿Dónde te encuentras? Madrid, Barcelona…"
+              value={address ? address : ''}
             />
           </div>
           <div className="form-search_div">
@@ -137,7 +138,7 @@ const Home = () => {
             <Busqueda closeModal={closeModal}  setAddress={setAddress}/>
         )}
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 };

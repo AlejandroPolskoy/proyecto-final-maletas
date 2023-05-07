@@ -2,7 +2,7 @@
   position: absolute;
   background-color: white;
   width: 100vw;
-  height: 500vh;
+  height: 100vh;
   z-index: 2;
   margin-top: 20px;
   display: flex;
@@ -52,7 +52,7 @@
   align-items: center;
   padding: 10px 0;
 }
-.content .history-one img {
+.content .history-one .history-img {
   width: 30px;
   height: 30px;
   margin-right: 20px;
@@ -69,7 +69,7 @@
   padding: 10px 0;
   border-bottom: 1px solid rgb(213, 210, 210);
 }
-.content .history-two img {
+.content .history-two .history-img {
   width: 30px;
   height: 30px;
   margin-right: 20px;
@@ -82,6 +82,6 @@
   margin-top: 220px;
   width: 100vw;
 }
-.content .next img {
+.content .next .arrow-img {
   margin-left: 300px;
 }/*# sourceMappingURL=Busqueda.css.map */

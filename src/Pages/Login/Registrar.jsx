@@ -39,7 +39,7 @@ const Registrar = () => {
     <div className='socials'>
         <div className='btns'>
             <div className='button-social facebook'> <img src='/assets/fbMid.png' alt='fb'/> <p>Facebook</p></div>
-            <div className='button-social google'> <img src='/asseets/googleMid.png' alt='fb'/> <p>Google</p> </div>
+            <div className='button-social google'> <img src='/assets/googleMid.png' alt='google'/> <p>Google</p> </div>
         </div>
 
         <p className='login-p'>o utiliza tu correo electrónico</p>

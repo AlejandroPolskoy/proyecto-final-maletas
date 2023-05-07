@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './ModalHorario.scss';
+import Footer from '../Footer/Footer';
 const ModalHorario = ({setStartTime, setEndTime, setAmountPack, handleModalOpen}) => {
 
     const saveDataStart = (e) => {
@@ -41,6 +42,8 @@ const ModalHorario = ({setStartTime, setEndTime, setAmountPack, handleModalOpen}
         <div className='arrow-continue' >
             <img onClick={() => handleModalOpen(0)} src='/assets/botonContinuar@2x.png' alt='continue'/>
         </div>
+
+        <Footer />
         
     </div>
   )

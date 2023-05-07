@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Calendar from 'react-calendar';
 import './CalendarioEnd.scss';
+import Footer from '../Footer/Footer';
 
 const CalendarioEnd = ({setEndDate, setShowModal}) => {
 
@@ -39,7 +40,7 @@ const CalendarioEnd = ({setEndDate, setShowModal}) => {
 
   return (
     <div className='content'>
-        <img onClick={()=> setShowModal(0)} src='/assets/icons8Back100Copy@2x.png' alt='back' />
+        <img className='cal-img' onClick={()=> setShowModal(0)} src='/assets/icons8Back100Copy@2x.png' alt='back' />
         <div className='calendar-container'>
             {months.map((month) => (
                 <Calendar
@@ -55,6 +56,7 @@ const CalendarioEnd = ({setEndDate, setShowModal}) => {
         <div className='btn-div'>
             <button onClick={()=> setShowModal(3)} className='calendar_btn'> Continuar </button> 
         </div>
+        <Footer />
     </div>
   )
 }
