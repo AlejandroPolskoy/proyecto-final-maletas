@@ -42,4 +42,60 @@
         z-index: 1;
         margin: 11px;
     }
+
+    .history {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-top: 40px;
+        margin-left: 25px;
+
+        &-one {
+            display: flex;
+            width: 330px;
+            height: 40px;
+            align-items: center;
+            padding: 10px 0;
+
+            img {
+                width: 30px;
+                height: 30px;
+                margin-right: 20px;
+                margin-left: 0;
+            }
+
+            p {
+                margin-left: 2px;
+            }
+        }
+
+        &-two {
+            display: flex;
+            width: 330px;
+            height: 40px;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgb(213, 210, 210);
+
+            img {
+                width: 30px;
+                height: 30px;
+                margin-right: 20px;
+                margin-left: 0;
+            }
+
+            p {
+                margin-left: 2px;
+            }
+        }
+    }
+
+    .next {
+        margin-top: 220px;
+        width: 100vw;
+        
+        img {
+            margin-left: 300px;
+        }
+    }
 }
