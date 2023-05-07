@@ -5,6 +5,7 @@ import Experiencias from "../../Componentes/Experiencias/Experiencias";
 import Calendario from "../../Componentes/Calendario/Calendario";
 import CalendarioEnd from "../../Componentes/Calendario/CalendarioEnd";
 import ModalHorario from "../../Componentes/ModalHorario/ModalHorario";
+import Busqueda from "../../Componentes/Busqueda/Busqueda";
 // import Footer from "../../Componentes/Footer/Footer";
 //import { useNavigate } from 'react-router-dom';
 
@@ -16,6 +17,7 @@ const Home = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [showModal, setShowModal] = useState(0);
+  const [address, setAddress] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -131,7 +133,9 @@ const Home = () => {
             closeModal={closeModal}
           />
         )}
-        {showModal === 4 && alert("aqui va el modelo para el mapa")}
+        {showModal === 4 && (
+            <Busqueda closeModal={closeModal}  setAddress={setAddress}/>
+        )}
       </div>
       {/* <Footer/> */}
     </>
