@@ -1,17 +1,32 @@
 import { useState } from "react";
 
-export const Search = ({ searchBox }) => {
-  const [places, setPlaces] = useState([]);
+export const Search = ({ onPlacesChanged }) => {
+  const [query, setQuery] = useState("");
 
-  const handleOnPlacesChanged = () => {
-    const newPlaces = searchBox.getPlaces();
-    setPlaces(newPlaces);
+  const handleSearch = () => {
+    onPlacesChanged();
+  };
+
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+  };
+
+  const handleInputKeyPress = (event) => {
+    if (event.key === "Enter") {
+      onPlacesChanged();
+    }
   };
 
   return (
     <div className="search-container">
-      <input type="text" placeholder="Search places..." className="map_input"/>
-      <button onClick={handleOnPlacesChanged}>Search</button>
+      <input
+        type="text"
+        placeholder="Search places..."
+        className="map_input"
+        value={query}
+        onChange={handleInputChange}
+        onKeyPress={handleInputKeyPress}
+      />
     </div>
   );
 };
