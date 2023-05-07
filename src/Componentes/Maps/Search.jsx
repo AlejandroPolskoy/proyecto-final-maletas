@@ -1,13 +1,17 @@
-import React from 'react';
+import { useState } from "react";
 
+export const Search = ({ searchBox }) => {
+  const [places, setPlaces] = useState([]);
 
-export const Search = () => {
-
+  const handleOnPlacesChanged = () => {
+    const newPlaces = searchBox.getPlaces();
+    setPlaces(newPlaces);
+  };
 
   return (
-    <div>
-      <input id="pac-input" type="text" placeholder="Busca una zona" className='map_input'></input>
-      
+    <div className="search-container">
+      <input type="text" placeholder="Search places..." className="map_input"/>
+      <button onClick={handleOnPlacesChanged}>Search</button>
     </div>
   );
 };
