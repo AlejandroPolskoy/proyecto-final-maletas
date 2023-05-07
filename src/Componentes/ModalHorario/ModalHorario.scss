@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap');
+
+.modal-time {
+    position: absolute;
+    background-color: white;
+    width: 100vw;
+    height: 200vh;
+    z-index: 2;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    .back-arrow {
+        padding-left: 25px;
+    }
+
+    &_container {
+        display: flex;
+        padding-left: 25px;
+        max-width: 90vw;
+        margin-top: 40px;
+        justify-content: flex-start;
+
+        &_inner {
+            margin: 5px;
+            text-align: start;
+
+            h2 {
+                font-family: 'Catamaran', sans-serif; 
+                font-weight: 400;
+            }
+
+            input {
+                font-family: 'Noto Sans', sans-serif;
+                width: 150px;
+                height: 60px;
+                text-align: center;
+                font-size: 18px;
+                border-radius: 5px;
+                border-top: none;
+                border-right: none;
+                border-bottom: none;
+                box-shadow: 1px 1px 3px 3px #edebeb;
+            }
+
+            input::-webkit-calendar-picker-indicator {
+                background: url(../../../public/assets/seleccion@3x.png) no-repeat;
+                background-size: contain;
+                margin-top: 25px;
+                width: 28px;
+                height: 1.5em;
+                cursor: pointer;
+            }
+
+            .orange{
+                border-left: 7px solid rgb(253 197 102);
+            }
+
+            .blue {
+                border-left: 7px solid rgb(0 149 190);
+            }
+            
+        }
+    }
+}
+
+.modal-suitcase {
+    max-width: 90vw;
+    text-align: start;
+    padding-left: 25px;
+    margin-top: 70px;
+
+    h2 {
+        font-family: 'Catamaran', sans-serif; 
+        font-weight: 400;
+    }
+
+    input {
+        font-family: 'Noto Sans', sans-serif;
+        width: 150px;
+        height: 60px;
+        text-align: center;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 1px 1px 3px 3px #edebeb;
+    }
+}
+
+.arrow-continue {
+    width: 50px;
+    height: 50px;
+
+    img {
+        margin-top: 170px;
+        margin-left: 330px;
+        width: 100%;
+        height: 100%;
+    }
+}
