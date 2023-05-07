@@ -1,0 +1,87 @@
+.content {
+  position: absolute;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.content .back-arrow {
+  margin-left: 25px;
+}
+.content .search-div {
+  display: flex;
+  margin: 28px 0 0 30px;
+  max-width: 100vw;
+}
+.content .input {
+  width: 290px;
+  height: 40px;
+  position: relative;
+  padding: 8px 8px 8px 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  box-shadow: 1px 1px 3px 3px #edebeb;
+  color: rgb(0, 0, 0);
+  opacity: 80%;
+  font-family: "Noto Sans", sans-serif;
+}
+.content .search-big:focus {
+  outline: none;
+}
+.content .aspa {
+  position: absolute;
+  z-index: 1;
+  margin: 11px;
+}
+.content .history {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 40px;
+  margin-left: 25px;
+}
+.content .history-one {
+  display: flex;
+  width: 330px;
+  height: 40px;
+  align-items: center;
+  padding: 10px 0;
+}
+.content .history-one .history-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  margin-left: 0;
+}
+.content .history-one p {
+  margin-left: 2px;
+}
+.content .history-two {
+  display: flex;
+  width: 330px;
+  height: 40px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgb(213, 210, 210);
+}
+.content .history-two .history-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  margin-left: 0;
+}
+.content .history-two p {
+  margin-left: 2px;
+}
+.content .next {
+  margin-top: 220px;
+  width: 100vw;
+}
+.content .next .arrow-img {
+  margin-left: 300px;
+}/*# sourceMappingURL=Busqueda.css.map */
