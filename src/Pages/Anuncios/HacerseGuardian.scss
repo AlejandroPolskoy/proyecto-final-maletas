@@ -1,0 +1,29 @@
+.configuracionContainer{
+    
+    height: 101px;
+    background-color: rgb(246, 143, 36);
+}
+
+.configuracionTitulo{
+    width: 45%;
+    color: white;
+    font-family: Noto Sans;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+.continuar{
+    width: 20%;
+    height: 20%;
+}
+
+.describe{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.items__container{
+    display: flex;
+    flex-direction: column;
+}
