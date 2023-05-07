@@ -10,15 +10,20 @@ const CalendarioEnd = ({setEndDate, setShowModal}) => {
     const selected = (e) => {
         const selectedTile = e.currentTarget;
         if (selectedTile) {
-          // Remove 'selected' class from any previously selected tile
+            // Quita la clase 'selected' de la fecha previamente seleccionada
           const prevSelectedTile = document.querySelector('.react-calendar__tile.selected');
           if (prevSelectedTile) {
             prevSelectedTile.classList.remove('selected');
           }
-          // Add 'selected' class to the clicked tile
+          // Agrega la clase 'selected'a la fecha seleccionada
           selectedTile.classList.add('selected');
         }
     }
+
+    const formatDate = (date) => {
+        return date.toLocaleDateString('en-GB'); // Cambia el formato de la fecha
+    };
+
 
     useEffect(() => {
         const tiles = document.querySelectorAll('.react-calendar__tile');
@@ -36,11 +41,10 @@ const CalendarioEnd = ({setEndDate, setShowModal}) => {
     <div className='content'>
         <img onClick={()=> setShowModal(0)} src='/assets/icons8Back100Copy@2x.png' alt='back' />
         <div className='calendar-container'>
-            {/* <Calendar onChange={setEndDate} value={new Date()} showDoubleView={true}/>  */}
             {months.map((month) => (
                 <Calendar
                     key={`${month.getMonth()}-${month.getFullYear()}`}
-                    onChange={setEndDate}
+                    onChange={(date) => setEndDate(formatDate(date))}
                     value={month}
                     maxDetail="month"
                     showNeighboringMonth={false}
