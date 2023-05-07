@@ -1,7 +1,11 @@
+
 .configuracionContainer{
     
     height: 101px;
     background-color: rgb(246, 143, 36);
+    margin-top: 0;
+    
+
 }
 
 .configuracionTitulo{
@@ -15,15 +19,34 @@
 .continuar{
     width: 20%;
     height: 20%;
+    padding-top: 10px;
 }
 
 .describe{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: 30px;
+    border-bottom: 1px solid rgb(177, 177, 177);
+    width: 85%;
+    margin: 0 auto;
 }
 
 .items__container{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    gap: 25px;
+}
+
+.categoria{
+    text-align: left;
+    padding-left: 30px;
+}
+
+.categoria--negrita{
+    font-weight: 600;
+}
+
+.input{
+    width: 85%;
 }

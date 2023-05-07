@@ -12,6 +12,7 @@ import Titulo from './Titulo';
 import Disponibilidad from './Disponibilidad';
 import Servicios from './Servicios';
 import Descripcion from './Descripcion';
+import { useRef } from 'react';
 
 
 
@@ -22,6 +23,11 @@ export default function HacerseGuardian() {
     const [paginas, setPaginas] =useState(0);
 
     const [direccion, setDireccion] = useState("");
+
+    const [titulo, setTitulo] = useState("");
+
+    const [foto, setFoto] = useState("");
+
 
 
 
@@ -36,8 +42,20 @@ export default function HacerseGuardian() {
         setDireccion(value);
       };
 
+    const onChangeFoto = (value) => {
+        setFoto(value);
+    };
+
+    const onChangeTitulo = (value) => {
+        setTitulo(value);
+    };
+
       const handleVolverClick = () => {
         setPaginas(paginas - 6);
+      };
+
+      const handleBack = () => {
+        setPaginas(paginas - 1);
       };
 
  
@@ -60,45 +78,85 @@ export default function HacerseGuardian() {
 
                     <div className="items__container">
                         <div className="describe">
-                            <p>Describe tu espacio</p>
+                            <p className="categoria--negrita">Describe tu espacio</p>
                             <img onClick = {handleFlechaClick}   className="continuar" src={continuar} alt="continuar"></img>
                         </div>
 
                         <div>
-                            <p>Ubicación </p>
-                            <input type="text" 
-                            id="input01"
-                            className="input"
-                            value={direccion}
-                            onChange={(event) => onChangeDireccion(event.target.value)}
-                        />
+                            <p className="categoria">Ubicación </p>
+                                <input type="text" 
+                                id="input01"
+                                className="input"
+                                value={direccion}
+                                onChange={(event) => onChangeDireccion(event.target.value)}
+                            />
                             
                         </div>
                         <div>
-                            <p>Fotos</p>
+                            <p className="categoria">Fotos</p>
+                                <input type="file" 
+                                    id="input02"
+                                    className="input"
+                                    files={foto}
+                                    onChange={(event) => onChangeFoto(event.target.files[0])}
+                                    />
+
                         </div>
                         <div>
-                            <p>Título</p>
+                            <p className="categoria">Título </p>
+                                <input type="text" 
+                                id="input03"
+                                className="input"
+                                value={titulo}
+                                onChange={(event) => onChangeTitulo(event.target.value)}
+                                />
+                        </div>
+                        <div>
+                            <p className="categoria">Disponibilidad y horarios</p>
+                        </div>
+                        <div>
+                            <p className="categoria">Servicios</p>
                         </div>
                     </div>  
       
                 </div>
-        )}
+            )}
 
-        { (paginas==1) && <Descripcion></Descripcion>}
+
+
+
+        { (paginas==1) && (
+        <Descripcion
+        onBackClick= {handleBack}
+        />)}
+        
 
         { (paginas==2) && ( 
         <Ubicacion
          onChangeDireccion = {onChangeDireccion}
          direccion={direccion}
-         onVolverClick={handleVolverClick}
-         ></Ubicacion>
-        )}
+         onBackClick={handleBack}
+         ></Ubicacion>)}
+        
+
+        { (paginas==3) && (
+        <Fotos
+            onChangeFotos={onChangeFoto}
+            foto={foto}
+            onBackClick={handleBack}
+         />)}
 
 
-        { (paginas==3) && <Fotos></Fotos>}
-        { (paginas==4) && <Titulo></Titulo>}
-        { (paginas==5) && <Disponibilidad></Disponibilidad>}
+        { (paginas==4) && (
+        <Titulo
+            onChangeTitulo={onChangeTitulo}
+            titulo={titulo}
+            onBackClick={handleBack}
+         />)}
+
+        
+        { (paginas==5) && (<Disponibilidad onBackClick={handleBack}/>)}
+
 
         { (paginas==6) && (
         <Servicios

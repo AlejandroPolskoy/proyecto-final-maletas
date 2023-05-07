@@ -30,9 +30,9 @@ export default function Ubicacion(props) {
 
                 <div>
 
-                    <a href="javascript:history.back()">
-                        <img className="atras" src={backIcon} alt="back"></img>
-                    </a>
+                   
+                    <img onClick={props.onBackClick} className="atras" src={backIcon} alt="back"></img>
+                   
 
                     <p className="anuncios__titular">Tu ubicación</p>
 

@@ -13,7 +13,7 @@ import HacerseGuardian from './HacerseGuardian';
 
 
 
-export default function Anuncios() {
+export default function Anuncios(props) {
 
     const [modalShow, setModalShow] = useState(false);
     const [selectedOption, setSelectedOption] = useState("");
@@ -56,9 +56,9 @@ export default function Anuncios() {
 
                 <div>
 
-                    <a href="javascript:history.back()">
-                        <img className="atras" src={backIcon} alt="back"></img>
-                    </a>
+                    
+                    <img onClick={props.onBackClick} className="atras" src={backIcon} alt="back"></img>
+                    
 
 
 

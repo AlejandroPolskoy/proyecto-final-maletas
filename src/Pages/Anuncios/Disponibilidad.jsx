@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 
 
-export default function Disponibilidad() {
+export default function Disponibilidad(props) {
 
 
 
@@ -16,9 +16,7 @@ export default function Disponibilidad() {
 
         <div>
 
-            <a href="javascript:history.back()">
-                <img className="atras" src={backIcon} alt="back"></img>
-            </a>
+            <img onClick={props.onBackClick} className="atras" src={backIcon} alt="back"></img>
 
             <p className="anuncios__titular">Especifica tu disponibilidad</p>
 

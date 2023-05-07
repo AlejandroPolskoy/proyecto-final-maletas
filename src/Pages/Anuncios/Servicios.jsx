@@ -9,10 +9,6 @@ import { Link } from 'react-router-dom'
 
 export default function Servicios(props) {
 
-    const {onChangeDireccion, setPaginas} = props;
-
-
-
 
     return (
 
@@ -39,9 +35,9 @@ export default function Servicios(props) {
                 
             </div>
 
-            <a href="#" onClick={props.onVolverClick}>
-                <img className="flecha" src={flecha} alt="back"></img>
-            </a>
+           
+            <img onClick={props.onVolverClick} className="flecha" src={flecha} alt="back"></img>
+            
 
             
 
