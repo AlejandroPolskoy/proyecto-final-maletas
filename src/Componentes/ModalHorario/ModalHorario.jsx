@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './ModalHorario.scss';
-const ModalHorario = ({setStartTime, setEndTime, setAmountPack, setShowModal}) => {
+const ModalHorario = ({setStartTime, setEndTime, setAmountPack, handleModalOpen}) => {
 
     const saveDataStart = (e) => {
         setStartTime(e.target.value);
@@ -14,11 +14,15 @@ const ModalHorario = ({setStartTime, setEndTime, setAmountPack, setShowModal}) =
         setAmountPack(e.target.value);
     }
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
 
   return (
     <div className='modal-time'>
 
-        <img className='back-arrow' onClick={()=> setShowModal(2)} src='/assets/icons8Back100Copy@2x.png' alt='back' />
+        <img className='back-arrow' onClick={() => handleModalOpen(2)} src='/assets/icons8Back100Copy@2x.png' alt='back' />
 
         <div className='modal-time_container'>
             <div className='modal-time_container_inner'>
@@ -35,7 +39,7 @@ const ModalHorario = ({setStartTime, setEndTime, setAmountPack, setShowModal}) =
             <input onChange={saveDataPack} type='number' />
         </div>
         <div className='arrow-continue' >
-            <img onClick={()=> setShowModal(0)} src='/assets/botonContinuar@2x.png' alt='continue'/>
+            <img onClick={() => handleModalOpen(0)} src='/assets/botonContinuar@2x.png' alt='continue'/>
         </div>
         
     </div>
