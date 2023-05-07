@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
-import { NavLink, useNavigate, redirect } from 'react-router-dom';
+import { NavLink, useNavigate, redirect, useFormAction } from 'react-router-dom';
 import backI from '../../assets/icons8Back100Copy@2x.png';
 import './Login.scss';
 import fb from '../../assets/fbMid.png';
 import google from '../../assets/googleMid.png';
 import axios from 'axios';
-
-const api = "https://maleteo-node.vercel.app";
-//const api = "http://localhost:8888";
+import { useForm } from 'react-hook-form';
+import { api } from '../../App';
 
 const Login = () => {
     const [form, setForm] = useState([]);
     const navigate = useNavigate();
-
-    function valueChanged(e) {
-        setForm({...form, [e.target.name] : e.target.value})
-    }
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     function sendForm() {
         try {
@@ -25,7 +21,7 @@ const Login = () => {
                     localStorage.setItem('token', res.data.token);
                     navigate('/');
                 } else {
-                    setForm({...form, msg:"Email o contrasena es incorrecto"});
+                    setForm({...form, msg: "Email o contraseña es incorrecto"});
                 }
             })
         } catch(err) {
@@ -52,15 +48,18 @@ const Login = () => {
                 
                 <p className='login-p'>o utiliza tu correo electrónico</p>
             </div>
-        <form className='form-login'>
-            { form.msg && <div className='err-massage'>{form.msg}</div> }
+        <form className='form-login' onSubmit={handleSubmit(sendForm)}>
+            
             <label className='label-login'>Dirección de correo electrónico</label>
-            <input type='email' className='input-login' name="email" onChange={valueChanged}></input>
-
+            <input type='email' className='input-login' {...register('email', {required: true})}></input>
+            {errors.email?.type === 'required' && <p className='date-p'>"Email is required"</p>}
+            { form.msg && <p className='date-p'>{form.msg}</p> }
+            
             <label className='label-login'>Contraseña</label>
-            <input type='password' className='input-login' name="password" onChange={valueChanged}></input>
+            <input type='password' className='input-login' {...register('password', {required: true})}></input>
+            {errors.password?.type === 'required' && <p className='date-p'>"Password is required"</p>}
 
-            <button type='button' className='btn-login' onClick={sendForm}> Inicia sesión </button>
+            <button type='submit' className='btn-login'> Inicia sesión </button>
         </form>
     </>
    

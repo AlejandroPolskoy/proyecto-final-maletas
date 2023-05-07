@@ -8,6 +8,9 @@ import Tarifas from "./Pages/Home/Tarifas";
 import Home from "./Pages/Home/Home";
 import Logout from "./Pages/Login/Logout";
 
+const urls = ["https://maleteo-node.vercel.app", "http://localhost:8888"];
+export const api = urls[0];
+
 function App() {
   return (
     <Router>
