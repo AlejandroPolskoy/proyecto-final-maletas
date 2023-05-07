@@ -1,56 +1,23 @@
-import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { Search } from './Search';
+import { useMemo } from "react";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import './Maps.scss'
 
 
 export const Maps = () => {
 
+    const { isLoaded } = useLoadScript({
+        googleMapsApiKey: "AIzaSyAEku8MYSQoLRi2aIAEyL-Qeu9U2xP_pJU",
+    });
 
+    if(!isLoaded) return <div>Loading... </div>
+  return <Map/>
+}
 
-    const containerStyle = {
-        height: '100vh'
-       };
-       
-       const mapOptions = {
-        center: {
-          lat: 40.4165000,
-          lng: -3.7025600
-        },
-        zoom:10
-      };
-
-    const { isLoaded } = useJsApiLoader({
-        id: 'google-map-script',
-        googleMapsApiKey:'AIzaSyCgfGA8mPkcAllZbuLJodNhVE2EY8pirYI'
-       })
-      
-       const [map, setMap] = React.useState(null)
-      
-       const onLoad = React.useCallback(function callback(map) {
-        const bounds = new window.google.maps.LatLngBounds(mapOptions.center);
-        map.fitBounds(bounds);
-        setMap(map)
-       }, [])
-      
-       const onUnmount = React.useCallback(function callback(map) {
-        setMap(null)
-       }, [])
-
-  return (
-    <div className='map'>
-    <Search/>
-    {isLoaded ? (
-        <GoogleMap
-         mapContainerStyle={containerStyle}
-         center={mapOptions.center}
-         zoom={mapOptions.zoom}
-         onLoad={onLoad}
-         onUnmount={onUnmount}
-        >
-         <></>
-        </GoogleMap>
-       ) : <></>}
-    </div>
-  )
+function Map(){
+    const center = useMemo(() => ({ lat: 40.4165, lng: -3.70256 }), []);
+    return (
+        <GoogleMap zoom={12} center={center} mapContainerClassName="map-container">
+        <Marker position={center} />
+      </GoogleMap>
+    );
 }
