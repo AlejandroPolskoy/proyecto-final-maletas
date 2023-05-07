@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import Calendar from 'react-calendar';
 import './CalendarioEnd.scss';
 
-const CalendarioEnd = ({closeCal, setEndDate}) => {
+const CalendarioEnd = ({setEndDate, setShowModal}) => {
 
     const months = Array.from({ length: 12 }, (_, i) => new Date(new Date().getFullYear(), i, 1));
+
 
     const selected = (e) => {
         const selectedTile = e.currentTarget;
@@ -33,7 +34,7 @@ const CalendarioEnd = ({closeCal, setEndDate}) => {
 
   return (
     <div className='content'>
-        <img onClick={closeCal} src='/assets/icons8Back100Copy@2x.png' alt='back' />
+        <img onClick={()=> setShowModal(0)} src='/assets/icons8Back100Copy@2x.png' alt='back' />
         <div className='calendar-container'>
             {/* <Calendar onChange={setEndDate} value={new Date()} showDoubleView={true}/>  */}
             {months.map((month) => (
@@ -48,10 +49,10 @@ const CalendarioEnd = ({closeCal, setEndDate}) => {
             ))}
         </div>
         <div className='btn-div'>
-            <button onClick={closeCal} className='calendar_btn'> Continuar </button> 
+            <button onClick={()=> setShowModal(3)} className='calendar_btn'> Continuar </button> 
         </div>
     </div>
   )
 }
 
-export default CalendarioEnd
+export default CalendarioEnd;

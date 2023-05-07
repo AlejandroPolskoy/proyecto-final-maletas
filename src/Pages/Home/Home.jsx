@@ -4,22 +4,28 @@ import Novedades from '../../Componentes/Novedades/Novedades';
 import Experiencias from '../../Componentes/Experiencias/Experiencias';
 import Calendario from '../../Componentes/Calendario/Calendario';
 import CalendarioEnd from '../../Componentes/Calendario/CalendarioEnd';
+import ModalHorario from '../../Componentes/ModalHorario/ModalHorario';
 // import Footer from "../../Componentes/Footer/Footer";
 
 const Home = () => {
 
+    //Datos de calendario
     const [startDate, setStartDate] = useState(null);       
     const [endDate, setEndDate] = useState(null);       
-    const [showCalStart, setShowCalStart] = useState(false);
-    const [showCalEnd, setShowCalEnd] = useState(false);
+    const [showModal, setShowModal] = useState(0);
 
-    const openCalStart = () => {
-        setShowCalStart(!showCalStart);
+    //Datos de horario
+    const [startTime, setStartTime] = useState('00:00');
+    const [endTime, setEndTime] = useState('00:00');
+
+    //Datos de numero de piezas
+    const [amountPack, setAmountPack] = useState(0);
+
+    //Funciones
+    const closeModal = () => {
+        setShowModal(0);
     }
 
-    const openCalEnd = () => {
-        setShowCalEnd(!showCalEnd);
-    }
 
   return (
     <>
@@ -33,28 +39,31 @@ const Home = () => {
             </div>
             <div className='form-search_div'>
                 <img className='search-img' src='/assets/calendario@2x.png' alt='calendar'/>
-                <input onClick={openCalStart} className='search-input' type='text' placeholder='Depósito'  defaultValue={startDate ? startDate : ''}/>
+                <input onClick={()=> setShowModal(showModal + 1)} className='search-input' type='text' placeholder='Depósito'  defaultValue={startDate ? startDate : ''}/>
             </div>
             <div className='form-search_div'>
                 <img className='search-img' src='/assets/calendario@2x.png' alt='calendar'/>
-                <input onClick={openCalEnd} className='search-input' type='text' placeholder='Retirada' defaultValue={endDate ? endDate : ''}/>
+                <input onClick={()=> setShowModal(showModal + 2)} className='search-input' type='text' placeholder='Retirada' defaultValue={endDate ? endDate : ''}/>
             </div>
             <div className='form-search_div'>
                 <img className='search-img' src='/assets/maletita@2x.png' alt='calendar'/>
-                <input className='search-input' type='number' placeholder='Nº de piezas'/>
+                <input className='search-input' type='number' placeholder='Nº de piezas' value={amountPack !== 0 ? amountPack : ''}/>
             </div>
             
             <button className='search-button'> Buscar </button>
         </form>
-        {showCalStart && (
-            <Calendario setStartDate={setStartDate} closeCal={openCalStart}/>
-        )}
-        {showCalEnd && (
-            <CalendarioEnd closeCal={openCalEnd} setEndDate={setEndDate}/>
-        )}
-        </div>
         <Novedades />
         <Experiencias />
+        {showModal === 1 && (
+            <Calendario setStartDate={setStartDate} closeCal={closeModal} />
+        )}
+        {showModal === 2 && (
+            <CalendarioEnd setShowModal={setShowModal} setEndDate={setEndDate} setStartTime={setStartTime} setEndTime={setEndTime} setAmountPack={setAmountPack}/>
+        )}
+        {showModal === 3 && (
+            <ModalHorario startTime={startTime} endTime={endTime}  amountPack={amountPack} setShowModal={setShowModal} setStartTime={setStartTime} setEndTime={setEndTime} setAmountPack={setAmountPack} closeModal={closeModal}/>
+        )}
+        </div>
         {/* <Footer/> */}
     </>
   )
