@@ -6,8 +6,12 @@ import Calendario from '../../Componentes/Calendario/Calendario';
 import CalendarioEnd from '../../Componentes/Calendario/CalendarioEnd';
 import ModalHorario from '../../Componentes/ModalHorario/ModalHorario';
 // import Footer from "../../Componentes/Footer/Footer";
+//import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+
+    // const navigate = useNavigate();
+    // if(!localStorage.getItem("user")) navigate("/bienvenida");
 
     //Datos de calendario
     const [startDate, setStartDate] = useState(null);       
