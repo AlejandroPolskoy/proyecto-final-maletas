@@ -6,6 +6,7 @@ import Login from "./Pages/Login/Login";
 import Registrar from "./Pages/Login/Registrar";
 import Tarifas from "./Pages/Home/Tarifas";
 import Home from "./Pages/Home/Home";
+import { Maps } from "./Componentes/Maps/Maps";
 import Logout from "./Pages/Login/Logout";
 
 const urls = ["https://maleteo-node.vercel.app", "http://localhost:8888"];
@@ -24,6 +25,7 @@ function App() {
         <Route path="/logout" element={<Logout/>} />
         <Route path="/register" element={<Registrar/>} />
         <Route path="/tarifas" element={<Tarifas/>} />
+        <Route path="/maps" element={<Maps/>}/>
       </Routes>
       
     </div>
