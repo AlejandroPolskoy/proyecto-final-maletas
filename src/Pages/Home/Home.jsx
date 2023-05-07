@@ -48,7 +48,7 @@ const Home = () => {
         <form className='form-search'>
             <div className='form-search_big'>
                 <img className='search-bimg' src='/assets/lupa@2x.png' alt='lupa'/>
-                <input className='search-big' type='text' placeholder='¿Dónde te encuentras? Madrid, Barcelona…'/>
+                <input onClick={() => handleModalOpen(4)} className='search-big' type='text' placeholder='¿Dónde te encuentras? Madrid, Barcelona…'/>
             </div>
             <div className='form-search_div'>
                 <img className='search-img' src='/assets/calendario@2x.png' alt='calendar'/>
@@ -76,6 +76,7 @@ const Home = () => {
         {showModal === 3 && (
             <ModalHorario startTime={startTime} endTime={endTime}  amountPack={amountPack} handleModalOpen={handleModalOpen} setStartTime={setStartTime} setEndTime={setEndTime} setAmountPack={setAmountPack} closeModal={closeModal}/>
         )}
+        {showModal === 4 && (alert('aqui va el modelo para el mapa'))}
         </div>
         {/* <Footer/> */}
     </>
