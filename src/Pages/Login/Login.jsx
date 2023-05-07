@@ -11,11 +11,12 @@ import { api } from '../../App';
 const Login = () => {
     const [form, setForm] = useState([]);
     const navigate = useNavigate();
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, getValues } = useForm();
 
     function sendForm() {
         try {
-            axios.post( api + "/user/login", form).then( res => {
+            axios.post( api + "/user/login", getValues()).then( res => {
+                console.log(res);
                 if(res.status === 200) {
                     localStorage.setItem('user', JSON.stringify(res.data.userInfo));
                     localStorage.setItem('token', res.data.token);
