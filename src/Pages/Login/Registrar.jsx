@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import backI from '../../assets/icons8Back100Copy@2x.png'
 import './Register.scss';
-import fb from '../../assets/fbMid.png';
-import google from '../../assets/googleMid.png';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { api } from '../../App';
@@ -40,8 +38,8 @@ const Registrar = () => {
     <h1 className='login-title'>Únete a Maleteo y disfruta de sus ventajas</h1>    
     <div className='socials'>
         <div className='btns'>
-            <div className='button-social facebook'> <img src={fb} alt='fb'/> <p>Facebook</p></div>
-            <div className='button-social google'> <img src={google} alt='fb'/> <p>Google</p> </div>
+            <div className='button-social facebook'> <img src='/assets/fbMid.png' alt='fb'/> <p>Facebook</p></div>
+            <div className='button-social google'> <img src='/asseets/googleMid.png' alt='fb'/> <p>Google</p> </div>
         </div>
 
         <p className='login-p'>o utiliza tu correo electrónico</p>
