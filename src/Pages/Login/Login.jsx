@@ -1,12 +1,38 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink, useNavigate, redirect } from 'react-router-dom';
 import backI from '../../assets/icons8Back100Copy@2x.png';
 import './Login.scss';
 import fb from '../../assets/fbMid.png';
 import google from '../../assets/googleMid.png';
+import axios from 'axios';
+
+const api = "https://maleteo-node.vercel.app";
+//const api = "http://localhost:8888";
 
 const Login = () => {
+    const [form, setForm] = useState([]);
+    const navigate = useNavigate();
 
+    function valueChanged(e) {
+        setForm({...form, [e.target.name] : e.target.value})
+    }
+
+    function sendForm() {
+        try {
+            axios.post( api + "/user/login", form).then( res => {
+                if(res.status === 200) {
+                    localStorage.setItem('user', JSON.stringify(res.data.userInfo));
+                    localStorage.setItem('token', res.data.token);
+                    navigate('/');
+                } else {
+                    setForm({...form, msg:"Email o contrasena es incorrecto"});
+                }
+            })
+        } catch(err) {
+            console.log( "Wrong data:", err );
+        }
+        
+    }
 
   return (
     <>
@@ -27,13 +53,14 @@ const Login = () => {
                 <p className='login-p'>o utiliza tu correo electrónico</p>
             </div>
         <form className='form-login'>
+            { form.msg && <div className='err-massage'>{form.msg}</div> }
             <label className='label-login'>Dirección de correo electrónico</label>
-            <input type='email' className='input-login'></input>
+            <input type='email' className='input-login' name="email" onChange={valueChanged}></input>
 
             <label className='label-login'>Contraseña</label>
-            <input type='password' className='input-login'></input>
+            <input type='password' className='input-login' name="password" onChange={valueChanged}></input>
 
-            <button type='submit' className='btn-login'> Inicia sesión </button>
+            <button type='button' className='btn-login' onClick={sendForm}> Inicia sesión </button>
         </form>
     </>
    
