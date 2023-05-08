@@ -6,6 +6,7 @@ import { Search } from "./Search";
 import Footer from "../Footer/Footer";
 
 const libraries = ["places"];
+
 export const Maps = () => {
 
     const { isLoaded } = useLoadScript({
@@ -16,6 +17,7 @@ export const Maps = () => {
     if(!isLoaded) return <div>Loading... </div>
     return <Map/>
 }
+
 
 function Map() {
   const center = useMemo(() => ({ lat: 40.4165, lng: -3.70256 }), []);
@@ -62,7 +64,6 @@ function Map() {
         <Footer/>
       </>
   );
-}
-
+  }
 
 export default Map;
