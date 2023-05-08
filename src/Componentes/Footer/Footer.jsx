@@ -20,7 +20,7 @@ export default function Footer() {
                     </div>) :
                     (<div className='footer_nav nav-1'>
                         <Link to="/"><img src="/assets/inicio@3x.png" alt="Icono inicio"/></Link>
-                        <Link to="/"><img src="/assets/buscar@3x.png" alt="Icono buscar"/></Link>
+                        <Link to="/maps"><img src="/assets/buscar@3x.png" alt="Icono buscar"/></Link>
                         <Link to="/"><img src="/assets/mensaje@3x.png" alt="Icono mensajes"/></Link>
                         <Link to="/usuario/:id"><img src="/assets/usuario@3x.png" alt="Icono usuario"/></Link>
                     </div>)}
