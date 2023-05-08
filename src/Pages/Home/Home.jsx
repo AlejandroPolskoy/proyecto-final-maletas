@@ -13,7 +13,9 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
 
   const navigate = useNavigate();
-  //if(!localStorage.getItem("user")) navigate("/bienvenida");
+
+  if(!localStorage.getItem("user")) navigate("/bienvenida");
+  //const userInfo = JSON.parse(localStorage.getItem("user")) || {};
 
   //Datos de calendario
   const [startDate, setStartDate] = useState(null);
@@ -38,7 +40,6 @@ const Home = () => {
   //Funciones
   const closeModal = () => {
     setShowModal(0);
-
     setIsModalOpen(false);
   };
 
