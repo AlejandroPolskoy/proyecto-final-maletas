@@ -48,7 +48,7 @@
 .search-section .form-search_big .search-bimg {
   position: absolute;
   z-index: 1;
-  margin: 11px;
+  margin: 15px 11px 11px 11px;
 }
 .search-section .form-search_div {
   width: 160px;

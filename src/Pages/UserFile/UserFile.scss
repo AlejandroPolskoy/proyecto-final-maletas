@@ -1,0 +1,42 @@
+.page-container {
+    max-width: 414px;
+    max-height: 90vh;
+
+    .file-container {
+        width: 100%;
+        overflow-y: scroll;
+
+        &_slider{
+            position: relative;
+            height: 240px;
+
+            &__img {
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
+
+            .circles {
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 15px;
+                bottom: 3px;
+                left: 50%;
+                transform: translateX(-50%);
+                max-width: 414px;
+                
+                .circle {
+                    background-color: rgb(255 255 255);
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    margin: 0 5px;
+                }
+            }
+
+          
+        }
+    }
+}
