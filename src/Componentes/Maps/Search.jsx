@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './Maps.scss'
+import { MarkerF } from "@react-google-maps/api";
 
 export const Search = ({ onPlacesChanged, setAddress }) => {
   const [query, setQuery] = useState("");

@@ -11,7 +11,9 @@ const libraries = ["places"];
 export const Maps = () => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyAEku8MYSQoLRi2aIAEyL-Qeu9U2xP_pJU",
+    googleMapsClientId: "5d4a8d81020e19ac",
     libraries,
+    mapIds: ["5d4a8d81020e19ac"]
   });
 
   if (!isLoaded) return <div>Loading... </div>;
@@ -25,7 +27,10 @@ function Map() {
   const mapRef = useRef();
   const {setAddress} = useContext(VariablesContext);
 
+  
+
   const onLoad = React.useCallback(function callback(map) {
+
     mapRef.current = map;
     setMap(map);
   }, []);
@@ -54,6 +59,7 @@ function Map() {
           mapContainerClassName="map-container"
           onLoad={onLoad}
           onUnmount={onUnmount}
+          mapId="5d4a8d81020e19ac"
         >
           <MarkerF position={center} />
           <StandaloneSearchBox onLoad={setSearchBox}>
