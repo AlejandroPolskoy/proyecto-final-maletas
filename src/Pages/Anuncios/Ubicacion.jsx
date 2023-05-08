@@ -42,7 +42,7 @@ export default function Ubicacion(props) {
                             <label for="input01">Especifica tu ubicación</label>
                             <input
                                 type="text" id="input01" placeholder='Madrid'
-                                className="input"
+                                className="inputComponente"
                                 value={props.direccion}
                                 onChange={handleOnChange}
         

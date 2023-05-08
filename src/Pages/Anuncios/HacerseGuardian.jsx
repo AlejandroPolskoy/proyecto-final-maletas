@@ -22,11 +22,15 @@ export default function HacerseGuardian() {
 
     const [paginas, setPaginas] =useState(0);
 
+    const [propiedad, setPropiedad] = useState("");
+
+
     const [direccion, setDireccion] = useState("");
 
     const [titulo, setTitulo] = useState("");
 
-    const [foto, setFoto] = useState("");
+    const [servicio, setServicio] = useState("");
+
 
 
 
@@ -36,18 +40,24 @@ export default function HacerseGuardian() {
         setPaginas(paginas + 1);
     };
 
-   
+    const onChangePropiedad = (value) => {
+        setDireccion(value);
+      };
 
     const onChangeDireccion = (value) => {
         setDireccion(value);
       };
 
-    const onChangeFoto = (value) => {
-        setFoto(value);
+    const onChangeFoto = (files) => {
+        setSelectedFileName(files);
     };
 
     const onChangeTitulo = (value) => {
         setTitulo(value);
+    };
+
+    const onChangeServicio = (value) => {
+        setServicio(value);
     };
 
       const handleVolverClick = () => {
@@ -57,6 +67,17 @@ export default function HacerseGuardian() {
       const handleBack = () => {
         setPaginas(paginas - 1);
       };
+
+      const [selectedOption, setSelectedOption] = useState("");
+
+      const [selectedOption02, setSelectedOption02] = useState("");
+
+      const [selectedFileName, setSelectedFileName] = useState("");
+
+      const [selectedDisponibilidad, setSelectedDisponibilidad] = useState("");
+
+      const [selectedDisponibilidad02, setSelectedDisponibilidad02] = useState("");
+
 
  
     return (
@@ -77,28 +98,42 @@ export default function HacerseGuardian() {
                     </div>  
 
                     <div className="items__container">
-                        <div className="describe">
-                            <p className="categoria--negrita">Describe tu espacio</p>
-                            <img onClick = {handleFlechaClick}   className="continuar" src={continuar} alt="continuar"></img>
+                        <div>
+                            <div className="describe">
+                                <p className="categoria--negrita">Describe tu espacio</p>
+                                <img onClick = {handleFlechaClick}   className="continuar" src={continuar} alt="continuar"></img>
+
+                            </div>
+                            <div className="describe__options">
+                                <input type="text" 
+                                    id="input00"
+                                    placeholder="tipo de espacio"
+                                    className="subInput"
+                                    value={selectedOption}
+                                />
+                                <input type="text" 
+                                    id="input001"
+                                    className="subInput"
+                                    value={selectedOption02}
+                                />
+                            </div>
                         </div>
 
                         <div>
                             <p className="categoria">Ubicación </p>
-                                <input type="text" 
+                            <input type="text" 
                                 id="input01"
                                 className="input"
                                 value={direccion}
-                                onChange={(event) => onChangeDireccion(event.target.value)}
                             />
                             
                         </div>
                         <div>
                             <p className="categoria">Fotos</p>
-                                <input type="file" 
+                                <input type="text" 
                                     id="input02"
                                     className="input"
-                                    files={foto}
-                                    onChange={(event) => onChangeFoto(event.target.files[0])}
+                                    value={selectedFileName}
                                     />
 
                         </div>
@@ -108,14 +143,33 @@ export default function HacerseGuardian() {
                                 id="input03"
                                 className="input"
                                 value={titulo}
-                                onChange={(event) => onChangeTitulo(event.target.value)}
                                 />
                         </div>
                         <div>
+                            <div>
                             <p className="categoria">Disponibilidad y horarios</p>
+                            </div>
+                            <div className="describe__options">
+                                <input type="text" 
+                                    id="input00"
+                                    placeholder="tipo de espacio"
+                                    className="input"
+                                    value={selectedDisponibilidad}
+                                />
+                                <input type="text" 
+                                    id="input001"
+                                    className="input"
+                                    value={selectedDisponibilidad02}
+                                />
+                            </div>
                         </div>
                         <div>
                             <p className="categoria">Servicios</p>
+                            <input type="text" 
+                                id="input03"
+                                className="input"
+                                value={servicio}
+                                />
                         </div>
                     </div>  
       
@@ -127,7 +181,13 @@ export default function HacerseGuardian() {
 
         { (paginas==1) && (
         <Descripcion
+        onChangePropiedad = {onChangePropiedad}
+        propiedad={propiedad}
         onBackClick= {handleBack}
+        setSelectedOption={setSelectedOption}
+        setSelectedOption02={setSelectedOption02}
+        selectedOption={selectedOption}
+        selectedOption02={selectedOption02}
         />)}
         
 
@@ -142,8 +202,9 @@ export default function HacerseGuardian() {
         { (paginas==3) && (
         <Fotos
             onChangeFotos={onChangeFoto}
-            foto={foto}
             onBackClick={handleBack}
+            selectedFileName={selectedFileName}
+            setSelectedFileName={setSelectedFileName}
          />)}
 
 
@@ -155,11 +216,22 @@ export default function HacerseGuardian() {
          />)}
 
         
-        { (paginas==5) && (<Disponibilidad onBackClick={handleBack}/>)}
+        { (paginas==5) && (
+        <Disponibilidad
+        onChangePropiedad = {onChangePropiedad}
+        propiedad={propiedad}
+        onBackClick= {handleBack}
+        setSelectedDisponibilidad={setSelectedDisponibilidad}
+        setSelectedDisponibilidad02={setSelectedDisponibilidad02}
+        selectedDisponibilidad={selectedDisponibilidad}
+        selectedDisponibilidad02={selectedDisponibilidad02}
+        />)}
 
 
         { (paginas==6) && (
         <Servicios
+        onChangeServicio = {onChangeServicio}
+        servicio={servicio}
         onVolverClick={handleVolverClick}
         ></Servicios>
         )}

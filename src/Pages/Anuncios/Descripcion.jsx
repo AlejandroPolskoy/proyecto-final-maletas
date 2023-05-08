@@ -15,12 +15,12 @@ import HacerseGuardian from './HacerseGuardian';
 
 export default function Anuncios(props) {
 
+    const {onChangePropiedad, setSelectedOption, setSelectedOption02, selectedOption, selectedOption02, setPaginas} = props;
+
     const [modalShow, setModalShow] = useState(false);
-    const [selectedOption, setSelectedOption] = useState("");
-    const [selectedOption02, setSelectedOption02] = useState("");
+  
     const [modalShow02, setModalShow02] =useState(false);
 
-    const [paginas, setPaginas] =useState(0);
 
 
     const handleInputClick = () => {
@@ -42,12 +42,11 @@ export default function Anuncios(props) {
         setModalShow02(true);
     }
 
-    const handleFlechaClick = () => {
-        setPaginas(paginas + 1);
-    };
+    
 
-
-
+    const handleOnChange = (event) => {
+        onChangePropiedad(event.target.value);
+      };
 
 
     return (
@@ -58,28 +57,28 @@ export default function Anuncios(props) {
 
                     
                     <img onClick={props.onBackClick} className="atras" src={backIcon} alt="back"></img>
-                    
-
-
+                
 
                     <p className="anuncios__titular">Descríbenos tu espacio</p>
 
                     <div className="inputs__container">
 
                         <div className="input__container">
-                            <label for="input01">Especifica tu propiedad</label>
+                            <label for="input00">Especifica tu propiedad</label>
                             <input
-                                type='text' id="input01" placeholder='Selecciona una opción'
-                                className="input"
+                                type='text' id="input00" placeholder='Selecciona una opción'
+                                className="inputComponente"
                                 onClick={handleInputClick}
                                 value={selectedOption}
+                                onChange={handleOnChange}
+
                             ></input>
 
 
                             <div className="input__container"></div>
                             <label for="input01">¿Qué tipo de espacio?</label>
                             <input type='text' id="input02" placeholder='Selecciona una opción'
-                            className="input"
+                            className="inputComponente"
                             onClick = {handleInputClick02}
                             value={selectedOption02}
                             ></input>
@@ -106,7 +105,6 @@ export default function Anuncios(props) {
                         </div>
                     </div>
                 </div>
-
 
         </div>
     )

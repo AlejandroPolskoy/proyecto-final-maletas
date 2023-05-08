@@ -28,7 +28,7 @@ export default function Servicios(props) {
                     <label for="input01">Describe tu espacio</label>
                     <input
                         type="text" id="input01" 
-                        className="input"
+                        className="inputComponente"
                     ></input>
 
                 </div>

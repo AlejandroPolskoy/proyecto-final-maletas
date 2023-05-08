@@ -9,17 +9,22 @@ import { Link } from 'react-router-dom';
 
 export default function Fotos(props) {
 
-    const {onChangeFotos, setPaginas} = props;
+    const {onChangeFotos, setSelectedFileName, selectedFileName, setPaginas} = props;
 
     
-    const handleOnChange = (event) => {
-        onChangeFotos(event.target.files[0]);
-      };
+    
 
 
     const handleVolverClick = () => {
         setPaginas(0);
       };
+
+    
+    
+      const handleOnChange = (event) => {
+        onChangeFotos(event.target.files[0]);
+        setSelectedFileName(event.target.files[0].name);
+    };
 
 
 
@@ -41,7 +46,8 @@ export default function Fotos(props) {
                             <label for="input01">Selecciona tus fotos</label>
                             <input
                                 type="file" id="input02"
-                                className="input"
+                                className="inputComponente"
+                                file={props.selectedFileName}
                                 onChange={handleOnChange}
         
                             ></input>
