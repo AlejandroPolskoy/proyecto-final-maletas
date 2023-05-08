@@ -2,14 +2,15 @@ import React from 'react';
 import './Busqueda.scss';
 import { NavLink } from 'react-router-dom';
 import Footer from '../Footer/Footer';
+import { Search } from '../Maps/Search';
 
 const Busqueda = ({closeModal, setAddress}) => {
 
-    const getAddress = (e) => {
+    // const getAddress = (e) => {
 
-        setAddress(e.target.value)
+    //     setAddress(e.target.value)
 
-    }
+    // }
 
   return (
     <>
@@ -18,7 +19,7 @@ const Busqueda = ({closeModal, setAddress}) => {
         
         <div className='search-div'>
             <img className='aspa' src='/assets/aspa@2x.png' alt='aspa' />
-            <input className="input" type="text" placeholder="¿Dónde te encuentras? Madrid, Barcelona…" onChange={(e)=> getAddress(e)}/>
+            <Search />
         </div>
 
         <div className='history' >

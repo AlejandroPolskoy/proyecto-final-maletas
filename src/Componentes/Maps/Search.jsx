@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './Maps.scss'
 
-export const Search = ({ onPlacesChanged }) => {
+export const Search = ({ onPlacesChanged, setAddress }) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
@@ -15,6 +15,7 @@ export const Search = ({ onPlacesChanged }) => {
   const handleInputKeyPress = (event) => {
     if (event.key === "Enter") {
       onPlacesChanged();
+      setAddress(event.target.value)
     }
   };
 
@@ -26,7 +27,7 @@ export const Search = ({ onPlacesChanged }) => {
         className="search"
         value={query}
         onChange={handleInputChange}
-        onKeyPress={handleInputKeyPress}
+        onKeyDown={(e)=> handleInputKeyPress(e)}
       />
     </div>
   );
