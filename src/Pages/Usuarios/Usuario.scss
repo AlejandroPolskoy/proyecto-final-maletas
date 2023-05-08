@@ -1,0 +1,31 @@
+.user{
+    height: 100%;
+    padding: 37px 25px;
+
+    &_head{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &_detail {
+        text-align: left;
+    }
+
+    &_title {
+        margin: 0;
+        font-weight: 400;
+        font-size: 2rem;
+    }
+
+    &_subtitle{
+        margin-top: 0;
+        font-weight: 300;
+    }
+
+    &_img {
+        width: 85px;
+    }
+}
