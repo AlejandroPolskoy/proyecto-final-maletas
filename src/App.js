@@ -13,6 +13,7 @@ import { Maps } from "./Componentes/Maps/Maps";
 import Logout from "./Pages/Login/Logout";
 import { useState } from "react";
 import { VariablesContext } from "./Shared/VariablesContext";
+import Reserva from "./Pages/Reserva/Reserva";
 
 const urls = ["https://maleteo-node.vercel.app", "http://localhost:8888"];
 export const api = urls[0];
@@ -33,6 +34,8 @@ function App() {
             <Route path="/register" element={<Registrar />} />
             <Route path="/tarifas" element={<Tarifas />} />
             <Route path="/maps" element={<Maps />} />
+
+            <Route path="/reserva" element={<Reserva/>}/>
           </Routes>
         </div>
       </Router>
