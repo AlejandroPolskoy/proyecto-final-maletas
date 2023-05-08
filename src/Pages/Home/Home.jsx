@@ -8,11 +8,12 @@ import ModalHorario from "../../Componentes/ModalHorario/ModalHorario";
 import Busqueda from "../../Componentes/Busqueda/Busqueda";
 import Footer from "../../Componentes/Footer/Footer";
 import { VariablesContext } from "../../Shared/VariablesContext";
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-//   const navigate = useNavigate();
-//   if(!localStorage.getItem("user")) navigate("/bienvenida");
+
+  const navigate = useNavigate();
+  //if(!localStorage.getItem("user")) navigate("/bienvenida");
 
   //Datos de calendario
   const [startDate, setStartDate] = useState(null);
@@ -55,7 +56,7 @@ const Home = () => {
           <div className="form-search_big">
             <img className="search-bimg" src="/assets/lupa@2x.png" alt="lupa" />
             <input
-              onClick={() => handleModalOpen(4)}
+              onClick={()=> navigate('/maps')}
               className="search-big"
               type="text"
               placeholder="¿Dónde te encuentras? Madrid, Barcelona…"
@@ -135,9 +136,9 @@ const Home = () => {
             closeModal={closeModal}
           />
         )}
-        {showModal === 4 && (
+        {/* {showModal === 4 && (
             <Busqueda closeModal={closeModal}  setAddress={setAddress}/>
-        )}
+        )} */}
       </div>
       <Footer/>
     </>
