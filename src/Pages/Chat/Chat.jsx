@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import socketIO from 'socket.io-client';
 import "./chat.scss";
+import { api } from '../../App';
 
-const usuario = "Pepito";
-const socket = socketIO.connect('http://localhost:8888');
+const socket = socketIO.connect(api);
+const userInfo = JSON.parse(localStorage.getItem("user")) || { name : "pepe", _id : "12345" };
 
 export default function Chat() {
     const [messages, setMessages] = useState([]);
@@ -24,8 +25,8 @@ export default function Chat() {
         e.preventDefault();
         socket.emit('message', {
             text: message,
-            name: usuario,
-            id: `${socket.id}${Math.random()}`,
+            name: userInfo.name,
+            id: `${socket.id}${userInfo._id}`,
             socketID: socket.id,
         });
         setMessage("");
@@ -34,7 +35,7 @@ export default function Chat() {
     return <>
         <div className="chat">
             { messages.map((message, index) => 
-                     message.name === usuario ? (
+                     message.name === userInfo.name ? (
                         <div className="chat-conversation" key={index}>
                             <div><img src="/assets/usuario@3x.png" alt=""/></div>
                             <p>{message.text}</p>
