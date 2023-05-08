@@ -32,6 +32,8 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Registrar />} />
             <Route path="/tarifas" element={<Tarifas />} />
+            <Route path="/hacerseguardian" element={<HacerseGuardian />} />
+
             <Route path="/maps" element={<Maps />} />
           </Routes>
         </div>
