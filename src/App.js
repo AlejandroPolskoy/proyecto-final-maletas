@@ -11,7 +11,7 @@ import Logout from "./Pages/Login/Logout";
 import Chat from "./Pages/Chat/Chat";
 
 const urls = ["https://maleteo-node.vercel.app", "http://localhost:8888"];
-export const api = urls[0];
+export const api = urls[1];
 
 function App() {
   return (
