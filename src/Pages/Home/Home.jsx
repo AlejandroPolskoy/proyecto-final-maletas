@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Home.scss";
 import Novedades from "../../Componentes/Novedades/Novedades";
 import Experiencias from "../../Componentes/Experiencias/Experiencias";
@@ -7,6 +7,7 @@ import CalendarioEnd from "../../Componentes/Calendario/CalendarioEnd";
 import ModalHorario from "../../Componentes/ModalHorario/ModalHorario";
 import Busqueda from "../../Componentes/Busqueda/Busqueda";
 import Footer from "../../Componentes/Footer/Footer";
+import { VariablesContext } from "../../Shared/VariablesContext";
 // import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [showModal, setShowModal] = useState(0);
-  const [address, setAddress] = useState('');
+  const {setAddress, address} = useContext(VariablesContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
