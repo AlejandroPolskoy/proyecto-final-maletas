@@ -64,6 +64,6 @@ function Map() {
         <Footer/>
       </>
   );
-
+  }
 
 export default Map;
