@@ -5,13 +5,7 @@ import Footer from '../Footer/Footer';
 import { Search } from '../Maps/Search';
 
 const Busqueda = ({closeModal, setAddress}) => {
-
-    // const getAddress = (e) => {
-
-    //     setAddress(e.target.value)
-
-    // }
-
+    
   return (
     <>
     <div className='content'>
