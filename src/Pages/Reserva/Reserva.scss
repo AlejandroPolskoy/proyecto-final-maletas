@@ -1,0 +1,72 @@
+.reserva{
+    height: 100%;
+    padding: 0px 25px;
+    text-align: left;
+
+    &_atras{
+        margin-top: 25px;
+    }
+
+    &_user {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: left;
+        justify-content: center;
+
+        &_all {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin: 13px 0px;
+            border-bottom: 1px solid rgb(216, 216, 216);
+            width: 100%;
+        }
+
+        img{
+            width: 45px;
+        }
+
+        h4{
+            margin: 0px;
+            font-size: 1.3rem;
+        }
+
+        p{
+            margin: 0px 0px 5px 0px;
+            font-size: 0.8rem;
+            font-weight: 300;
+        }
+        &_detail{
+            margin-left: 10px;
+            margin-right: 49px;
+            margin-bottom: 10px;
+        }
+
+        &_btn {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+
+        &_btn button{
+            background-color: rgb(246 143 36);
+            border: none;
+            border-radius: 3px;
+            color: white;
+            padding: 10px 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        &_btn p{
+            margin: 13px 0;
+            color: rgb(0 149 190);
+            font-weight: 500;
+        }
+
+    }
+}
