@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap');
+
+.search-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 414px;
+    overflow: auto;
+    margin-bottom: 50px;
+
+    .search-title {
+        margin-left: 15px;
+        font-family: 'Catamaran', sans-serif; 
+        font-weight: 400;
+        font-size: 28px;
+    }
+
+    .form-search {
+        display: grid;
+        width: 90%;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15px;
+        font-family: 'Noto Sans', sans-serif;
+
+        &_big {
+            grid-column: 1 / 3;
+            grid-row: 1;
+            width: 95%;
+            background-color: #efefef89;
+            box-shadow: 2px 2px 3px 1px #edebeb;
+            margin-bottom: 20px;
+
+            .search-big {
+                width: 290px;
+                height: 40px;
+                position: relative;
+                padding: 5px  8px 5px 35px;
+                border: none;
+                background-color: transparent;
+                color: rgb(0 0 0);
+                opacity: 80%;
+                font-family: 'Noto Sans', sans-serif;
+            }
+
+            .search-big:focus {
+               outline: none;
+            }
+
+            .search-bimg {
+                position: absolute;
+                z-index: 1;
+                margin: 11px;
+            }
+        }
+
+        &_div {
+            width: 160px;
+            height: 40px;
+            padding: 12px 5px;
+            display: flex;
+            background-color: #efefef89;
+            box-shadow: 2px 2px 3px 1px #edebeb;
+            border-radius: 3px;
+            color: rgb(0 0 0);
+            align-items: center;
+            margin: 10px;
+        
+            .search-input {
+                width: 100%;
+                margin-left: 15px;
+                position: relative;
+                padding: 5px  8px 5px 25.6px;
+                border: none;
+                background-color: transparent;
+                color: rgb(0 0 0);
+                opacity: 80%;
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 14.5px;
+            }
+
+            .search-input:focus {
+                outline: none;
+            }
+
+            .search-img {
+                position: absolute;
+                z-index: 1;
+                margin: 11px;
+            }
+        }
+        
+        .search-button {
+                width: 170px;
+                height: 60px;
+                border: none;
+                background-color: rgb(246 143 3);
+                color: rgb(255 255 255);
+                border-radius: 4px;
+                margin: 11px;
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 15px;
+            }
+    }
+}

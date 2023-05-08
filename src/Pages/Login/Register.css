@@ -110,7 +110,7 @@
   color: transparent;
 }
 .form-login :focus::-webkit-datetime-edit {
-  color: rgb(203, 203, 203);
+  color: rgb(132, 125, 125);
 }
 .form-login ::-webkit-calendar-picker-indicator {
   display: none;
