@@ -1,7 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { MarkerF } from '@react-google-maps/api';
 
-export const Markers = () => {
+const Markers = ({ locations }) => {
   return (
-    <div>Markers</div>
-  )
-}
+    <>
+      {locations.map((location, index) => (
+        <MarkerF key={index} position={location} />
+      ))}
+    </>
+  );
+};
+
+export default Markers;
