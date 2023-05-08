@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap");
 .page-container {
   max-width: 414px;
-  max-height: 90vh;
+  max-height: 100vh;
 }
 .page-container .file-container {
   width: 100%;
+  max-height: 88vh;
   overflow-y: scroll;
 }
 .page-container .file-container_slider {
@@ -33,4 +35,302 @@
   height: 8px;
   border-radius: 50%;
   margin: 0 5px;
+}
+.page-container .file-container_intro {
+  display: flex;
+  width: 90%;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 25px;
+}
+.page-container .file-container_intro__info {
+  text-align: start;
+}
+.page-container .file-container_intro__info .file-title {
+  margin: 5px 5px 0 5px;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+}
+.page-container .file-container_intro__info .file-p {
+  font-family: "Noto Sans", sans-serif;
+  margin: 5px;
+  color: #696969;
+}
+.page-container .file-container_intro__photo {
+  width: 100px;
+  height: 100px;
+  margin-left: 90px;
+}
+.page-container .file-container_intro__photo .profile {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.page-container .file-container_intro .star-file {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  margin: 15px 5px 0 5px;
+}
+.page-container .file-container_intro .star-file-inner {
+  display: flex;
+  width: 40px;
+  height: 20px;
+  background-color: transparent;
+  background-color: #F7C04A;
+}
+.page-container .file-container_intro .star-file-star {
+  width: 80px;
+  height: 20px;
+  cursor: pointer;
+}
+.page-container .file-container_intro .random {
+  color: #9f9c9a;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  margin-left: 110px;
+  position: absolute;
+}
+.page-container .file-container_spam {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  margin-left: 25px;
+  margin-top: 20px;
+}
+.page-container .file-container_spam-img {
+  width: 28px;
+  height: 28px;
+  margin: 0 2px;
+}
+.page-container .file-container_spam-red {
+  margin: 0 15px 0 5px;
+  font-family: "Noto Sans", sans-serif;
+  color: rgb(255, 0, 0);
+  font-size: 12px;
+}
+.page-container .file-container_spam-black {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 13px;
+  margin: 0;
+}
+.page-container .file-container_promo {
+  max-width: 95%;
+  margin: 28px 0 0 25px;
+}
+.page-container .file-container_promo_box {
+  display: flex;
+  width: 100%;
+  max-height: 82px;
+  margin-top: 10px;
+}
+.page-container .file-container_promo_box__img {
+  width: 80px;
+  height: 80px;
+}
+.page-container .file-container_promo_box__img img {
+  margin-top: 15px;
+}
+.page-container .file-container_promo_box__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 290px;
+}
+.page-container .file-container_promo_box__text .promo-title {
+  margin: 0;
+}
+.page-container .file-container_promo_box__text .promo-desc {
+  margin: 0;
+  text-align: justify;
+}
+.page-container .file-container_promo_box__up {
+  width: 80px;
+  height: 80px;
+  padding-top: 10px;
+}
+.page-container .file-container_promo_box__up .up {
+  margin: 0;
+  padding-right: 8px;
+  font-family: "Noto Sans", sans-serif;
+  color: rgb(255, 130, 0);
+}
+.page-container .file-container_promo_box__up .up-1 {
+  margin: 0;
+  padding-right: 8px;
+  padding-top: 10px;
+  font-family: "Noto Sans", sans-serif;
+  color: rgb(255, 130, 0);
+}
+.page-container .file-container_promo_desc {
+  margin-right: 25px;
+  text-align: justify;
+  border-bottom: 1px solid rgb(195, 193, 193);
+  border-top: 1px solid rgb(195, 193, 193);
+}
+.page-container .file-container_ubi {
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  height: 200px;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+.page-container .file-container_ubi_title {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+}
+.page-container .file-container_ubi_img {
+  width: 360px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+.page-container .file-container_comments {
+  text-align: start;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+.page-container .file-container_comments_title {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+}
+.page-container .file-container_comments .comment-box {
+  display: flex;
+  max-width: 95%;
+  border-bottom: 1px solid rgb(195, 193, 193);
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.page-container .file-container_comments .comment-box_img {
+  width: 81px;
+  height: 85px;
+  line-height: 180px;
+}
+.page-container .file-container_comments .comment-box_img img {
+  width: 81px;
+  height: 81px;
+}
+.page-container .file-container_comments .comment-box_texts {
+  width: 300px;
+  height: 130px;
+  margin-left: 10px;
+}
+.page-container .file-container_comments .comment-box_texts .upper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.page-container .file-container_comments .comment-box_texts .upper-title {
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+.page-container .file-container_comments .comment-box_texts .upper-text {
+  margin: 0 15px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 15px;
+  color: rgb(54, 54, 54);
+}
+.page-container .file-container_comments .comment-box_texts .lower-text {
+  margin: 0;
+  text-align: justify;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 15px;
+}
+.page-container .file-container_rules {
+  text-align: start;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+.page-container .file-container_rules_title {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+}
+.page-container .file-container_rules .rules-box {
+  width: 350px;
+}
+.page-container .file-container_rules .rules-box_p {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 10 0;
+  border-bottom: 1px solid rgb(195, 193, 193);
+}
+.page-container .file-container_lockers {
+  max-width: 414px;
+  overflow-x: hidden;
+  margin-left: 25px;
+}
+.page-container .file-container_lockers_title {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+  text-align: start;
+}
+.page-container .file-container_lockers .slider-container {
+  margin: 0 auto;
+  margin: 0 auto;
+  min-width: 100%;
+}
+.page-container .file-container_lockers .slider-container .slider {
+  width: 100%;
+  display: flex;
+  cursor: grab;
+}
+.page-container .file-container_lockers .slider-container .slider .item {
+  position: relative;
+  border-radius: 5px;
+  margin: 2px 15px 0 0;
+}
+.page-container .file-container_lockers .slider-container .slider .item-cont {
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  height: 150px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 150px;
+}
+.page-container .file-container_reserve {
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  height: 80px;
+  align-items: center;
+}
+.page-container .file-container_reserve-price {
+  text-align: center;
+  margin-right: 25px;
+  height: 40px;
+}
+.page-container .file-container_reserve-price .price-title {
+  margin: 0;
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+}
+.page-container .file-container_reserve-btn {
+  width: 200px;
+  height: 40px;
+  margin-left: 50px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(246, 143, 36);
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
 }/*# sourceMappingURL=UserFile.css.map */

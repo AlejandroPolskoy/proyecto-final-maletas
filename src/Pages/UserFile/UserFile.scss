@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap');
+
 .page-container {
     max-width: 414px;
-    max-height: 90vh;
+    max-height: 100vh;
 
     .file-container {
         width: 100%;
+        max-height: 88vh;
         overflow-y: scroll;
 
         &_slider{
@@ -37,6 +40,359 @@
             }
 
           
+        }
+
+        &_intro {
+            display: flex;
+            width: 90%;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 30px;
+            margin-left: 25px;
+
+            &__info {
+                text-align: start;
+
+                .file-title{
+                    margin: 5px 5px 0 5px;
+                    font-family: 'Catamaran', sans-serif; 
+                    font-weight: 400;
+                }
+
+                .file-p {
+                    font-family: 'Noto Sans', sans-serif;
+                    margin: 5px;
+                    color: #696969;
+                }
+            }
+
+            &__photo {
+                width: 100px;
+                height: 100px;
+                margin-left: 90px;
+
+                .profile{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+            .star-file{
+                width:150px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                position: relative;
+                margin: 15px 5px 0 5px;
+        
+                &-inner{
+                    display: flex;
+                    width: 40px;
+                    height: 20px;
+                    background-color: transparent;
+                    background-color: #F7C04A;
+                }
+              
+                &-star {
+                    width: 80px;
+                    height: 20px;
+                    cursor: pointer;
+                }
+            }
+        
+            .random {
+                color: #9f9c9a;
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 14px;
+                margin-left: 110px;
+                position: absolute;
+            }
+        }
+
+        &_spam{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 90%;
+            margin-left: 25px;
+            margin-top: 20px;
+
+            &-img {
+                width: 28px;
+                height: 28px;
+                margin: 0 2px;
+            }
+
+            &-red {
+                margin: 0 15px 0 5px;
+                font-family: 'Noto Sans', sans-serif;
+                color: rgb(255 0 0);
+                font-size: 12px;
+            }
+
+            &-black {
+                font-family: 'Noto Sans', sans-serif;
+                font-size: 13px;
+                margin: 0;
+            }
+        }
+
+        &_promo {
+            max-width: 95%;
+            margin: 28px 0 0 25px;
+
+            &_box {
+                display: flex;
+                width: 100%;
+                max-height: 82px;
+                margin-top: 10px;
+
+                &__img {
+                    width: 80px;
+                    height: 80px;
+                   
+                    img {
+                        margin-top: 15px;
+                    }
+                }
+
+                &__text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    width: 290px;
+
+                    .promo-title {
+                        margin: 0;
+                    }
+
+                    .promo-desc {
+                        margin: 0;
+                        text-align: justify;
+                    }
+                }
+
+                &__up {
+                    width: 80px;
+                    height: 80px;
+                    padding-top: 10px;
+
+                    .up{
+                        margin: 0;
+                        padding-right: 8px;
+                        font-family: 'Noto Sans', sans-serif;
+                        color: rgb(255 130 0)
+                    }
+
+                    .up-1{
+                        margin: 0;
+                        padding-right: 8px;
+                        padding-top: 10px;
+                        font-family: 'Noto Sans', sans-serif;
+                        color: rgb(255 130 0)
+                    }
+                }
+            }
+
+            &_desc {
+                margin-right: 25px;
+                text-align: justify;
+                border-bottom: 1px solid rgb(195, 193, 193);
+                border-top: 1px solid rgb(195, 193, 193);
+            }
+        }
+        
+        
+        &_ubi {
+            max-width: 95%;
+            display: flex;
+            flex-direction: column;
+            text-align: start;
+            height: 200px;
+            margin-top: 25px;
+            margin-left: 25px;
+
+            &_title {
+                font-family: 'Catamaran', sans-serif; 
+                font-weight: 400;
+                font-size: 20px;
+                margin: 0;
+            }
+
+            &_img {
+                width: 360px;
+                border-radius: 15px;
+                margin-top: 10px;
+            }
+        }
+
+        &_comments {
+            text-align: start;
+            margin-top: 25px;
+            margin-left: 25px;
+
+            &_title {
+                font-family: 'Catamaran', sans-serif; 
+                font-weight: 400;
+                font-size: 20px;
+                margin: 0;
+            }
+
+            .comment-box {
+                display: flex;
+                max-width: 95%;
+                border-bottom: 1px solid rgb(195, 193, 193);
+                margin-top: 10px;
+                margin-bottom: 5px;
+
+                &_img {
+                    width: 81px;
+                    height: 85px;
+                    line-height: 180px;
+
+                    img {
+                        width: 81px;
+                        height: 81px;
+                    }
+                }
+
+                &_texts {
+                    width: 300px;
+                    height: 130px;
+                    margin-left: 10px;
+
+                    .upper {
+                        display: flex;
+                        width: 100%;
+                        align-items: center;
+
+                        &-title {
+                            margin: 0;
+                            font-family: 'Noto Sans', sans-serif;
+                            letter-spacing: 1px;
+                            font-size: 15px;
+                        }
+
+                        &-text {
+                            margin: 0 15px;
+                            font-family: 'Noto Sans', sans-serif;
+                            font-size: 15px;
+                            color: rgb(54, 54, 54);
+                        }
+                    }
+
+                    .lower-text {
+                        margin: 0;
+                        text-align: justify;
+                        font-family: 'Noto Sans', sans-serif;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+
+        &_rules {
+            text-align: start;
+            margin-top: 25px;
+            margin-left: 25px;
+
+            &_title {
+                font-family: 'Catamaran', sans-serif; 
+                font-weight: 400;
+                font-size: 20px;
+                margin: 0;
+            }
+
+            .rules-box {
+                width: 350px;
+
+                &_p {
+                    font-family: 'Catamaran', sans-serif; 
+                    font-weight: 400;
+                    font-size: 20px;
+                    margin: 10 0;
+                    border-bottom: 1px solid rgb(195, 193, 193);
+                }
+            }
+        }
+
+        &_lockers {
+            max-width: 414px;
+            overflow-x: hidden;
+            margin-left: 25px;
+
+            &_title {
+                font-family: 'Catamaran', sans-serif; 
+                font-weight: 400;
+                text-align: start;
+            }
+
+            .slider-container {
+                    margin: 0 auto;
+                    margin: 0 auto;
+                    min-width: 100%;
+            
+                .slider {
+                    width: 100%;
+                    display: flex;
+                    cursor: grab;
+            
+                    .item {
+                        position: relative;
+                        border-radius: 5px;
+                        margin: 2px 15px 0 0;
+                    }
+                        
+                    .item-cont {
+                        display: flex;
+                        flex-direction: column;
+                        width: 270px;
+                        height: 150px;
+                        background-size: cover;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 15px 150px;
+
+                    }
+                    
+                }
+            }
+        }
+
+        &_reserve {
+            display: flex;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            margin-left: 25px;
+            height: 80px;
+            align-items: center;
+
+            &-price {
+                text-align: center;
+                margin-right: 25px;
+                height: 40px;
+
+                .price-title {
+                    margin: 0;
+                    font-family: 'Catamaran', sans-serif; 
+                    font-weight: 400;
+                }
+
+            }
+
+            &-btn {
+                width: 200px;
+                height: 40px;
+                margin-left: 50px;
+                border-radius: 3px;
+                border: none;
+                background-color: rgb(246 143 36);
+                color: white;
+                font-family: 'Noto Sans', sans-serif;
+                font-weight: 400;
+            }
+
         }
     }
 }
