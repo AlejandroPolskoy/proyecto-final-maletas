@@ -7,7 +7,7 @@ export default function Footer() {
 
     const location = useLocation()
     
-    const isUserPage = location.pathname.includes('/usuario/');
+    const isUserPage = /\/usuario\/|\/reserva$/.test(location.pathname);
     
     return (
         <div className="footer">
