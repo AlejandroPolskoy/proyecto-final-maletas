@@ -4,6 +4,7 @@
     height: 130px;
     background-color: rgb(246, 143, 36);
     display: flex;
+    justify-content: space-between;
     align-items: flex-end;
     
     p{
@@ -11,7 +12,18 @@
         color: white;
         font-family: Noto Sans;
         font-size: 20px;
-        padding-left: 30px;
+        text-align: left;
+        
+        padding-left: 8%;
+    }
+
+    img{
+       
+         width: 6%;
+         padding-bottom: 60px;
+         padding-right: 8%;
+         
+
     }
 
 }
@@ -84,5 +96,21 @@
 
 
 }
+
+.botonPublicar__container{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-right: 30px;
+
+
+}
+
+.botonPublicar{
+   
+    width: 35%;
+}
+
+
 
 

@@ -3,6 +3,8 @@ import { useState } from 'react';
 import backIcon from '../../assets/icons8Back100Copy@3x.png';
 import flecha from '../../assets/circulo_flecha.png';
 import continuar from '../../assets/continuar.png';
+import botonPublicar from '../../assets/botonPublicar.png';
+import botonx from '../../assets/x.png';
 // import "./Anuncios.scss";
 import "./HacerseGuardian.scss";
 import { Link } from 'react-router-dom'
@@ -13,6 +15,7 @@ import Disponibilidad from './Disponibilidad';
 import Servicios from './Servicios';
 import Descripcion from './Descripcion';
 import { useRef } from 'react';
+
 
 
 
@@ -95,6 +98,8 @@ export default function HacerseGuardian() {
 
                     <div className="configuracionContainer">
                         <p className="configuracionTitulo">Configura tu espacio en muy pocos pasos</p>
+                        <img onClick = {handleFlechaClick}   className="botonx" src={botonx} alt="continuar"></img>
+
                     </div>  
 
                     <div className="items__container">
@@ -169,7 +174,11 @@ export default function HacerseGuardian() {
                                 value={servicio}
                                 />
                         </div>
-                    </div>  
+                    </div> 
+
+                    <div className="botonPublicar__container">
+                        <img onClick = {handleFlechaClick}   className="botonPublicar" src={botonPublicar} alt="continuar"></img>
+                    </div>
       
                 </div>
             )}

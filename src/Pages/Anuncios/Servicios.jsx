@@ -9,31 +9,47 @@ import { Link } from 'react-router-dom'
 
 export default function Servicios(props) {
 
+    const {onChangeServicio, setPaginas} = props;
+
+    
+    const handleOnChange = (event) => {
+        onChangeServicio(event.target.value);
+      };
+
+
+    const handleVolverClick = () => {
+        setPaginas(0);
+      };
+
 
     return (
 
         <div>
 
-            
+                <div>
 
-            <a href="javascript:history.back()">
-                <img className="atras" src={backIcon} alt="back"></img>
-            </a>
+                   
+                    <img onClick={props.onBackClick} className="atras" src={backIcon} alt="back"></img>
+                   
 
-            <p className="anuncios__titular">Servicios</p>
+                    <p className="anuncios__titular">Servicios</p>
 
-            <div className="inputs__container">
+                    <div className="inputs__container">
 
-                <div className="input__container">
-                    <label for="input01">Describe tu espacio</label>
-                    <input
-                        type="text" id="input01" 
-                        className="inputComponente"
-                    ></input>
+                        <div className="input__container">
+                            <label for="input01">Nº de Maletas</label>
+                            <input
+                                type="number" id="input01"
+                                className="inputComponente"
+                                value={props.servicio}
+                                onChange={handleOnChange}
+        
+                            ></input>
 
+
+                        </div>
+                    </div>
                 </div>
-                
-            </div>
 
            
             <img onClick={props.onVolverClick} className="flecha" src={flecha} alt="back"></img>
