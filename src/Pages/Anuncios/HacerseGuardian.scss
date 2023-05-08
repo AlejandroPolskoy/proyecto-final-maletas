@@ -1,0 +1,88 @@
+
+.configuracionContainer{
+    
+    height: 130px;
+    background-color: rgb(246, 143, 36);
+    display: flex;
+    align-items: flex-end;
+    
+    p{
+        width: 52%;
+        color: white;
+        font-family: Noto Sans;
+        font-size: 20px;
+        padding-left: 30px;
+    }
+
+}
+
+
+
+.continuar{
+    width: 25%;
+    height: 18%;
+    padding-top: 10px;
+}
+
+.describe{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.describe__options{
+    display: flex;
+    gap: 10px;
+    width: 85%;
+    margin: 0 auto;
+
+    
+}
+
+.items__container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.categoria{
+    text-align: left;
+    padding-left: 30px;
+}
+
+.categoria--negrita{
+    font-weight: 600;
+}
+
+
+.inputComponente{
+    width: 85%;
+    height: 25px;
+    border-style: none;
+    border: none;
+    border-bottom: 1px solid rgb(198, 198, 198);
+    outline: none;
+    font-family: Noto Sans;
+    font-size:12px;
+    color: rgb(92, 92, 92);
+}
+
+.inputGuardian{
+    width: 85%;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    font-family: Noto Sans;
+    font-size:14px;
+    color: rgb(182, 179, 175);
+    font-family: Noto Sans;
+    font-weight: 600;
+    border-bottom: 1px solid rgb(198, 198, 198);
+
+
+
+}
+
+
