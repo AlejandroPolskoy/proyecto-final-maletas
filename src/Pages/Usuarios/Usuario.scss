@@ -25,7 +25,36 @@
         font-weight: 300;
     }
 
+    &_subtitle a{
+       text-decoration: none;
+       color: #000000;
+       cursor: pointer;
+    }
+
     &_img {
         width: 85px;
+    }
+
+    &_list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        text-align: left;
+
+        &_details {
+            /* margin: 0; */
+            border-bottom: 1px solid rgb(216, 216, 216);
+            width: 100%;
+
+            h4{
+                margin-bottom: 0;
+                font-weight: 500;
+            }
+            p{
+                margin: 4px 0px 12px;
+                font-weight: 300;
+            }
+        }
     }
 }
