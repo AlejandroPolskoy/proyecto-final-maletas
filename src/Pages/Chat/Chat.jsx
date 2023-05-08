@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import socketIO from 'socket.io-client';
 import "./chat.scss";
-import { api } from '../../App';
+import { api } from "../../Componentes/shared";
 
 const socket = socketIO.connect(api);
 const userInfo = JSON.parse(localStorage.getItem("user")) || { name : "pepe", _id : "12345" };

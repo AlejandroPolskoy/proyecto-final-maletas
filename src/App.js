@@ -16,9 +16,7 @@ import { useState } from "react";
 import { VariablesContext } from "./Shared/VariablesContext";
 import MiPerfil from "./Pages/Usuarios/MiPerfil";
 import Reserva from "./Pages/Reserva/Reserva";
-
-const urls = ["https://maleteo-node.vercel.app", "http://localhost:8888"];
-export const api = urls[1];
+import { api } from "./Componentes/shared";
 
 function App() {
   const [address, setAddress] = useState("");

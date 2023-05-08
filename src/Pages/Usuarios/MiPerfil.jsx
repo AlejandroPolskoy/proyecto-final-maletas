@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
-import { api } from '../../App';
 import { useNavigate } from 'react-router-dom';
+import { api } from '../../Componentes/shared';
 
 export default function MiPerfil() {
     if(!localStorage.getItem("user")) navigate("/bienvenida");
