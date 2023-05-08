@@ -3,7 +3,7 @@ import { useState } from 'react';
 import backIcon from '../../assets/icons8Back100Copy@3x.png';
 import flecha from '../../assets/circulo_flecha.png';
 import continuar from '../../assets/continuar.png';
-import "./Anuncios.scss";
+// import "./Anuncios.scss";
 import "./HacerseGuardian.scss";
 import { Link } from 'react-router-dom'
 import Ubicacion from './Ubicacion';
@@ -107,13 +107,12 @@ export default function HacerseGuardian() {
                             <div className="describe__options">
                                 <input type="text" 
                                     id="input00"
-                                    placeholder="tipo de espacio"
-                                    className="subInput"
+                                    className="inputGuardian"
                                     value={selectedOption}
                                 />
                                 <input type="text" 
                                     id="input001"
-                                    className="subInput"
+                                    className="inputGuardian"
                                     value={selectedOption02}
                                 />
                             </div>
@@ -123,7 +122,7 @@ export default function HacerseGuardian() {
                             <p className="categoria">Ubicación </p>
                             <input type="text" 
                                 id="input01"
-                                className="input"
+                                className="inputGuardian"
                                 value={direccion}
                             />
                             
@@ -132,7 +131,7 @@ export default function HacerseGuardian() {
                             <p className="categoria">Fotos</p>
                                 <input type="text" 
                                     id="input02"
-                                    className="input"
+                                    className="inputGuardian"
                                     value={selectedFileName}
                                     />
 
@@ -141,7 +140,7 @@ export default function HacerseGuardian() {
                             <p className="categoria">Título </p>
                                 <input type="text" 
                                 id="input03"
-                                className="input"
+                                className="inputGuardian"
                                 value={titulo}
                                 />
                         </div>
@@ -152,13 +151,12 @@ export default function HacerseGuardian() {
                             <div className="describe__options">
                                 <input type="text" 
                                     id="input00"
-                                    placeholder="tipo de espacio"
-                                    className="input"
+                                    className="inputGuardian"
                                     value={selectedDisponibilidad}
                                 />
                                 <input type="text" 
                                     id="input001"
-                                    className="input"
+                                    className="inputGuardian"
                                     value={selectedDisponibilidad02}
                                 />
                             </div>
@@ -167,7 +165,7 @@ export default function HacerseGuardian() {
                             <p className="categoria">Servicios</p>
                             <input type="text" 
                                 id="input03"
-                                className="input"
+                                className="inputGuardian"
                                 value={servicio}
                                 />
                         </div>
