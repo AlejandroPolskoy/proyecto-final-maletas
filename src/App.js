@@ -11,13 +11,14 @@ import HomeGuardian from "./Pages/Anuncios/HomeGuardian";
 import HacerseGuardian from "./Pages/Anuncios/HacerseGuardian";
 import { Maps } from "./Componentes/Maps/Maps";
 import Logout from "./Pages/Login/Logout";
+import Chat from "./Pages/Chat/Chat";
 import { useState } from "react";
 import { VariablesContext } from "./Shared/VariablesContext";
 import MiPerfil from "./Pages/Usuarios/MiPerfil";
 import Reserva from "./Pages/Reserva/Reserva";
 
 const urls = ["https://maleteo-node.vercel.app", "http://localhost:8888"];
-export const api = urls[0];
+export const api = urls[1];
 
 function App() {
   const [address, setAddress] = useState("");
@@ -37,6 +38,7 @@ function App() {
             <Route path="/maps" element={<Maps />} />
             <Route path="/miperfil" element={<MiPerfil />} />
             <Route path="/reserva" element={<Reserva/>}/>
+            <Route path="/chat" element={<Chat/>}/>
           </Routes>
         </div>
       </Router>
