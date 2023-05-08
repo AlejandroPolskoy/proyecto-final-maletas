@@ -5,9 +5,10 @@ import './Usuario.scss'
 
 export default function Usuario() {
 
-    const userData =[ {name: "Marta", img:"/assets/bitmapCopy2@3x.png"}]
+    const userData =[ { name: "Marta", image:"/assets/bitmapCopy2@3x.png"}]
 
     return (
+        <>
     <div className="user">
         {userData && userData.map((list,index) => 
         <div key={index} className="user_head">
@@ -16,13 +17,13 @@ export default function Usuario() {
                 <p className="user_subtitle"><Link to="/">Puedes ver y editar tu perfil</Link></p>
             </div>
             <div className="user_detail">
-                <img src={list.img} alt={list.name} className="user_img"/>
+                <img src={list.image} alt={list.name} className="user_img"/>
             </div>
         </div>
         )}
         <div className="user_list">
             <div className="user_list_details">
-                <h4>Conviértete en guardián</h4>
+                <Link to="/hacer-guardian"><h4>Conviértete en guardián</h4></Link>
                 <p>Puedes ganar 400€ de media al mes</p>
             </div>
             <div className="user_list_details">
@@ -34,7 +35,7 @@ export default function Usuario() {
                 <p></p>
             </div>
             <div className="user_list_details">
-                <h4>Publica tu anuncio o experiencia</h4>
+                <Link to="/guardian"><h4>Publica tu anuncio o experiencia</h4></Link>
                 <p></p>
             </div>
             <div className="user_list_details">
@@ -46,6 +47,7 @@ export default function Usuario() {
                 <p></p>
             </div>
         </div>
-        <Footer/>
-    </div>);
+    </div>
+        <Footer/></>
+        );
 }

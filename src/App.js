@@ -33,7 +33,6 @@ function App() {
             <Route path="/register" element={<Registrar />} />
             <Route path="/tarifas" element={<Tarifas />} />
             <Route path="/maps" element={<Maps />} />
-            <Route path="/hacer-guardian" element={<HacerseGuardian/>}/>
           </Routes>
         </div>
       </Router>
