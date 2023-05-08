@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './Maps.scss'
 
 export const Search = ({ onPlacesChanged }) => {
   const [query, setQuery] = useState("");
@@ -22,7 +23,7 @@ export const Search = ({ onPlacesChanged }) => {
       <input
         type="text"
         placeholder="Search places..."
-        className="map_input"
+        className="search"
         value={query}
         onChange={handleInputChange}
         onKeyPress={handleInputKeyPress}

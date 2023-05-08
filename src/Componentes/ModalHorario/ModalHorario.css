@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap");
+.modal-time {
+  position: absolute;
+  background-color: white;
+  width: 100vw;
+  height: 200vh;
+  z-index: 2;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.modal-time .back-arrow {
+  padding-left: 25px;
+}
+.modal-time_container {
+  display: flex;
+  padding-left: 25px;
+  max-width: 90vw;
+  margin-top: 40px;
+  justify-content: flex-start;
+}
+.modal-time_container_inner {
+  margin: 5px;
+  text-align: start;
+}
+.modal-time_container_inner h2 {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+}
+.modal-time_container_inner input {
+  font-family: "Noto Sans", sans-serif;
+  width: 150px;
+  height: 60px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  box-shadow: 1px 1px 3px 3px #edebeb;
+}
+.modal-time_container_inner input::-webkit-calendar-picker-indicator {
+  background: url(../../../public/assets/seleccion@3x.png) no-repeat;
+  background-size: contain;
+  margin-top: 25px;
+  width: 28px;
+  height: 1.5em;
+  cursor: pointer;
+}
+.modal-time_container_inner .orange {
+  border-left: 7px solid rgb(253, 197, 102);
+}
+.modal-time_container_inner .blue {
+  border-left: 7px solid rgb(0, 149, 190);
+}
+
+.modal-suitcase {
+  max-width: 90vw;
+  text-align: start;
+  padding-left: 25px;
+  margin-top: 70px;
+}
+.modal-suitcase h2 {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 400;
+}
+.modal-suitcase input {
+  font-family: "Noto Sans", sans-serif;
+  width: 150px;
+  height: 60px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 3px 3px #edebeb;
+}
+
+.arrow-continue {
+  width: 50px;
+  height: 50px;
+}
+.arrow-continue img {
+  margin-top: 170px;
+  margin-left: 330px;
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=ModalHorario.css.map */
