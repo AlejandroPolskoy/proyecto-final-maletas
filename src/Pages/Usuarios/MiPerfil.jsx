@@ -21,7 +21,8 @@ export default function MiPerfil() {
         axios.put( api + "/user/update/" + userInfo._id, data).then( res => {
             if(res.status == 201 || res.status == 200) {
                 localStorage.setItem('user', JSON.stringify(res.data));
-                navigate('/');
+                setForm({...form, msg: "Los datos han sido actualizados"});
+                //navigate('/');
             } else {
                 setForm({...form, msg: res.data.message});
             }

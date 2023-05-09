@@ -5,7 +5,7 @@ import continuar from "../../assets/continuar.png";
 import botonPublicar from "../../assets/botonPublicar.png";
 import botonx from "../../assets/x.png";
 import "./HacerseGuardian.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Ubicacion from "./Ubicacion";
 import Fotos from "./Fotos";
 import Titulo from "./Titulo";
@@ -13,7 +13,6 @@ import Disponibilidad from "./Disponibilidad";
 import Servicios from "./Servicios";
 import Descripcion from "./Descripcion";
 import Footer from "../../Componentes/Footer/Footer";
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { api } from '../../Componentes/shared';
@@ -84,7 +83,7 @@ export default function HacerseGuardian() {
     console.log( datosAnuncio );
     axios.post( api + "/anuncios/setLocation", datosAnuncio, config).then( res => {
       if(res.status == 201) {
-          console.log( res );
+        navigate("/homeguardian");
       } else {
         console.log( "error:", res );
       }
