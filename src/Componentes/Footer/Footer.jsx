@@ -26,7 +26,7 @@ export default function Footer() {
                     <Link to="/"><img src="/assets/inicio@3x.png" alt="Icono inicio"/></Link>
                     <Link to="/maps"><img src="/assets/buscar@3x.png" alt="Icono buscar"/></Link>
                     <Link to="/"><img src="/assets/mensaje@3x.png" alt="Icono mensajes"/></Link>
-                    <Link to={"/miperfil"}><img src="/assets/usuario@3x.png" alt="Icono usuario"/></Link>
+                    <Link to={"/mi-perfil"}><img src="/assets/usuario@3x.png" alt="Icono usuario"/></Link>
                 </div>) }
             </nav>
         </div>
