@@ -58,6 +58,7 @@ const UserFile = () => {
     pixelPercentage = 100 / 5 * anuncio.stars;
 
   return (
+    <>
     <div className="page-container">
       <div className="file-container">
 
@@ -197,6 +198,8 @@ const UserFile = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

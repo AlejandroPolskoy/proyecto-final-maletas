@@ -5,7 +5,7 @@
 }
 .page-container .file-container {
   width: 100%;
-  max-height: 88vh;
+  max-height: 95vh;
   overflow-y: scroll;
 }
 .page-container .file-container_slider {
@@ -308,7 +308,7 @@
 .page-container .file-container_reserve {
   display: flex;
   margin-top: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   margin-left: 25px;
   height: 80px;
   align-items: center;
