@@ -1,0 +1,18 @@
+.addEspacio {
+  border-bottom: 1px solid rgb(198, 198, 198);
+  width: 90%;
+  margin: 0 auto;
+}
+
+.addEspacio__texto {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.masIcon {
+  width: 5%;
+  display: block;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-left: auto;
+}/*# sourceMappingURL=HomeGuardian.css.map */

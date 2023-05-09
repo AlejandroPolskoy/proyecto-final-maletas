@@ -11,12 +11,15 @@ import HomeGuardian from "./Pages/Anuncios/HomeGuardian";
 import HacerseGuardian from "./Pages/Anuncios/HacerseGuardian";
 import { Maps } from "./Componentes/Maps/Maps";
 import Logout from "./Pages/Login/Logout";
+import Chat from "./Pages/Chat/Chat";
 import { useState } from "react";
 import { VariablesContext } from "./Shared/VariablesContext";
+import DetallesReserva from "./Pages/Reserva/DetallesReserva";
+import UserFile from "./Pages/UserFile/UserFile";
+import MiPerfil from "./Pages/Usuarios/MiPerfil";
 import Reserva from "./Pages/Reserva/Reserva";
+import { api } from "./Componentes/shared";
 
-const urls = ["https://maleteo-node.vercel.app", "http://localhost:8888"];
-export const api = urls[0];
 
 function App() {
   const [address, setAddress] = useState("");
@@ -33,9 +36,14 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Registrar />} />
             <Route path="/tarifas" element={<Tarifas />} />
+            <Route path="/homeguardian" element={<HomeGuardian/>} />
+            <Route path="/detallesreserva" element={<DetallesReserva/>} />
             <Route path="/maps" element={<Maps />} />
-
+            <Route path="/hacerse-guardian" element={<HacerseGuardian/>} />
+            <Route path="/user-file" element={<UserFile />} />
+            <Route path="/miperfil" element={<MiPerfil />} />
             <Route path="/reserva" element={<Reserva/>}/>
+            <Route path="/chat" element={<Chat/>}/>
           </Routes>
         </div>
       </Router>
