@@ -17,10 +17,8 @@ const Home = () => {
   const userInfo = JSON.parse(localStorage.getItem("user"));
 
   //Datos de calendario
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
   const [showModal, setShowModal] = useState(0);
-  const {setAddress, address} = useContext(VariablesContext);
+  const {setReserva, reserva} = useContext(VariablesContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -28,13 +26,6 @@ const Home = () => {
       window.scrollTo(0, 0);
     }
   }, [isModalOpen]);
-
-  //Datos de horario
-  const [startTime, setStartTime] = useState("00:00");
-  const [endTime, setEndTime] = useState("00:00");
-
-  //Datos de numero de piezas
-  const [amountPack, setAmountPack] = useState(0);
 
   //Funciones
   const closeModal = () => {
@@ -46,6 +37,11 @@ const Home = () => {
     setShowModal(modalNumber);
     setIsModalOpen(true);
   };
+
+  function buscar(e) {
+    e.preventDefault();
+    navigate("/lista-anuncios");
+  }
 
   return (
     <>
@@ -60,7 +56,7 @@ const Home = () => {
               className="search-big"
               type="text"
               placeholder="¿Dónde te encuentras? Madrid, Barcelona…"
-              value={address ? address : ''}
+              value={reserva.address ? reserva.address : ''}
             />
           </div>
           <div className="form-search_div">
@@ -74,7 +70,7 @@ const Home = () => {
               className="search-input"
               type="text"
               placeholder="Depósito"
-              defaultValue={startDate ? startDate : ""}
+              defaultValue={reserva.startDate ? reserva.startDate : ""}
             />
           </div>
           <div className="form-search_div">
@@ -88,7 +84,7 @@ const Home = () => {
               className="search-input"
               type="text"
               placeholder="Retirada"
-              defaultValue={endDate ? endDate : ""}
+              defaultValue={reserva.endDate ? reserva.endDate : ""}
             />
           </div>
           <div className="form-search_div">
@@ -101,11 +97,11 @@ const Home = () => {
               className="search-input"
               type="number"
               placeholder="Nº de piezas"
-              value={amountPack !== 0 ? amountPack : ""}
+              value={reserva.amountPack !== 0 ? reserva.amountPack : ""}
             />
           </div>
 
-          <button className="search-button"> Buscar </button>
+          <button className="search-button" onClick={buscar}> Buscar </button>
         </form>
         <Novedades />
         <Experiencias />
@@ -113,26 +109,20 @@ const Home = () => {
         {/*Modales*/}
         
         {showModal === 1 && (
-          <Calendario setStartDate={setStartDate} closeCal={closeModal} />
+          <Calendario setReserva={setReserva} reserva={reserva} closeCal={closeModal} />
         )}
         {showModal === 2 && (
           <CalendarioEnd
             setShowModal={setShowModal}
-            setEndDate={setEndDate}
-            setStartTime={setStartTime}
-            setEndTime={setEndTime}
-            setAmountPack={setAmountPack}
+            reserva={reserva}
+            setReserva={setReserva}
           />
         )}
         {showModal === 3 && (
           <ModalHorario
-            startTime={startTime}
-            endTime={endTime}
-            amountPack={amountPack}
+            setReserva={setReserva}
+            reserva={reserva}
             handleModalOpen={handleModalOpen}
-            setStartTime={setStartTime}
-            setEndTime={setEndTime}
-            setAmountPack={setAmountPack}
             closeModal={closeModal}
           />
         )}

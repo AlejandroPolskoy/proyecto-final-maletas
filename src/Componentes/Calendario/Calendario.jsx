@@ -3,7 +3,7 @@ import './Calendario.scss';
 import Calendar from 'react-calendar';
 import Footer from '../Footer/Footer';
 
-const Calendario = ({setStartDate, closeCal}) => {
+const Calendario = ({setReserva, reserva, closeCal}) => {
 
     const months = Array.from({ length: 12 }, (_, i) => new Date(new Date().getFullYear(), i, 1));
 
@@ -44,7 +44,7 @@ const Calendario = ({setStartDate, closeCal}) => {
                 {months.map((month) => (
                     <Calendar
                         key={`${month.getMonth()}-${month.getFullYear()}`}
-                        onChange={(date) => setStartDate(formatDate(date))}
+                        onChange={(date) => setReserva({...reserva, startDate: formatDate(date)})}
                         value={month}
                         maxDetail="month"
                         showNeighboringMonth={false}

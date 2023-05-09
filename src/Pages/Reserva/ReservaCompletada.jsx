@@ -1,17 +1,18 @@
 import fenix from "../../assets/fenix@3x.png";
 import xIcon from "../../assets/x.png";
 import "./ReservaCompletada.scss";
+import { useNavigate } from 'react-router-dom';
 
 export default function ReservaCompletada(props) {
 
-    const {setPaginas} = props;
+    const navigate = useNavigate();
 
     return(
 
         <div>
-            
+
             <div className="xIcon__container">
-                <img onClick={props.onBackClick} className="xIcon" src={xIcon}/>
+                <img onClick={()=>navigate("/")} className="xIcon" src={xIcon}/>
             </div>
 
             <div>

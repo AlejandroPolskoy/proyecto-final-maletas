@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './Maps.scss'
 
-export const Search = ({ onPlacesChanged, setAddress }) => {
+export const Search = ({ onPlacesChanged, setReserva, reserva }) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
@@ -9,13 +9,13 @@ export const Search = ({ onPlacesChanged, setAddress }) => {
   };
 
   const handleInputChange = (event) => {
-    setQuery(event.target.value);
+    setReserva({...reserva, address: event.target.value})
   };
 
   const handleInputKeyPress = (event) => {
     if (event.key === "Enter") {
       onPlacesChanged();
-      setAddress(event.target.value)
+      setReserva({...reserva, address: event.target.value})
     }
   };
 
@@ -25,7 +25,7 @@ export const Search = ({ onPlacesChanged, setAddress }) => {
         type="text"
         placeholder="Search places..."
         className="search"
-        value={query}
+        value={reserva.address}
         onChange={handleInputChange}
         onKeyDown={(e)=> handleInputKeyPress(e)}
       />

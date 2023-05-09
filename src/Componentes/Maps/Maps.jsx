@@ -23,7 +23,7 @@ function Map() {
   const [searchBox, setSearchBox] = useState(center);
   const [map, setMap] = useState(null);
   const mapRef = useRef();
-  const {setAddress} = useContext(VariablesContext);
+  const {setReserva, reserva} = useContext(VariablesContext);
 
   const onLoad = React.useCallback(function callback(map) {
     mapRef.current = map;
@@ -57,7 +57,7 @@ function Map() {
         >
           <MarkerF position={center} />
           <StandaloneSearchBox onLoad={setSearchBox}>
-            <Search onPlacesChanged={handleOnPlacesChanged} setAddress={setAddress}/>
+            <Search onPlacesChanged={handleOnPlacesChanged} setReserva={setReserva} reserva={reserva}/>
           </StandaloneSearchBox>
         </GoogleMap>
       </div>

@@ -19,13 +19,22 @@ import UserFile from "./Pages/UserFile/UserFile";
 import MiPerfil from "./Pages/Usuarios/MiPerfil";
 import Reserva from "./Pages/Reserva/Reserva";
 import { api } from "./Componentes/shared";
+import ListaAnuncios from "./Pages/Anuncios/ListaAnuncios";
 
 
 function App() {
-  const [address, setAddress] = useState("");
+  const [reserva, setReserva] = useState({
+    startTime: "00:00",
+    endTime: "00:00",
+    amountPack: 0,
+    startDate: "",
+    endDate: "",
+    address: "",
+    anuncio: ""
+  });
 
   return (
-    <VariablesContext.Provider value={{ address, setAddress }}>
+    <VariablesContext.Provider value={{ reserva, setReserva }}>
       <Router>
         <div className="App">
           <Routes>
@@ -45,6 +54,7 @@ function App() {
             <Route path="/reserva" element={<Reserva/>}/>
             <Route path="/chat" element={<Chat/>}/>
             <Route path="/mi-perfil" element={<Usuario />} />
+            <Route path="/lista-anuncios" element={<ListaAnuncios />} />
           </Routes>
         </div>
       </Router>
