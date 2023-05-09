@@ -7,8 +7,11 @@ export default function Footer() {
 
     const location = useLocation()
     
-    const isUserPage = location.pathname.includes('/usuario/');
+
+    const isUserPage = /\/usuario\/|\/reserva$/.test(location.pathname);
+
     const userInfo = JSON.parse(localStorage.getItem("user")) || {};
+
     
     return (
         <div className="footer">
