@@ -2,9 +2,27 @@
     border-bottom: 1px solid rgb(198, 198, 198);
     width: 90%;
     margin: 0 auto;
+    text-align: left;
 
+    &_img{
+        width: 270px;
+        height: 160px;
+        object-fit: cover;
+    }
+
+    &_title{
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
 }
 
+.tusanuncios{
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: left;
+    margin-left: 19px;
+}
 
 .addEspacio__texto{
     text-align: left;
