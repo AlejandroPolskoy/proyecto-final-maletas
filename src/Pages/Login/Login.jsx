@@ -32,7 +32,7 @@ const Login = () => {
   return (
     <>
         <div className='back-icon'>
-            <img src={backI} alt='back' />
+        <NavLink to='/bienvenida'> <img src={backI} alt='back' /> </NavLink>
         </div>
         <nav className='navbar'>
             <NavLink to='/login' className='route-link'> Iniciar sesión </NavLink>   

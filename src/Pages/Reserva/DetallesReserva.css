@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500&family=Noto+Sans&display=swap");
+.detalle__titular {
+  font-family: Catamaran;
+  font-weight: 500;
+  font-size: 28px;
+  text-align: left;
+  margin-left: 30px;
+}
+
+.subtitulo__container {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgb(198, 198, 198);
+}
+
+.subtitulo__bloque {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.detalle__subtitulo--negrita {
+  font-family: Noto Sans;
+  font-weight: 600;
+  margin-bottom: -10px;
+}
+
+.resumen__container {
+  display: flex;
+  justify-content: space-around;
+  align-self: left;
+  align-items: center;
+}
+
+.detalle__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.resumen__detalle {
+  margin-bottom: -10px;
+}
+
+.detalles__pedido {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 60px;
+  text-align: left;
+}
+
+.boton__reservar {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.boton__reservar img {
+  width: 70%;
+}/*# sourceMappingURL=DetallesReserva.css.map */

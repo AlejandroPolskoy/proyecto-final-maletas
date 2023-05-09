@@ -1,0 +1,62 @@
+.reserva {
+  height: 100%;
+  padding: 0px 25px;
+  text-align: left;
+}
+.reserva_atras {
+  margin-top: 25px;
+}
+.reserva_user {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+}
+.reserva_user_all {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 13px 0px;
+  border-bottom: 1px solid rgb(216, 216, 216);
+  width: 100%;
+}
+.reserva_user img {
+  width: 45px;
+}
+.reserva_user h4 {
+  margin: 0px;
+  font-size: 1.3rem;
+}
+.reserva_user p {
+  margin: 0px 0px 5px 0px;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+.reserva_user_detail {
+  margin-left: 10px;
+  margin-right: 49px;
+  margin-bottom: 10px;
+}
+.reserva_user_btn {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.reserva_user_btn button {
+  background-color: rgb(246, 143, 36);
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.reserva_user_btn p {
+  margin: 13px 0;
+  color: rgb(0, 149, 190);
+  font-weight: 500;
+}/*# sourceMappingURL=Reserva.css.map */

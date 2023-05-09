@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap");
 .modalContainer {
   position: fixed;
   top: 0;
@@ -30,10 +31,12 @@
 .modalContainer .modal_txt h2 {
   line-height: 33px;
   font-weight: 600;
+  font-family: "Catamaran", sans-serif;
 }
 .modalContainer .modal_txt p {
   font-size: 18px;
   line-height: 23px;
+  font-family: "Noto Sans", sans-serif;
 }
 .modalContainer .modal_btn {
   background-color: rgb(246, 143, 36);
@@ -44,10 +47,12 @@
   height: 39px;
   font-weight: 900;
   cursor: pointer;
+  font-family: "Noto Sans", sans-serif;
 }
 .modalContainer .modal_btn a {
   text-decoration: none;
   color: white;
+  font-family: "Noto Sans", sans-serif;
 }
 .modalContainer .modal_content {
   border-bottom: 1px solid #dddddd;
@@ -70,4 +75,9 @@
 }
 .modalContainer .modal_footer .modal-close:hover {
   background-color: #2EC4B6;
+}
+.modalContainer .modal_price {
+  color: black;
+  letter-spacing: 0.5;
+  font-family: "Noto Sans", sans-serif;
 }/*# sourceMappingURL=Modal.css.map */

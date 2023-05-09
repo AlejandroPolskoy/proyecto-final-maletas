@@ -1,0 +1,45 @@
+.chat-img {
+  width: 48px;
+  border-radius: 100%;
+  background-size: cover;
+  padding-bottom: 6px;
+}
+.chat-conversation {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  align-items: flex-end;
+}
+.chat-conversation img {
+  width: 100%;
+}
+.chat-conversation p {
+  background-color: rgb(251, 251, 251);
+  width: 80%;
+  border-radius: 4px;
+  box-shadow: 1px 2px #888888;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.chat-input {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px grey solid;
+}
+.chat-input input[type=text] {
+  width: 82%;
+  margin: 0;
+  border: 0;
+  padding: 12px 0;
+}
+.chat-input input[type=submit] {
+  width: 15%;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  padding: 12px 0;
+}/*# sourceMappingURL=chat.css.map */

@@ -33,7 +33,7 @@ export const Modal = ({ mostrar }) => {
                                 </p>
                             </div>
                             <button className="modal_btn"><NavLink to="/login">Empezar Ya</NavLink></button>
-                            <p><NavLink to="/tarifas" >Consulta los precios</NavLink></p>
+                            <p><NavLink className="modal_price" to="/tarifas" >Consulta los precios</NavLink></p>
                         </div>)}
                     </div>
                 </div>
