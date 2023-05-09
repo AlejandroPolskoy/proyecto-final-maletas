@@ -14,7 +14,7 @@ export default function Usuario() {
         <div key={index} className="user_head">
             <div className="user_detail">
                 <h2 className="user_title">{list.name}</h2>
-                <p className="user_subtitle"><Link to="/perfil">Puedes ver y editar tu perfil</Link></p>
+                <p className="user_subtitle"><Link to="/miperfil">Puedes ver y editar tu perfil</Link></p>
             </div>
             <div className="user_detail">
                 <img src={list.image} alt={list.name} className="user_img"/>
@@ -23,7 +23,7 @@ export default function Usuario() {
         )}
         <div className="user_list">
             <div className="user_list_details">
-                <Link to="/hacer-guardian"><h4>Conviértete en guardián</h4></Link>
+                <Link to="/hacerse-guardian"><h4>Conviértete en guardián</h4></Link>
                 <p>Puedes ganar 400€ de media al mes</p>
             </div>
             <div className="user_list_details">
@@ -35,7 +35,7 @@ export default function Usuario() {
                 <p></p>
             </div>
             <div className="user_list_details">
-                <Link to="/guardian"><h4>Publica tu anuncio o experiencia</h4></Link>
+                <Link to="/homeguardian"><h4>Publica tu anuncio o experiencia</h4></Link>
                 <p></p>
             </div>
             <div className="user_list_details">
