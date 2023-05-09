@@ -14,7 +14,7 @@ const Registrar = () => {
     function sendForm() {
         axios.post( api + "/user/register", getValues()).then( res => {
             if(res.status == 201) {
-                navigate('/login');
+                //navigate('/login');
             } else {
                 // err message
                 setForm({...form, msg: res.data.message});

@@ -18,7 +18,7 @@ export default function HomeGuardian() {
 
     // get anuncios de guardian
     function getAnuncios() {
-        axios.get( api + "/anuncios/getLocation/"+userInfo._id).then( res => {
+        axios.get( api + "/anuncios/getLocations/" + userInfo._id).then( res => {
             if(res.status === 200) {
                 console.log( res );
                 setAnuncios(res.data);

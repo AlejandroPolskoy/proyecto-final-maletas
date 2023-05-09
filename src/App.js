@@ -40,7 +40,7 @@ function App() {
             <Route path="/detallesreserva" element={<DetallesReserva/>} />
             <Route path="/maps" element={<Maps />} />
             <Route path="/hacerse-guardian" element={<HacerseGuardian/>} />
-            <Route path="/user-file" element={<UserFile />} />
+            <Route path="/user-file/:id" element={<UserFile />} />
             <Route path="/editar-perfil" element={<MiPerfil />} />
             <Route path="/reserva" element={<Reserva/>}/>
             <Route path="/chat" element={<Chat/>}/>
