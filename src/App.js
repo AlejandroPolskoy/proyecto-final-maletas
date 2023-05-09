@@ -14,6 +14,7 @@ import Logout from "./Pages/Login/Logout";
 import Chat from "./Pages/Chat/Chat";
 import { useState } from "react";
 import { VariablesContext } from "./Shared/VariablesContext";
+import DetallesReserva from "./Pages/Reserva/DetallesReserva";
 import UserFile from "./Pages/UserFile/UserFile";
 import MiPerfil from "./Pages/Usuarios/MiPerfil";
 import Reserva from "./Pages/Reserva/Reserva";
@@ -35,6 +36,8 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Registrar />} />
             <Route path="/tarifas" element={<Tarifas />} />
+            <Route path="/homeguardian" element={<HomeGuardian/>} />
+            <Route path="/detallesreserva" element={<DetallesReserva/>} />
             <Route path="/maps" element={<Maps />} />
             <Route path="/hacerse-guardian" element={<HacerseGuardian/>} />
             <Route path="/user-file" element={<UserFile />} />
