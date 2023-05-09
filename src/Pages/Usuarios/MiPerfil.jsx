@@ -31,8 +31,8 @@ export default function MiPerfil() {
     return <div>
         <form className='form-login' onSubmit={handleSubmit(updateUserData)} encType="multipart/form-data">
 
-            <div className=''>
-                <img src={userInfo.image} />
+            <div>
+                <img src={userInfo.image}  className='user_img'/>
             </div>
 
             { form.msg && <p className='date-p'>{form.msg}</p> }
