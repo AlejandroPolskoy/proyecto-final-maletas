@@ -106,12 +106,6 @@
 .form-login .input-login:focus {
   outline: none;
 }
-.form-login ::-webkit-datetime-edit {
-  color: transparent;
-}
-.form-login :focus::-webkit-datetime-edit {
-  color: rgb(132, 125, 125);
-}
 .form-login ::-webkit-calendar-picker-indicator {
   display: none;
   -webkit-appearance: none;

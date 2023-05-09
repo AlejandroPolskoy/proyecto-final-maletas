@@ -120,8 +120,8 @@
         outline: none;
     }
 
-    ::-webkit-datetime-edit { color: transparent; }
-    :focus::-webkit-datetime-edit { color: rgb(132, 125, 125)}
+    // ::-webkit-datetime-edit { color: transparent; }
+    // :focus::-webkit-datetime-edit { color: rgb(132, 125, 125)}
     ::-webkit-calendar-picker-indicator {
         display: none;
         -webkit-appearance: none;

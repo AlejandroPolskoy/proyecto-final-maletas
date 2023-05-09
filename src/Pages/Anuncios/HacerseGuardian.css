@@ -2,6 +2,7 @@
   height: 130px;
   background-color: rgb(246, 143, 36);
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
 }
 .configuracionContainer p {
@@ -9,7 +10,13 @@
   color: white;
   font-family: Noto Sans;
   font-size: 20px;
-  padding-left: 30px;
+  text-align: left;
+  padding-left: 8%;
+}
+.configuracionContainer img {
+  width: 6%;
+  padding-bottom: 60px;
+  padding-right: 8%;
 }
 
 .continuar {
@@ -71,4 +78,15 @@
   font-family: Noto Sans;
   font-weight: 600;
   border-bottom: 1px solid rgb(198, 198, 198);
+}
+
+.botonPublicar__container {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  padding-right: 30px;
+}
+
+.botonPublicar {
+  width: 35%;
 }/*# sourceMappingURL=HacerseGuardian.css.map */
