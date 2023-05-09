@@ -43,9 +43,9 @@ export default function HomeGuardian() {
             <div className="addEspacio">
 
                 { anuncios && anuncios.map((anuncio, index)=> <div key={index}>
-                        <h3>{ anuncio.title }</h3>
+                        <h3 className='addEspacio_title'>{ anuncio.title }</h3>
                         <p>Anuncio completado al 100%</p>
-                        <img src={anuncio.image} alt={anuncios.title}/>
+                        <img src={anuncio.image} alt={anuncios.title} className='addEspacio_img'/>
                     </div>
                 )}
                 
