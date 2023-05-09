@@ -4,7 +4,7 @@ import backI from '../../assets/icons8Back100Copy@2x.png';
 import './Login.scss';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
-import { api } from '../../App';
+import { api } from '../../Componentes/shared';
 
 const Login = () => {
     const [form, setForm] = useState([]);
