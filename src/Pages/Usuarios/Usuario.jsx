@@ -14,7 +14,7 @@ export default function Usuario() {
         <div key={index} className="user_head">
             <div className="user_detail">
                 <h2 className="user_title">{list.name}</h2>
-                <p className="user_subtitle"><Link to="/">Puedes ver y editar tu perfil</Link></p>
+                <p className="user_subtitle"><Link to="/perfil">Puedes ver y editar tu perfil</Link></p>
             </div>
             <div className="user_detail">
                 <img src={list.image} alt={list.name} className="user_img"/>
