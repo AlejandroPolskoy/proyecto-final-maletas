@@ -2,6 +2,7 @@ import React from "react";
 import "./UserFile.scss";
 import Footer from "../../Componentes/Footer/Footer";
 import {motion} from 'framer-motion';
+import { NavLink } from "react-router-dom";
 
 const UserFile = () => {
 
@@ -194,7 +195,7 @@ const UserFile = () => {
             <div className="file-container_reserve-price">
                 <h3 className="price-title"> Total: {anuncio.price} € </h3>
             </div>
-            <button className="file-container_reserve-btn"> Reservar Ahora </button>
+            <NavLink to='/detallesreserva'><button className="file-container_reserve-btn"> Reservar Ahora </button></NavLink>
         </div>
       </div>
     </div>
