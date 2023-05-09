@@ -1,26 +1,29 @@
 import React from "react";
 import Footer from "../../Componentes/Footer/Footer";
 import { Link } from "react-router-dom";
-import './Usuario.scss'
+import './Usuario.scss';
+import { useNavigate } from 'react-router-dom';
 
 export default function Usuario() {
 
-    const userData =[ { name: "Marta", image:"/assets/bitmapCopy2@3x.png"}]
+    const navigate = useNavigate();
+    if(!localStorage.getItem("user")) navigate("/bienvenida");
+    const userData = JSON.parse(localStorage.getItem("user"));
 
     return (
         <>
     <div className="user">
-        {userData && userData.map((list,index) => 
-        <div key={index} className="user_head">
+
+        <div className="user_head">
             <div className="user_detail">
-                <h2 className="user_title">{list.name}</h2>
-                <p className="user_subtitle"><Link to="/miperfil">Puedes ver y editar tu perfil</Link></p>
+                <h2 className="user_title">{userData.name}</h2>
+                <p className="user_subtitle"><Link to="/editar-perfil">Puedes ver y editar tu perfil</Link></p>
             </div>
             <div className="user_detail">
-                <img src={list.image} alt={list.name} className="user_img"/>
+                <img src={userData.image} alt={userData.name} className="user_img"/>
             </div>
         </div>
-        )}
+
         <div className="user_list">
             <div className="user_list_details">
                 <Link to="/hacerse-guardian"><h4>Conviértete en guardián</h4></Link>

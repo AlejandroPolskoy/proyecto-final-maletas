@@ -35,13 +35,13 @@ export default function Chat() {
     return <>
         <div className="chat">
             { messages.map((message, index) => 
-                     message.name === userInfo.name ? (
+                    message.name === userInfo.name ? (
                         <div className="chat-conversation" key={index}>
                             <div><img src="/assets/usuario@3x.png" alt=""/></div>
                             <p>{message.text}</p>
                         </div>
                     ) : (
-                        <div className="chat-conversation reverse">
+                        <div className="chat-conversation reverse" key={index}>
                             <div><img src="/assets/usuario@3x.png" alt=""/></div>
                             <p>{message.text}</p>
                         </div>

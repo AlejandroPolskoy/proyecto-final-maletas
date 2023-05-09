@@ -23,7 +23,7 @@ export default function Fotos(props) {
     
       const handleOnChange = (event) => {
         onChangeFotos(event.target.files[0]);
-        setSelectedFileName(event.target.files[0].name);
+        setSelectedFileName(event.target.files[0]);
     };
 
 

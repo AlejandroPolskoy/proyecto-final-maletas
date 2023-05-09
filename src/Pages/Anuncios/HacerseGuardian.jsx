@@ -13,9 +13,17 @@ import Disponibilidad from "./Disponibilidad";
 import Servicios from "./Servicios";
 import Descripcion from "./Descripcion";
 import Footer from "../../Componentes/Footer/Footer";
-
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
+import { api } from '../../Componentes/shared';
 
 export default function HacerseGuardian() {
+
+  const navigate = useNavigate();
+  if(!localStorage.getItem("user")) navigate("/bienvenida");
+  const userInfo = JSON.parse(localStorage.getItem("user"));
+
   const [paginas, setPaginas] = useState(0);
 
   const [propiedad, setPropiedad] = useState("");
@@ -56,6 +64,31 @@ export default function HacerseGuardian() {
 
   const handleBack = () => {
     setPaginas(paginas - 1);
+  };
+
+  const publicarAnuncio = () => {
+    const datosAnuncio = new FormData();
+    datosAnuncio.append("coords", direccion);
+    datosAnuncio.append("title", titulo);
+    datosAnuncio.append("owner", userInfo._id);
+    datosAnuncio.append("type", selectedOption);
+    datosAnuncio.append("propertyType", selectedOption02);
+    datosAnuncio.append("image", selectedFileName);
+    datosAnuncio.append("capacity", servicio);
+    datosAnuncio.append("availability", selectedDisponibilidad);
+    datosAnuncio.append("availability2", selectedDisponibilidad02);
+    const config = {
+      headers: { 'content-type': 'multipart/form-data' }
+    }
+    console.log("datos:" ,direccion, titulo, userInfo._id, selectedOption, selectedOption02, selectedFileName, servicio,selectedDisponibilidad,selectedDisponibilidad02);
+    console.log( datosAnuncio );
+    axios.post( api + "/anuncios/setLocation", datosAnuncio, config).then( res => {
+      if(res.status == 201) {
+          console.log( res );
+      } else {
+        console.log( "error:", res );
+      }
+  })
   };
 
   const [selectedOption, setSelectedOption] = useState("");
@@ -174,7 +207,7 @@ export default function HacerseGuardian() {
 
           <div className="botonPublicar__container">
             <img
-              onClick={handleFlechaClick}
+              onClick={publicarAnuncio}
               className="botonPublicar"
               src={botonPublicar}
               alt="continuar"

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useNavigate, redirect, useFormAction } from 'react-router-dom';
+import { NavLink, useNavigate, useFormAction } from 'react-router-dom';
 import backI from '../../assets/icons8Back100Copy@2x.png';
 import './Login.scss';
 import axios from 'axios';
@@ -14,7 +14,6 @@ const Login = () => {
     function sendForm() {
         try {
             axios.post( api + "/user/login", getValues()).then( res => {
-                console.log(res);
                 if(res.status === 200) {
                     localStorage.setItem('user', JSON.stringify(res.data.userInfo));
                     localStorage.setItem('token', res.data.token);
@@ -26,7 +25,6 @@ const Login = () => {
         } catch(err) {
             console.log( "Wrong data:", err );
         }
-        
     }
 
   return (
