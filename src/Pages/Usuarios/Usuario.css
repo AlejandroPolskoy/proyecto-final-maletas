@@ -28,6 +28,10 @@
 }
 .user_img {
   width: 85px;
+  height: 85px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 7px;
 }
 .user_list {
   display: flex;

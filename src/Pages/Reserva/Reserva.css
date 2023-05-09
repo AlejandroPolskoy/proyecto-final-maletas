@@ -25,6 +25,7 @@
 }
 .reserva_user img {
   width: 45px;
+  border-radius: 3px;
 }
 .reserva_user h4 {
   margin: 0px;
