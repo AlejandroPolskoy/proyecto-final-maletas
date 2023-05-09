@@ -1,34 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap');
+
+.guardian-container {
+    padding-bottom: 70px;
+}
 
 .configuracionContainer{
-    
     height: 130px;
     background-color: rgb(246, 143, 36);
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    
-    p{
-        width: 52%;
+    justify-content: space-around;
+    width: 414px;
+
+    .configuracionTitulo{
+        width: 200px;
+        height: 50px;
         color: white;
-        font-family: Noto Sans;
+        font-family: 'Noto Sans', sans-serif;
         font-size: 20px;
         text-align: left;
-        
-        padding-left: 8%;
+        margin-top: 55px;
     }
 
-    img{
-       
-         width: 6%;
-         padding-bottom: 60px;
-         padding-right: 8%;
-         
+    .cross-link {
+        width: 20px;
+        height: 20px;
 
+         .botonx{
+            width: 100%;
+            height: 100%;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+            padding-top: 30px;
+            padding-right: 0px;
+            padding-left: 25px;
+        }
     }
-
 }
-
-
 
 .continuar{
     width: 25%;
@@ -76,7 +83,7 @@
     border: none;
     border-bottom: 1px solid rgb(198, 198, 198);
     outline: none;
-    font-family: Noto Sans;
+    font-family: 'Noto Sans', sans-serif;
     font-size:12px;
     color: rgb(92, 92, 92);
 }
@@ -86,10 +93,9 @@
     margin: 0 auto;
     border: none;
     outline: none;
-    font-family: Noto Sans;
+    font-family: 'Noto Sans', sans-serif;
     font-size:14px;
     color: rgb(182, 179, 175);
-    font-family: Noto Sans;
     font-weight: 600;
     border-bottom: 1px solid rgb(198, 198, 198);
 
@@ -102,13 +108,12 @@
     justify-content: flex-end;
     padding-top: 20px;
     padding-right: 30px;
-
-
 }
 
 .botonPublicar{
-   
     width: 35%;
+    font-family: 'Noto Sans', sans-serif;
+    letter-spacing: 0.5;
 }
 
 
