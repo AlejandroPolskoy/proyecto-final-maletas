@@ -57,4 +57,11 @@
 .user_list_details a {
   text-decoration: none;
   color: #000000;
+}
+
+.go-back {
+  width: 414px;
+  height: 25px;
+  text-align: start;
+  padding: 20px 0 0 20px;
 }/*# sourceMappingURL=Usuario.css.map */

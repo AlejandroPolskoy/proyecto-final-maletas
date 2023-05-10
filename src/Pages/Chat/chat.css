@@ -1,40 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap");
+.chat {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
 .chat-img {
   width: 48px;
   border-radius: 100%;
   background-size: cover;
   padding-bottom: 6px;
 }
+.chat .img__container {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.chat img {
+  width: 100%;
+  position: absolute;
+  top: -5px;
+  right: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .chat-conversation {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   width: 90%;
-  margin: 0 auto;
-  align-items: flex-end;
+  padding-left: 10px;
 }
-.chat-conversation img {
-  width: 100%;
-}
-.chat-conversation p {
-  background-color: rgb(251, 251, 251);
+.chat-conversation .texto__user01 {
+  font-family: "Noto Sans", sans-serif;
+  background-color: rgb(240, 240, 240);
+  color: rgb(65, 65, 65);
   width: 80%;
+  text-align: left;
+  text-indent: 10px;
+  height: 50px;
   border-radius: 4px;
-  box-shadow: 1px 2px #888888;
+  line-height: 50px;
 }
 
 .reverse {
+  display: flex;
   flex-direction: row-reverse;
+}
+.reverse .texto__user02 {
+  font-family: "Noto Sans", sans-serif;
+  background-color: rgb(246, 143, 36);
+  color: white;
+  width: 80%;
+  text-align: left;
+  text-indent: 10px;
+  height: 50px;
+  border-radius: 4px;
+  line-height: 50px;
 }
 
 .chat-input {
   position: fixed;
+  background-color: rgb(255, 255, 255);
   bottom: 0;
-  width: 100%;
-  border-top: 1px grey solid;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  width: 92%;
 }
 .chat-input input[type=text] {
-  width: 82%;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 15px;
+  width: 300px;
   margin: 0;
-  border: 0;
-  padding: 12px 0;
+  border: 1px solid rgb(130, 129, 129);
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px 30px 30px 30px;
+  padding: 10px 0 10px 15px;
+  color: rgb(130, 129, 129);
+}
+.chat-input input[type=text]:focus {
+  outline: 1px solid rgb(97, 96, 96);
 }
 .chat-input input[type=submit] {
   width: 15%;
@@ -42,4 +89,29 @@
   border: 0;
   background-color: transparent;
   padding: 12px 0;
+}
+
+.enviar {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 18px;
+  color: rgb(56, 159, 255);
+}
+
+.chat-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 15px;
+  box-shadow: 2px 2px 3px 1px #d3d2d2;
+}
+.chat-header .back-img {
+  margin-right: 20px;
+}
+.chat-header .chat-name {
+  font-family: "Catamaran", sans-serif;
+  font-weight: 500;
+  color: rgb(87, 87, 87);
+  letter-spacing: 0.5px;
 }/*# sourceMappingURL=chat.css.map */

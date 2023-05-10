@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap");
+.lista-anuncios {
+  display: flex;
+  flex-direction: column;
+  font-family: "Catamaran", sans-serif;
+  padding: 18px 23px;
+}
+.lista-anuncios_selected {
+  border: 4px solid rgb(246, 143, 36);
+}
+.lista-anuncios_contenedor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 13px;
+  width: 360px;
+  margin: 9px auto;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 21px;
+}
+.lista-anuncios_img {
+  width: 150px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 180px;
+}
+.lista-anuncios_title {
+  font-weight: 400;
+  margin: 6px 0px 0px 0px;
+  text-align: left;
+}
+.lista-anuncios_nombre {
+  font-weight: 400;
+  margin: 10px 0px 0px 0px;
+}
+.lista-anuncios_details {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  text-align: left;
+}
+.lista-anuncios_profile {
+  width: 70px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 13px;
+}
+.lista-anuncios .star-file {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  margin: 5px 19px 8px 0px;
+}
+.lista-anuncios .star-file-inner {
+  display: flex;
+  width: 40px;
+  height: 20px;
+  background-color: transparent;
+  background-color: #F7C04A;
+}
+.lista-anuncios .star-file-star {
+  width: 80px;
+  height: 20px;
+  cursor: pointer;
+}
+.lista-anuncios .random {
+  color: #9f9c9a;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  margin-left: 110px;
+  position: absolute;
+}
+.lista-anuncios_btn {
+  width: 200px;
+  height: 40px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(246, 143, 36);
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+}/*# sourceMappingURL=ListaAnuncios.css.map */
