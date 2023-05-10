@@ -27,11 +27,12 @@ export default function ListaAnuncios() {
     }
 
     function selecteChanged(e, id) {
-        setReserva({...reserva, location: id})
+        setReserva({...reserva, location: id});
         selectedID = id;
     }
 
     function reservar() {
+
         if(selectedID) navigate("/user-file/" + selectedID);
     }
 

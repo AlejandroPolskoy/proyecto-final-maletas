@@ -41,6 +41,7 @@ const Home = () => {
   function buscar(e) {
     e.preventDefault();
     navigate("/lista-anuncios");
+    setReserva({...reserva, user: userInfo._id});
   }
 
   return (

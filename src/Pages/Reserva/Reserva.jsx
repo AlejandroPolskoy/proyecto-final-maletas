@@ -10,38 +10,10 @@ export default function Reserva() {
     const navigate = useNavigate();
     if(!localStorage.getItem("user")) navigate("/bienvenida");
     const userInfo = JSON.parse(localStorage.getItem("user"));
-    const [reservas, setReservas] = useState(
-  //     [
-  //   {
-  //     id: 1,
-  //     name: "Carlos",
-  //     image: "/assets/bitmapCopy5@3x.png",
-  //     depositoDia: "30 de Julio",
-  //     depositoHora: "16:30",
-  //     recogidaDia: "30 de Julio",
-  //     recogidaHora: "20:00",
-  //   },{
-  //       id: 2,
-  //       name: "Cristina",
-  //       image: "/assets/bitmapCopy6@3x.png",
-  //       depositoDia: "30 de Julio",
-  //       depositoHora: "16:30",
-  //       recogidaDia: "30 de Julio",
-  //       recogidaHora: "20:00",
-  //   },{
-  //       id: 3,
-  //       name: "Joaquín",
-  //       image: "/assets/bitmapCopy7@3x.png",
-  //       depositoDia: "30 de Julio",
-  //       depositoHora: "16:30",
-  //       recogidaDia: "30 de Julio",
-  //       recogidaHora: "20:00",
-  //   },
-  // ]
-  );
+    const [reservas, setReservas] = useState([]);
 
   const confirmar = (id) => {
-    axios.put( api + "/anuncios/getReservas/" + id).then( res => {
+    axios.put( api + "/anuncios/acceptReserva/" + id).then( res => {
       if(res.status === 200) {
         setReservas(reservas.filter(list => list.id !== id));
       }
@@ -64,6 +36,7 @@ export default function Reserva() {
     axios.get( api + "/anuncios/getReservas/" + userInfo._id).then( res => {
       if(res.status === 200) {
         setReservas(res.data);
+        console.log( res.data );
       }
     })
   }
@@ -75,7 +48,7 @@ export default function Reserva() {
           <img className="reserva_atras" src={backIcon} alt="back"></img>
         </a>
         <h2>Petición de reserva</h2>
-        {reservas && reservas.map((reserva,index) => 
+        {reservas && reservas.map((ubicacion) => ubicacion.map((reserva,index) => {return (
         <div key={index} className="reserva_user">
             <div className="reserva_user_all">
                 <div className="reserva_user_img">
@@ -92,7 +65,7 @@ export default function Reserva() {
                 </div>
             </div>
         </div>
-        )}
+        )}))}
         {!reservas || reservas.length == 0 && <div>
           No hay reservas pendientes
         </div>}
