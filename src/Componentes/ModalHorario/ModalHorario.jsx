@@ -34,9 +34,7 @@ const ModalHorario = ({setReserva, reserva, handleModalOpen}) => {
         <div className='arrow-continue' >
             <img onClick={() => handleModalOpen(0)} src='/assets/botonContinuar@2x.png' alt='continue'/>
         </div>
-
         <Footer />
-        
     </div>
   )
 }

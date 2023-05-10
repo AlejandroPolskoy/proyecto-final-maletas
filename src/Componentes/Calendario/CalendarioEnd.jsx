@@ -43,6 +43,7 @@ const CalendarioEnd = ({setReserva, reserva, setShowModal}) => {
         <img className='cal-img' onClick={()=> setShowModal(0)} src='/assets/icons8Back100Copy@2x.png' alt='back' />
         <div className='calendar-container'>
             {months.map((month) => (
+                <>
                 <Calendar
                     key={`${month.getMonth()}-${month.getFullYear()}`}
                     onChange={(date) => setReserva({...reserva, date_out: formatDate(date)})}
@@ -51,10 +52,11 @@ const CalendarioEnd = ({setReserva, reserva, setShowModal}) => {
                     showNeighboringMonth={false}
                     onClickDay={(e)=> selected(e)}
                 />
+                <div className='btn-div'>
+                        <button  onClick={()=> setShowModal(3)} className='calendar_btn'> Continuar </button> 
+                </div>
+                </>
             ))}
-        </div>
-        <div className='btn-div'>
-            <button onClick={()=> setShowModal(3)} className='calendar_btn'> Continuar </button> 
         </div>
         <Footer />
     </div>

@@ -64,11 +64,13 @@ const Experiencias = () => {
                         </div>
                     )
                 })}  
+                {expShown < experiences.length && (
+                    <button className='exp-btn' onClick={addMore}> Mostrar más </button>
+                    )}
         </div>
 
-        {expShown < experiences.length && (
-        <button className='exp-btn' onClick={addMore}> Mostrar más </button>
-        )}
+      
+        
     </>
   )
 }

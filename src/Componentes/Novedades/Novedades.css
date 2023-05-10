@@ -5,6 +5,7 @@
   align-items: flex-start;
   overflow-x: hidden;
   max-width: 414px;
+  min-height: 220px;
 }
 .news-container-title {
   margin-left: 15px;

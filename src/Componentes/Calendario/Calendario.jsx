@@ -42,6 +42,7 @@ const Calendario = ({setReserva, reserva, closeCal}) => {
             <img className='cal-img' onClick={closeCal} src='/assets/icons8Back100Copy@2x.png' alt='back' />
             <div className='calendar-container'>
                 {months.map((month) => (
+                    <>
                     <Calendar
                         key={`${month.getMonth()}-${month.getFullYear()}`}
                         onChange={(date) => setReserva({...reserva, date_in: formatDate(date)})}
@@ -50,11 +51,14 @@ const Calendario = ({setReserva, reserva, closeCal}) => {
                         showNeighboringMonth={false}
                         onClickDay={(e)=> selected(e)}
                     />
+                    <div className='btn-div'>
+                        <button onClick={closeCal} className='calendar_btn'> Continuar </button> 
+                    </div>
+                    </>
                 ))}
+                
             </div>
-            <div className='btn-div'>
-                <button onClick={closeCal} className='calendar_btn'> Continuar </button> 
-            </div>
+            
             <Footer />
         </div>
     </>
