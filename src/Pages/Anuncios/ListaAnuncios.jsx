@@ -27,7 +27,7 @@ export default function ListaAnuncios() {
 
     function selecteChanged(e) {
         console.log( e.target.value );
-        setReserva({...reserva, anuncio: e.target.value})
+        setReserva({...reserva, location: e.target.value})
     }
 
     function reservar() {

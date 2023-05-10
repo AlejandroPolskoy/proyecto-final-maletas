@@ -33,7 +33,7 @@ function Map() {
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null);
   }, []);
-
+  
   const handleOnPlacesChanged = () => {
     const places = searchBox.getPlaces();
     if (places.length === 0) return;
@@ -54,6 +54,14 @@ function Map() {
           mapContainerClassName="map-container"
           onLoad={onLoad}
           onUnmount={onUnmount}
+          data-style='[
+            {
+              "featureType": "poi",
+              "stylers": [
+                { "visibility": "off" }
+              ]
+            }
+          ]'
         >
           <MarkerF position={center} />
           <StandaloneSearchBox onLoad={setSearchBox}>

@@ -8,7 +8,7 @@ const Busqueda = ({closeModal, setAddress}) => {
     
   return (
     <>
-    <div className='content'>
+    <div className='content-busqueda'>
         <img className='back-arrow' onClick={closeModal} src='/assets/icons8Back100Copy@2x.png' alt='back' />
         
         <div className='search-div'>

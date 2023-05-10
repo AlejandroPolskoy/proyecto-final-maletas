@@ -9,13 +9,13 @@ export const Search = ({ onPlacesChanged, setReserva, reserva }) => {
   };
 
   const handleInputChange = (event) => {
-    setReserva({...reserva, address: event.target.value})
+    setReserva({...reserva, location: event.target.value})
   };
 
   const handleInputKeyPress = (event) => {
     if (event.key === "Enter") {
       onPlacesChanged();
-      setReserva({...reserva, address: event.target.value})
+      handleInputChange(event);
     }
   };
 
@@ -25,7 +25,7 @@ export const Search = ({ onPlacesChanged, setReserva, reserva }) => {
         type="text"
         placeholder="Search places..."
         className="search"
-        value={reserva.address}
+        value={reserva.location}
         onChange={handleInputChange}
         onKeyDown={(e)=> handleInputKeyPress(e)}
       />

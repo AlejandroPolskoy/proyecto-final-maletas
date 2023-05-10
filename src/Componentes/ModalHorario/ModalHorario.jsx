@@ -20,16 +20,16 @@ const ModalHorario = ({setReserva, reserva, handleModalOpen}) => {
         <div className='modal-time_container'>
             <div className='modal-time_container_inner'>
                 <h2 className='modal-time_container_inner__title'>Depósito</h2>
-                <input onChange={(e)=>saveData(e, "startTime")} className='orange' type='time'/>
+                <input onChange={(e)=>saveData(e, "time_in")} className='orange' type='time'/>
             </div>
             <div className='modal-time_container_inner'>
                 <h2 className='modal-time_container_inner__title'>Retirada</h2>
-                <input onChange={(e)=>saveData(e, "endTime")} className='blue' type='time' />
+                <input onChange={(e)=>saveData(e, "time_out")} className='blue' type='time' />
             </div>
         </div>
         <div className='modal-suitcase'>
             <h2 className='modal-suitcase_title'> Número de equipaje </h2>
-            <input onChange={(e)=>saveData(e, "amountPack")} type='number' />
+            <input onChange={(e)=>saveData(e, "cuantity")} type='number' />
         </div>
         <div className='arrow-continue' >
             <img onClick={() => handleModalOpen(0)} src='/assets/botonContinuar@2x.png' alt='continue'/>

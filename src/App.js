@@ -24,13 +24,12 @@ import ListaAnuncios from "./Pages/Anuncios/ListaAnuncios";
 
 function App() {
   const [reserva, setReserva] = useState({
-    startTime: "00:00",
-    endTime: "00:00",
-    amountPack: 0,
-    startDate: "",
-    endDate: "",
-    address: "",
-    anuncio: ""
+    time_in: "00:00",
+    time_out: "00:00",
+    cuantity: 0,
+    date_in: "",
+    date_out: "",
+    location: ""
   });
 
   return (
