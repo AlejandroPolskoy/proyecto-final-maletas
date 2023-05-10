@@ -38,13 +38,17 @@ export default function Chat() {
             { messages.map((message, index) => 
                     message.name === userInfo.name ? (
                         <div className="chat-conversation" key={index}>
-                            <div><img src="/assets/usuario@3x.png" alt=""/></div>
-                            <p>{message.text}</p>
+                            <div className="img__container">
+                                <img src={userInfo.image} alt=""/>
+                            </div>
+                            <p className="texto__user01">{message.text}</p>
                         </div>
                     ) : (
                         <div className="chat-conversation reverse" key={index}>
-                            <div><img src="/assets/usuario@3x.png" alt=""/></div>
-                            <p>{message.text}</p>
+                            <div className="img__container">
+                                <img src={userInfo.image} alt=""/>
+                            </div>
+                            <p className="texto__user02">{message.text}</p>
                         </div>
                     )
                 )
@@ -54,7 +58,7 @@ export default function Chat() {
         <div className="chat-input">
             <form onSubmit={sendMessage}>
                 <input type="text" placeholder="Escribe un mensaje" value={message} onChange={(e)=>setMessage(e.target.value)}/>
-                <input type="submit" value="Enviar"/>
+                <input  className="enviar" type="submit" value="Enviar"/>
             </form>
         </div>
     </>;

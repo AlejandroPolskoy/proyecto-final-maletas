@@ -13,11 +13,12 @@ const UserFile = () => {
   if(!localStorage.getItem("user")) navigate("/bienvenida");
   const user = JSON.parse(localStorage.getItem("user"));
   const {reserva, setReserva} = useContext(VariablesContext);
+ 
   const precio = 6;
 
   const {id} = useParams();
   const [anuncio, setAnuncio] = useState([]);
-  console.log( id );
+  
   function getDetallesAnuncio(id) {
     axios.get( api + "/anuncios/getLocation/" + id).then( res => {
         if(res.status === 200) {
