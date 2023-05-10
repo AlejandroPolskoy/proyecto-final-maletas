@@ -33,8 +33,7 @@ export default function ListaAnuncios() {
     }
 
     function reservar() {
-        
-        navigate("/user-file/" + selectedID);
+        if(selectedID) navigate("/user-file/" + selectedID);
     }
 
     

@@ -11,6 +11,8 @@ const UserFile = () => {
   const navigate = useNavigate();
   if(!localStorage.getItem("user")) navigate("/bienvenida");
   const user = JSON.parse(localStorage.getItem("user"));
+ 
+ //falseando datos:
   const precio = 6;
   // cantidad de maletas del anuncio
   const maletas = 3;
