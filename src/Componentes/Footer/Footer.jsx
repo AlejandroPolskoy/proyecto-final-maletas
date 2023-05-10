@@ -9,7 +9,7 @@ export default function Footer() {
 
     const location = useLocation()
     
-    const isUserPage = /\/(usuario|reserva|hacerse-guardian|homeguardian)$/.test(location.pathname);
+    const isUserPage = /\/(usuario|reserva|hacerse-guardian|homeguardian|mi-perfil)$/.test(location.pathname);
 
     const userInfo = JSON.parse(localStorage.getItem("user")) || {};
 
