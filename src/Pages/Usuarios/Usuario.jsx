@@ -20,7 +20,7 @@ export default function Usuario() {
                 <p className="user_subtitle"><Link to="/editar-perfil">Puedes ver y editar tu perfil</Link></p>
             </div>
             <div className="user_detail">
-                <img src={userData.image} alt={userData.name} className="user_img"/>
+                <img src={userData.image ? userData.image : "/assets/usuario@3x.png"} alt={userData.name} className="user_img"/>
             </div>
         </div>
 

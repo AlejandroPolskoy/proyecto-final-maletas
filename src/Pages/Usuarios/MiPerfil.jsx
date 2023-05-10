@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../Componentes/shared';
 import './Usuario.scss';
+import Footer from '../../Componentes/Footer/Footer';
 
 export default function MiPerfil() {
     if(!localStorage.getItem("user")) navigate("/bienvenida");
@@ -58,5 +59,7 @@ export default function MiPerfil() {
 
             <button type='submit' className='btn-login'> Actualizar </button>
         </form>
+        <Footer/>
     </div>
+    
 }
