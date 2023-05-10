@@ -1,20 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap");
-.search-section {
+.home-content {
+  max-width: 414px;
+  height: 736px;
+  padding-bottom: 70px;
+  overflow-y: hidden;
   position: relative;
+}
+.home-content .search-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 414px;
-  overflow: auto;
-  margin-bottom: 50px;
+  height: 736px;
+  overflow-y: scroll;
+  position: relative;
 }
-.search-section .search-title {
+.home-content .search-section .search-title {
   margin-left: 15px;
   font-family: "Catamaran", sans-serif;
   font-weight: 400;
   font-size: 28px;
 }
-.search-section .form-search {
+.home-content .search-section .form-search {
   display: grid;
   width: 90%;
   justify-items: center;
@@ -23,7 +29,7 @@
   margin-left: 15px;
   font-family: "Noto Sans", sans-serif;
 }
-.search-section .form-search_big {
+.home-content .search-section .form-search_big {
   grid-column: 1/3;
   grid-row: 1;
   width: 95%;
@@ -31,7 +37,7 @@
   box-shadow: 2px 2px 3px 1px #edebeb;
   margin-bottom: 20px;
 }
-.search-section .form-search_big .search-big {
+.home-content .search-section .form-search_big .search-big {
   width: 290px;
   height: 40px;
   position: relative;
@@ -42,15 +48,15 @@
   opacity: 80%;
   font-family: "Noto Sans", sans-serif;
 }
-.search-section .form-search_big .search-big:focus {
+.home-content .search-section .form-search_big .search-big:focus {
   outline: none;
 }
-.search-section .form-search_big .search-bimg {
+.home-content .search-section .form-search_big .search-bimg {
   position: absolute;
   z-index: 1;
   margin: 15px 11px 11px 11px;
 }
-.search-section .form-search_div {
+.home-content .search-section .form-search_div {
   width: 160px;
   height: 40px;
   padding: 12px 5px;
@@ -62,7 +68,7 @@
   align-items: center;
   margin: 10px;
 }
-.search-section .form-search_div .search-input {
+.home-content .search-section .form-search_div .search-input {
   width: 100%;
   margin-left: 15px;
   position: relative;
@@ -74,15 +80,15 @@
   font-family: "Noto Sans", sans-serif;
   font-size: 14.5px;
 }
-.search-section .form-search_div .search-input:focus {
+.home-content .search-section .form-search_div .search-input:focus {
   outline: none;
 }
-.search-section .form-search_div .search-img {
+.home-content .search-section .form-search_div .search-img {
   position: absolute;
   z-index: 1;
   margin: 11px;
 }
-.search-section .form-search .search-button {
+.home-content .search-section .form-search .search-button {
   width: 170px;
   height: 60px;
   border: none;
@@ -92,4 +98,7 @@
   margin: 11px;
   font-family: "Noto Sans", sans-serif;
   font-size: 15px;
+}
+.home-content .calendar1 {
+  position: absolute;
 }/*# sourceMappingURL=Home.css.map */

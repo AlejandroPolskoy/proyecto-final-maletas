@@ -8,17 +8,16 @@ import ModalHorario from "../../Componentes/ModalHorario/ModalHorario";
 import Busqueda from "../../Componentes/Busqueda/Busqueda";
 import Footer from "../../Componentes/Footer/Footer";
 import { VariablesContext } from "../../Shared/VariablesContext";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-
   const navigate = useNavigate();
-  if(!localStorage.getItem("user")) navigate("/bienvenida");
+  if (!localStorage.getItem("user")) navigate("/bienvenida");
   const userInfo = JSON.parse(localStorage.getItem("user"));
 
   //Datos de calendario
   const [showModal, setShowModal] = useState(0);
-  const {setReserva, reserva} = useContext(VariablesContext);
+  const { setReserva, reserva } = useContext(VariablesContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -41,97 +40,106 @@ const Home = () => {
   function buscar(e) {
     e.preventDefault();
     navigate("/lista-anuncios");
-    setReserva({...reserva, user: userInfo._id});
+    setReserva({ ...reserva, user: userInfo._id });
   }
 
   return (
     <>
-      <div className="search-section">
-        <h1 className="search-title"> Encuentra tu guardián </h1>
+       {/*Modales*/}
+       {showModal === 1 && (
+            <Calendario
+              setReserva={setReserva}
+              reserva={reserva}
+              closeCal={closeModal}
+              className='calendar1'
+            />
+          )}
+          {showModal === 2 && (
+            <CalendarioEnd
+              setShowModal={setShowModal}
+              reserva={reserva}
+              setReserva={setReserva}
+            />
+          )}
+          {showModal === 3 && (
+            <ModalHorario
+              setReserva={setReserva}
+              reserva={reserva}
+              handleModalOpen={handleModalOpen}
+              closeModal={closeModal}
+            />
+          )}
+      <div className="home-content">
+        <div className="search-section">
+          <h1 className="search-title"> Encuentra tu guardián </h1>
 
-        <form className="form-search">
-          <div className="form-search_big">
-            <img className="search-bimg" src="/assets/lupa@2x.png" alt="lupa" />
-            <input
-              onClick={()=> navigate('/maps')}
-              className="search-big"
-              type="text"
-              placeholder="¿Dónde te encuentras? Madrid, Barcelona…"
-              value={reserva.location ? reserva.location : ''}
-            />
-          </div>
-          <div className="form-search_div">
-            <img
-              className="search-img"
-              src="/assets/calendario@2x.png"
-              alt="calendar"
-            />
-            <input
-              onClick={() => handleModalOpen(1)}
-              className="search-input"
-              type="text"
-              placeholder="Depósito"
-              defaultValue={reserva.date_in ? reserva.date_in : ""}
-            />
-          </div>
-          <div className="form-search_div">
-            <img
-              className="search-img"
-              src="/assets/calendario@2x.png"
-              alt="calendar"
-            />
-            <input
-              onClick={() => handleModalOpen(2)}
-              className="search-input"
-              type="text"
-              placeholder="Retirada"
-              defaultValue={reserva.date_out ? reserva.date_out : ""}
-            />
-          </div>
-          <div className="form-search_div">
-            <img
-              className="search-img"
-              src="/assets/maletita@2x.png"
-              alt="calendar"
-            />
-            <input
-              className="search-input"
-              type="number"
-              placeholder="Nº de piezas"
-              value={reserva.cuantity !== 0 ? reserva.cuantity : ""}
-            />
-          </div>
+          <form className="form-search">
+            <div className="form-search_big">
+              <img
+                className="search-bimg"
+                src="/assets/lupa@2x.png"
+                alt="lupa"
+              />
+              <input
+                onClick={() => navigate("/maps")}
+                className="search-big"
+                type="text"
+                placeholder="¿Dónde te encuentras? Madrid, Barcelona…"
+                value={reserva.location ? reserva.location : ""}
+              />
+            </div>
+            <div className="form-search_div">
+              <img
+                className="search-img"
+                src="/assets/calendario@2x.png"
+                alt="calendar"
+              />
+              <input
+                onClick={() => handleModalOpen(1)}
+                className="search-input"
+                type="text"
+                placeholder="Depósito"
+                defaultValue={reserva.date_in ? reserva.date_in : ""}
+              />
+            </div>
+            <div className="form-search_div">
+              <img
+                className="search-img"
+                src="/assets/calendario@2x.png"
+                alt="calendar"
+              />
+              <input
+                onClick={() => handleModalOpen(2)}
+                className="search-input"
+                type="text"
+                placeholder="Retirada"
+                defaultValue={reserva.date_out ? reserva.date_out : ""}
+              />
+            </div>
+            <div className="form-search_div">
+              <img
+                className="search-img"
+                src="/assets/maletita@2x.png"
+                alt="calendar"
+              />
+              <input
+                className="search-input"
+                type="number"
+                placeholder="Nº de piezas"
+                value={reserva.cuantity !== 0 ? reserva.cuantity : ""}
+              />
+            </div>
 
-          <button className="search-button" onClick={buscar}> Buscar </button>
-        </form>
-        <Novedades />
-        <Experiencias />
-
-        {/*Modales*/}
-        
-        {showModal === 1 && (
-          <Calendario setReserva={setReserva} reserva={reserva} closeCal={closeModal} />
-        )}
-        {showModal === 2 && (
-          <CalendarioEnd
-            setShowModal={setShowModal}
-            reserva={reserva}
-            setReserva={setReserva}
-          />
-        )}
-        {showModal === 3 && (
-          <ModalHorario
-            setReserva={setReserva}
-            reserva={reserva}
-            handleModalOpen={handleModalOpen}
-            closeModal={closeModal}
-          />
-        )}
-        {/* {showModal === 4 && (
-            <Busqueda closeModal={closeModal}  setAddress={setAddress}/>
-        )} */}
+            <button className="search-button" onClick={buscar}>
+              {" "}
+              Buscar{" "}
+            </button>
+          </form>
+          <Novedades />
+          <Experiencias />
+          <Footer />
+        </div>
       </div>
-      <Footer/>
     </>
   );
 };
