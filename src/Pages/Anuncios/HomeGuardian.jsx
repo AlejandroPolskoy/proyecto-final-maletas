@@ -35,7 +35,6 @@ export default function HomeGuardian() {
     return (
 
         <div>
-            
             <img onClick={()=> navigate('/mi-perfil')} className="atras" src={backIcon} alt="back"></img>
 
             <p className="tusanuncios">Tus anuncios</p>
