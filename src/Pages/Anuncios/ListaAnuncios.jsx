@@ -32,7 +32,7 @@ export default function ListaAnuncios() {
     }
 
     function reservar() {
-        navigate("/detallesreserva");
+        if(selectedID) navigate("/user-file/" + selectedID);
     }
 
     const stars = 4.5;
@@ -65,7 +65,7 @@ export default function ListaAnuncios() {
             </div>
         </div>
         )}
-        <div><button onClick={reservar} className="lista-anuncios_btn">RESERVAR</button></div>
+        <div><button onClick={reservar} className="lista-anuncios_btn">Ver detalles</button></div>
         </div>
     )
 }
