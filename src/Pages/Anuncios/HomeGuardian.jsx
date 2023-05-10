@@ -35,10 +35,8 @@ export default function HomeGuardian() {
     return (
 
         <div>
+            <img onClick={()=> navigate('/mi-perfil')} className="atras" src={backIcon} alt="back"></img>
 
-            <NavLink href="/">
-                <img className="atras" src={backIcon} alt="back"></img>
-            </NavLink>
             <p className="tusanuncios">Tus anuncios</p>
             <div className="addEspacio">
 
