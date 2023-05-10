@@ -33,7 +33,8 @@ export default function ListaAnuncios() {
     }
 
     function reservar() {
-        navigate("/detallesreserva");
+        
+        navigate("/user-file/" + selectedID);
     }
 
     
@@ -68,7 +69,7 @@ export default function ListaAnuncios() {
             </div>
         </div>
         )}
-        <div><button onClick={reservar} className="lista-anuncios_btn">RESERVAR</button></div>
+        <div><button onClick={reservar} className="lista-anuncios_btn">Ver detalles</button></div>
         </div>
     )
 }
