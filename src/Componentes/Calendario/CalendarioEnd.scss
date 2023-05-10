@@ -4,13 +4,14 @@
     position : absolute;
     background-color: white;
     width: 414px;
+    height: 736px;
     z-index : 33;
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
     .cal-img {
+        margin-top: 15px;
         margin-left: 25px;
     }
 }
