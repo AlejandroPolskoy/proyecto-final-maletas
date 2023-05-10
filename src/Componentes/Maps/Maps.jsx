@@ -5,6 +5,7 @@ import "./Maps.scss";
 import { Search } from "./Search";
 import Footer from "../Footer/Footer";
 import { VariablesContext } from "../../Shared/VariablesContext";
+import { useNavigate } from "react-router-dom";
 
 const libraries = ["places"];
 
@@ -24,6 +25,7 @@ function Map() {
   const [map, setMap] = useState(null);
   const mapRef = useRef();
   const {setReserva, reserva} = useContext(VariablesContext);
+  const navigate = useNavigate();
 
   const onLoad = React.useCallback(function callback(map) {
     mapRef.current = map;
@@ -59,7 +61,9 @@ function Map() {
           <StandaloneSearchBox onLoad={setSearchBox}>
             <Search onPlacesChanged={handleOnPlacesChanged} setReserva={setReserva} reserva={reserva}/>
           </StandaloneSearchBox>
+          <img src="/assets/botonContinuar@3x.png" alt="continue" className="continue" onClick={()=> navigate('/')}/>
         </GoogleMap>
+        
       </div>
       <Footer />
     </>
