@@ -1,20 +1,21 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import socketIO from 'socket.io-client';
 import "./chat.scss";
 import { api } from "../../Componentes/shared";
+import { VariablesContext } from "../../Shared/VariablesContext";
 
 const socket = socketIO.connect(api);
 const userInfo = JSON.parse(localStorage.getItem("user")) || { name : "pepe", _id : "12345" };
 
 export default function Chat() {
-    const [messages, setMessages] = useState([]);
+    const {messages, setMessages} = useContext(VariablesContext);
     const [message, setMessage] = useState("");
     const lastMessageRef = useRef(null);
     
     useEffect(() => {
         socket.on('messageResponse', (data) => {
             setMessages([...messages, data])
-        });  
+        });
     }, [socket, messages]);
 
     useEffect(() => {
