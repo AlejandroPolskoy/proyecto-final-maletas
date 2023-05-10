@@ -45,7 +45,7 @@ export default function Chat() {
         socket.emit('message', {
             text: message,
             name: userInfo.name,
-            id: `${socket.id}${userInfo._id}`,
+            id: `${userInfo._id}`,
             socketID: socket.id,
         });
         setMessage("");
