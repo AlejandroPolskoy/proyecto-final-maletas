@@ -46,7 +46,7 @@ export default function Usuario() {
                 <p></p>
             </div>
             <div className="user_list_details">
-                <h4>Ayuda</h4>
+            <Link to="/logout"><h4>Logout</h4></Link>
                 <p></p>
             </div>
         </div>
