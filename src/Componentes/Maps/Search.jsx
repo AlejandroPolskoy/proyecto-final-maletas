@@ -1,34 +1,34 @@
-import { useState } from "react";
 import './Maps.scss'
 
-export const Search = ({ onPlacesChanged, setReserva, reserva }) => {
-  const [query, setQuery] = useState("");
 
-  const handleSearch = () => {
-    onPlacesChanged();
-  };
+export const Search = ({ onPlacesChanged, setReserva, reserva }) => {
 
   const handleInputChange = (event) => {
     setReserva({...reserva, location: event.target.value})
   };
 
-  const handleInputKeyPress = (event) => {
-    if (event.key === "Enter") {
-      onPlacesChanged();
-      handleInputChange(event);
-    }
+  const handleSearch = (event) => {
+
+    const input = event.target.offsetParent.querySelector('input[type="text"]');
+    const inputValue = input.value;
+
+    setReserva({...reserva, location: inputValue})
+    onPlacesChanged();
   };
 
   return (
+    <>
     <div className="search-container">
       <input
         type="text"
-        placeholder="Search places..."
+        placeholder="¿Dónde te encuentras? Madrid, Barcelona…"
         className="search"
         value={reserva.location}
-        onChange={handleInputChange}
-        onKeyDown={(e)=> handleInputKeyPress(e)}
+        onChangeCapture={handleInputChange}
+        onBlur={handleInputChange}
       />
+      <img  onClick={(e)=> handleSearch(e)} className='arrow-search' src="/assets/right-arrow.png" alt="search" />
     </div>
+    </>
   );
 };

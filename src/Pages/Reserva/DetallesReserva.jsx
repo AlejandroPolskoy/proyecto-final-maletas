@@ -15,7 +15,7 @@ export default function DetallesReserva() {
     const {reserva, setReserva} = useContext(VariablesContext);
 
     const handleBotonClick = () => {
-        axios.post( api + "/anuncios/newReserva").then( res => {
+        axios.post( api + "/anuncios/newReserva", reserva).then( res => {
             if(res.status === 200) {
                 //console.log( res );
                 setPaginas(paginas + 1);
