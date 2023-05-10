@@ -34,9 +34,9 @@ export default function ListaAnuncios() {
     function reservar() {
         navigate("/detallesreserva");
     }
-
-    let pixelPercentage = listaAnuncios.stars;
-    pixelPercentage = 100 / 5 * listaAnuncios.stars;
+    const stars = 4.5;
+    let pixelPercentage = stars;
+    pixelPercentage = 100 / 5 * stars;
 
     return (
         <div className="lista-anuncios">
@@ -58,7 +58,6 @@ export default function ListaAnuncios() {
                         <img className='star-file-star' src='/assets/Star_1.png' alt='star' />
                         <img className='star-file-star' src='/assets/Star_1.png' alt='star' />
                     </div>
-                <p className='random'> {`(${comments.length})`} </p>
             </div>
                 </div>
             </div>

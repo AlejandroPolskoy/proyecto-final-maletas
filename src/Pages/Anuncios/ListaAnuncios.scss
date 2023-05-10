@@ -1,0 +1,61 @@
+.lista-anuncios{
+    display: flex;
+    flex-direction: column;
+
+    &_contenedor{
+        border: 1px solid rgb(198, 198, 198);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 13px;
+        width: 360px;
+        margin: 9px auto;
+    }
+    &_img{
+        width: 150px;
+        height: 100%;
+        object-fit: cover;
+    }
+    &_details {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        flex-wrap: wrap;
+    }
+    &_profile{
+        width: 85px;
+        height: 85px;
+        object-fit: cover;
+        border-radius: 13px;
+    }
+    .star-file{
+        width:150px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        margin: 15px 5px 0 5px;
+
+        &-inner{
+            display: flex;
+            width: 40px;
+            height: 20px;
+            background-color: transparent;
+            background-color: #F7C04A;
+        }
+      
+        &-star {
+            width: 80px;
+            height: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .random {
+        color: #9f9c9a;
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 14px;
+        margin-left: 110px;
+        position: absolute;
+    }
+}
