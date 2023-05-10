@@ -19,7 +19,14 @@ export default function DetallesReserva() {
             if(res.status === 200) {
                 //console.log( res );
                 setPaginas(paginas + 1);
-                setReserva([]);
+                setReserva({
+                    time_in: "00:00",
+                    time_out: "00:00",
+                    cuantity: 0,
+                    date_in: "",
+                    date_out: "",
+                    location: ""
+                  });
             }
         })
     };
