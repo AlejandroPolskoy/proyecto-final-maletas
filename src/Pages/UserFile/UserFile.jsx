@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./UserFile.scss";
 import Footer from "../../Componentes/Footer/Footer";
 import {motion} from 'framer-motion';
 import { NavLink, useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { api } from '../../Componentes/shared';
+import { VariablesContext } from "../../Shared/VariablesContext";
 
 const UserFile = () => {
 
   const navigate = useNavigate();
   if(!localStorage.getItem("user")) navigate("/bienvenida");
   const user = JSON.parse(localStorage.getItem("user"));
+  const {reserva, setReserva} = useContext(VariablesContext);
  
- //falseando datos:
   const precio = 6;
-  // cantidad de maletas del anuncio
-  const maletas = 3;
 
   const {id} = useParams();
   const [anuncio, setAnuncio] = useState([]);
-  console.log( id );
+  
   function getDetallesAnuncio(id) {
     axios.get( api + "/anuncios/getLocation/" + id).then( res => {
         if(res.status === 200) {
@@ -35,15 +34,6 @@ const UserFile = () => {
     getDetallesAnuncio(id);
   },[])
 
-  // const anuncio = {
-  //     placeTitle: "El hall de Marta",
-  //     description: "Habitación espaciada a 15 minutos del centro de madrid y a 5 minutos del la Linea 1. Además ofrezco información turística personalizada.",
-  //     location: "Tetuan, Madrid",
-  //     stars: 4.5,
-  //     space: "7",
-  //     price: 10,
-  //   };
-
     const rules = [
       "Cómo debe ser tu maleta",
       "Tipo de cancelación de reserva",
@@ -56,19 +46,19 @@ const UserFile = () => {
         img: '/assets/oval@3x.png',
         name: "María",
         date: "En julio de 2019",
-        comment: "El hall es acogedor y super chulo, muy limpio, Marta nos ayudó a subir las maletas y nos transmitió muchísima seguridad.",
+        comment: `El hall es acogedor y super chulo, muy limpio, ${anuncio.owner && anuncio.owner.name} nos ayudó a subir las maletas y nos transmitió muchísima seguridad.`,
       },
       {
         img: '/assets/ovalCopy5@3x.png',
         name: "Robert",
         date: "En julio de 2019",
-        comment: "Marta is very nice and her space is so cozy, she also showed us the best places to go for tapas in Madrid. Thank you so much.",
+        comment: `${anuncio.owner && anuncio.owner.name} is very nice and her space is so cozy, she also showed us the best places to go for tapas in Madrid. Thank you so much.`,
       },
       {
         img: '/assets/ovalCopy6@3x.png',
         name: "Carla",
         date: "En junio de 2019",
-        comment: "Marta responde rápido y estuvo muy atenta. Nos dió muchos consejos sobre Madrid y pudimos hacer turismo tranquilamente. Su ubicación nos vino genial para el transporte de vuelta.",
+        comment: `${anuncio.owner && anuncio.owner.name} responde rápido y estuvo muy atenta. Nos dió muchos consejos sobre Madrid y pudimos hacer turismo tranquilamente. Su ubicación nos vino genial para el transporte de vuelta.`,
       },
     ]
 
@@ -120,7 +110,7 @@ const UserFile = () => {
         <div className="file-container_spam">
             <p className="file-container_spam-red"> ¡Rápido no le queda mucho espacio! </p>
             <img className='file-container_spam-img' src="/assets/maletita@2x.png" alt="suitcase" />
-            <p className='file-container_spam-black'> {`${maletas}/${anuncio.capacity}`} </p>
+            <p className='file-container_spam-black'> {`${reserva.cuantity}/${anuncio.capacity}`} </p>
         </div>
 
         {/* ESPECIFICACIONES */}
@@ -199,7 +189,7 @@ const UserFile = () => {
 
         {/* OTROS LOCKERS */}
         <div className="file-container_lockers">
-            <h4 className="file-container_lockers_title"> Normas de Marta </h4>
+            <h4 className="file-container_lockers_title"> Otros lockers </h4>
             <motion.div className='slider-container'>
                 <motion.div className='slider' drag='x' dragConstraints={{right: 2, left: -597}}>
                 {images.map((image, index) =>{ return (
@@ -212,7 +202,7 @@ const UserFile = () => {
         {/* PRECIO */}
         <div className="file-container_reserve">
             <div className="file-container_reserve-price">
-                <h3 className="price-title"> Total: {maletas * precio} € </h3>
+                <h3 className="price-title"> Total: {reserva.cuantity * precio} € </h3>
             </div>
             <NavLink to='/detallesreserva'><button className="file-container_reserve-btn"> Reservar Ahora </button></NavLink>
         </div>

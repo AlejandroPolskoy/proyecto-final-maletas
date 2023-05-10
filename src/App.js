@@ -12,7 +12,7 @@ import HacerseGuardian from "./Pages/Anuncios/HacerseGuardian";
 import { Maps } from "./Componentes/Maps/Maps";
 import Logout from "./Pages/Login/Logout";
 import Chat from "./Pages/Chat/Chat";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { VariablesContext } from "./Shared/VariablesContext";
 import DetallesReserva from "./Pages/Reserva/DetallesReserva";
 import UserFile from "./Pages/UserFile/UserFile";
@@ -31,9 +31,15 @@ function App() {
     date_out: "",
     location: ""
   });
+  const [messages, setMessages] = useState([]);
+  const [isNewMessages, setNotification] = useState(false);
+
+  useEffect(()=> {
+    setNotification(true);
+  }, [messages]);
 
   return (
-    <VariablesContext.Provider value={{ reserva, setReserva }}>
+    <VariablesContext.Provider value={{ reserva, setReserva, messages, setMessages, isNewMessages, setNotification }}>
       <Router>
         <div className="App">
           <Routes>
