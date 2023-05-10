@@ -69,7 +69,7 @@ const Registrar = () => {
 
         <label className='check'>
             <input type='checkbox' className='checkbox' />
-            <p className='check-p'>Quiero recibir consejos sobre como gestionar mi equipaje, ofertas, novedades y totros correos electrónicos de Maleteo</p>
+            <p className='check-p'>Quiero recibir consejos sobre como gestionar mi equipaje, ofertas, novedades y otros correos electrónicos de Maleteo.</p>
         </label>
 
         <button type='submit' className='btn-login'> Registrarse </button>
