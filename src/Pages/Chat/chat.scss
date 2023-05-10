@@ -1,4 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;500&family=Noto+Sans&display=swap');
+
+
 .chat {
+
+    padding-top: 30px;
+    padding-bottom: 60px;
+
 
     &-img {
         width: 48px;
@@ -7,40 +14,86 @@
         padding-bottom: 6px;
     }
 
+  
+
+    .img__container{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-size: cover;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+
+    img {
+        width: 100%;
+        position: absolute;
+        top: -5px;
+        right: 0;
+
+    }
+
     &-conversation {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
         width: 90%;
-        margin: 0 auto;
-        align-items: flex-end;
+        padding-left: 10px;
 
         
 
-        img {
-            width: 100%;
-        }
-        p {
-            background-color: rgb(251 251 251);
+   
+
+        .texto__user01 {
+            font-family: Noto Sans;
+            background-color: rgb(240, 240, 240);
+            color: rgb(65, 65, 65);
             width: 80%;
+            text-align: left;
+            text-indent: 10px;
+            height: 50px;
             border-radius: 4px;
-            box-shadow: 1px 2px #888888;
         }
+
+      
     }
 }
 .reverse {
+    display: flex;
     flex-direction: row-reverse;
+
+    .texto__user02{
+        font-family: Noto Sans;
+        background-color: rgb(246, 143, 36);
+        color: white;
+        width: 80%;
+        text-align: left;
+        text-indent: 10px;
+        height: 50px;
+        border-radius: 4px;
+    }
 }
 
 .chat-input {
     position: fixed;
+    background-color: rgb(255, 255, 255);
     bottom: 0;
-    width: 100%;
-    border-top: 1px grey solid;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    width: 92%;
+    
 
     input[type=text] {
+        font-family: Noto Sans;
+        font-size: 18px;
         width: 82%;
         margin: 0;
-        border: 0;
-        padding: 12px 0;
+        border: 1px solid gray;
+        background-color: rgb(255, 255, 255);
+        border-radius: 30px 30px 30px 30px;
+        padding: 10px 0;
+        color: rgb(68, 68, 68);
     }
 
     input[type=submit] {
@@ -50,4 +103,11 @@
         background-color: transparent;
         padding: 12px 0;
     }
+}
+
+.enviar{
+    font-family: Noto Sans;
+    font-weight: 500;
+    font-size: 18px;
+    color: rgb(56, 159, 255)
 }
