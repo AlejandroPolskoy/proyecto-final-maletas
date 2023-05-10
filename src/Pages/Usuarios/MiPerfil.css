@@ -1,0 +1,47 @@
+.mi-perfil {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+.mi-perfil_form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 30px;
+}
+.mi-perfil_label {
+  color: rgb(0, 0, 0);
+  opacity: 55%;
+  font-size: 15px;
+  font-weight: bolder;
+  font-family: "Noto Sans", sans-serif;
+}
+.mi-perfil_input {
+  width: 88%;
+  height: 25px;
+  margin: 12px 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1.5px solid rgb(203, 203, 203);
+  font-family: "Noto Sans", sans-serif;
+}
+.mi-perfil_btn {
+  width: 60%;
+  height: 40px;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(246, 143, 36);
+  box-shadow: 1px 0 0 0 #ECECEC;
+  color: white;
+  font-weight: bolder;
+  margin: 45px 0 0 17%;
+  font-family: "Noto Sans", sans-serif;
+}
+.mi-perfil_p {
+  color: rgb(0, 0, 0);
+  opacity: 58%;
+  font-size: 15px;
+  font-family: "Noto Sans", sans-serif;
+}/*# sourceMappingURL=MiPerfil.css.map */
