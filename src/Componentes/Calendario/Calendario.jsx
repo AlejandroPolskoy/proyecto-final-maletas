@@ -44,7 +44,7 @@ const Calendario = ({setReserva, reserva, closeCal}) => {
                 {months.map((month) => (
                     <Calendar
                         key={`${month.getMonth()}-${month.getFullYear()}`}
-                        onChange={(date) => setReserva({...reserva, startDate: formatDate(date)})}
+                        onChange={(date) => setReserva({...reserva, date_in: formatDate(date)})}
                         value={month}
                         maxDetail="month"
                         showNeighboringMonth={false}

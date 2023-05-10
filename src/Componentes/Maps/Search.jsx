@@ -4,8 +4,7 @@ import './Maps.scss'
 export const Search = ({ onPlacesChanged, setReserva, reserva }) => {
 
   const handleInputChange = (event) => {
-    setReserva({...reserva, address: event.target.value})
-    console.log("antes:", reserva.address)
+    setReserva({...reserva, location: event.target.value})
   };
 
   const handleSearch = (event) => {
@@ -13,10 +12,8 @@ export const Search = ({ onPlacesChanged, setReserva, reserva }) => {
     const input = event.target.offsetParent.querySelector('input[type="text"]');
     const inputValue = input.value;
 
-    setReserva({...reserva, address: inputValue})
+    setReserva({...reserva, location: inputValue})
     onPlacesChanged();
-    console.log("despues:", reserva.address);
-    
   };
 
   return (
@@ -26,7 +23,7 @@ export const Search = ({ onPlacesChanged, setReserva, reserva }) => {
         type="text"
         placeholder="¿Dónde te encuentras? Madrid, Barcelona…"
         className="search"
-        value={reserva.address}
+        value={reserva.location}
         onChangeCapture={handleInputChange}
         onBlur={handleInputChange}
       />

@@ -56,7 +56,7 @@ const Home = () => {
               className="search-big"
               type="text"
               placeholder="¿Dónde te encuentras? Madrid, Barcelona…"
-              value={reserva.address ? reserva.address : ''}
+              value={reserva.location ? reserva.location : ''}
             />
           </div>
           <div className="form-search_div">
@@ -70,7 +70,7 @@ const Home = () => {
               className="search-input"
               type="text"
               placeholder="Depósito"
-              defaultValue={reserva.startDate ? reserva.startDate : ""}
+              defaultValue={reserva.date_in ? reserva.date_in : ""}
             />
           </div>
           <div className="form-search_div">
@@ -84,7 +84,7 @@ const Home = () => {
               className="search-input"
               type="text"
               placeholder="Retirada"
-              defaultValue={reserva.endDate ? reserva.endDate : ""}
+              defaultValue={reserva.date_out ? reserva.date_out : ""}
             />
           </div>
           <div className="form-search_div">
@@ -97,7 +97,7 @@ const Home = () => {
               className="search-input"
               type="number"
               placeholder="Nº de piezas"
-              value={reserva.amountPack !== 0 ? reserva.amountPack : ""}
+              value={reserva.cuantity !== 0 ? reserva.cuantity : ""}
             />
           </div>
 

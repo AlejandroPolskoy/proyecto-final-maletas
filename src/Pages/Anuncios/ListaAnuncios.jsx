@@ -27,16 +27,13 @@ export default function ListaAnuncios() {
     }
 
     function selecteChanged(e, id) {
-        console.log( id);
-        setReserva({...reserva, anuncio: id})
+        setReserva({...reserva, location: id})
         selectedID = id;
     }
 
     function reservar() {
         navigate("/detallesreserva");
     }
-
-    
 
     const stars = 4.5;
     let pixelPercentage = stars;
