@@ -8,17 +8,33 @@ import { useNavigate } from "react-router-dom";
 const socket = socketIO.connect(api);
 const userInfo = JSON.parse(localStorage.getItem("user")) || { name : "pepe", _id : "12345" };
 
+
 export default function Chat() {
     const {messages, setMessages} = useContext(VariablesContext);
     const [message, setMessage] = useState("");
     const lastMessageRef = useRef(null);
     const navigate = useNavigate();
-    
+    const [users, setUsers] = useState({});
+    if(!localStorage.getItem("user")) navigate("/bienvenida");
+    const userInfo = JSON.parse(localStorage.getItem("user"));
+    const [userName, setUserName] = useState(userInfo.name);
+
+    useEffect(()=> {
+        socket.emit('newUser', { userName, socketID: socket.id });
+    }, [])
+
     useEffect(() => {
         socket.on('messageResponse', (data) => {
             setMessages([...messages, data])
         });
     }, [socket, messages]);
+
+    useEffect(() => {
+        socket.on('newUserResponse', (data) => {
+            setUsers([data]);
+            console.log("USERS:", data );
+        });
+    }, [socket, users]);
 
     useEffect(() => {
         lastMessageRef.current?.scrollIntoView({ behavior: 'smooth' });
