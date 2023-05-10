@@ -15,7 +15,8 @@ export default function Reserva() {
   const confirmar = (id) => {
     axios.put( api + "/anuncios/acceptReserva/" + id).then( res => {
       if(res.status === 200) {
-        setReservas(reservas.filter(list => list.id !== id));
+        //getReservas();
+        navigate("/chat");
       }
     })
   }
@@ -23,7 +24,7 @@ export default function Reserva() {
   const decline = (id) => {
     axios.put( api + "/anuncios/declineReserva/" + id).then( res => {
       if(res.status === 200) {
-        setReservas(reservas.filter(list => list.id !== id));
+        getReservas();
       }
     })
   }
@@ -48,11 +49,10 @@ export default function Reserva() {
           <img className="reserva_atras" src={backIcon} alt="back"></img>
         </a>
         <h2>Petición de reserva</h2>
-        {reservas && reservas.map((ubicacion) => ubicacion.map((reserva,index) => {return (
-        <div key={index} className="reserva_user">
+        {reservas && reservas.map((ubicacion) => ubicacion.map((reserva,index) => <div key={index} className="reserva_user">
             <div className="reserva_user_all">
                 <div className="reserva_user_img">
-                    <img src={reserva.image} alt={reserva.name} className="user_img"/>
+                    <img src={reserva.user.image} alt={reserva.user.name} className="user_img"/>
                 </div>
                 <div className="reserva_user_detail">
                     <h4 className="user_title">{reserva.name}</h4>
@@ -65,8 +65,8 @@ export default function Reserva() {
                 </div>
             </div>
         </div>
-        )}))}
-        {!reservas || reservas.length == 0 && <div>
+        ))}
+        {!reservas || Math.max(...reservas.map((item)=> item.length )) == 0 && <div>
           No hay reservas pendientes
         </div>}
       </div>
