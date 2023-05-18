@@ -63,7 +63,7 @@ export default function Disponibilidad(props) {
                     <div className="inputs__container">
 
                         <div className="input__container">
-                            <label for="input00">Especifica tus días disponibles</label>
+                            <label htmlFor="input00">Especifica tus días disponibles</label>
                             <input
                                 type='text' id="input00" placeholder='Selecciona una opción'
                                 className="inputComponente"
@@ -75,11 +75,11 @@ export default function Disponibilidad(props) {
 
 
                             <div className="input__container"></div>
-                            <label for="input01">Especifica tu horario disponible</label>
+                            <label htmlFor="input01">Especifica tu horario disponible</label>
                             <input type='text' id="input02" placeholder='Selecciona una opción'
                             className="inputComponente"
                             onClick = {handleInputClick02}
-                            value={selectedDisponibilidad02}
+                            defaultValue={selectedDisponibilidad02}
                             ></input>
                         </div>
                     </div>
@@ -92,14 +92,11 @@ export default function Disponibilidad(props) {
                         </div>
                     </div>
 
-                    <div className="modal__container02" style={{display: modalShow02 ? "block" : "none"}}>
-                        <div className="modal__content02">
+                    <div className="modal__container" style={{display: modalShow02 ? "block" : "none"}}>
+                        <div className="modal__content">
                             <p onClick={() => handleOptionClick02("Mañana")}>Mañana</p>
                             <p onClick={() => handleOptionClick02("Tarde")}>Tarde</p>
                             <p onClick={() => handleOptionClick02("Ambos")}>Ambos</p> 
-                            
-        
-
                         </div>
                     </div>
                 </div>

@@ -43,7 +43,7 @@ export default function Fotos(props) {
                     <div className="inputs__container">
 
                         <div className="input__container">
-                            <label for="input01">Selecciona tus fotos</label>
+                            <label htmlFor="input01">Selecciona tus fotos</label>
                             <input
                                 type="file" id="input02"
                                 className="inputComponente"

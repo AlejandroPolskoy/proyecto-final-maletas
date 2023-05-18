@@ -79,8 +79,6 @@ export default function HacerseGuardian() {
     const config = {
       headers: { 'content-type': 'multipart/form-data' }
     }
-    console.log("datos:" ,direccion, titulo, userInfo._id, selectedOption, selectedOption02, selectedFileName, servicio,selectedDisponibilidad,selectedDisponibilidad02);
-    console.log( datosAnuncio );
     axios.post( api + "/anuncios/setLocation", datosAnuncio, config).then( res => {
       if(res.status == 201) {
         navigate("/homeguardian");
@@ -103,12 +101,14 @@ export default function HacerseGuardian() {
   return (
     <div className='guardian-container'>
       {paginas !== 0 && paginas !== 6 && (
-        <img
-          onClick={handleFlechaClick}
-          className="flecha"
-          src={flecha}
-          alt="flecha"
-        ></img>
+        <div className="arrow-continue">
+          <img
+            onClick={handleFlechaClick}
+            className=""
+            src={flecha}
+            alt="flecha"
+          ></img>
+        </div>
       )}
 
       {paginas === 0 && (
@@ -136,13 +136,13 @@ export default function HacerseGuardian() {
                   type="text"
                   id="input00"
                   className="inputGuardian"
-                  value={selectedOption}
+                  defaultValue={selectedOption}
                 />
                 <input
                   type="text"
                   id="input001"
                   className="inputGuardian"
-                  value={selectedOption02}
+                  defaultValue={selectedOption02}
                 />
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function HacerseGuardian() {
                 type="text"
                 id="input01"
                 className="inputGuardian"
-                value={direccion}
+                defaultValue={direccion}
               />
             </div>
             <div>
@@ -162,7 +162,7 @@ export default function HacerseGuardian() {
                 type="text"
                 id="input02"
                 className="inputGuardian"
-                value={selectedFileName}
+                defaultValue={selectedFileName ? selectedFileName.name : ""}
               />
             </div>
             <div>
@@ -171,7 +171,7 @@ export default function HacerseGuardian() {
                 type="text"
                 id="input03"
                 className="inputGuardian"
-                value={titulo}
+                defaultValue={titulo}
               />
             </div>
             <div>
@@ -183,13 +183,13 @@ export default function HacerseGuardian() {
                   type="text"
                   id="input00"
                   className="inputGuardian"
-                  value={selectedDisponibilidad}
+                  defaultValue={selectedDisponibilidad}
                 />
                 <input
                   type="text"
                   id="input001"
                   className="inputGuardian"
-                  value={selectedDisponibilidad02}
+                  defaultValue={selectedDisponibilidad02}
                 />
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function HacerseGuardian() {
                 type="text"
                 id="input03"
                 className="inputGuardian"
-                value={servicio}
+                defaultValue={servicio}
               />
             </div>
           </div>

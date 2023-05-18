@@ -37,22 +37,19 @@ export default function Servicios(props) {
                     <div className="inputs__container">
 
                         <div className="input__container">
-                            <label for="input01">Nº de Maletas</label>
+                            <label htmlFor="input01">Nº de Maletas</label>
                             <input
                                 type="number" id="input01"
                                 className="inputComponente"
                                 value={props.servicio}
                                 onChange={handleOnChange}
-        
                             ></input>
-
-
                         </div>
                     </div>
                 </div>
 
            
-            <img onClick={props.onVolverClick} className="flecha" src={flecha} alt="back"></img>
+            <div className='arrow-continue'><img onClick={props.onVolverClick} src={flecha} alt="back"></img></div>
             
 
             

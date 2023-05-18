@@ -3,7 +3,6 @@ import "./Home.scss";
 import Novedades from "../../Componentes/Novedades/Novedades";
 import Experiencias from "../../Componentes/Experiencias/Experiencias";
 import Calendario from "../../Componentes/Calendario/Calendario";
-import CalendarioEnd from "../../Componentes/Calendario/CalendarioEnd";
 import ModalHorario from "../../Componentes/ModalHorario/ModalHorario";
 import Busqueda from "../../Componentes/Busqueda/Busqueda";
 import Footer from "../../Componentes/Footer/Footer";
@@ -43,6 +42,10 @@ const Home = () => {
     setReserva({ ...reserva, user: userInfo._id });
   }
 
+  const formatDate = (date) => {
+    return date.toLocaleDateString('en-GB'); // Cambia el formato de la fecha
+  };
+
   return (
     <>
        {/*Modales*/}
@@ -52,13 +55,16 @@ const Home = () => {
               reserva={reserva}
               closeCal={closeModal}
               className='calendar1'
+              dateKey={"date_in"}
             />
           )}
           {showModal === 2 && (
-            <CalendarioEnd
-              setShowModal={setShowModal}
-              reserva={reserva}
+            <Calendario
               setReserva={setReserva}
+              reserva={reserva}
+              closeCal={closeModal}
+              className='calendar1'
+              dateKey={"date_out"}
             />
           )}
           {showModal === 3 && (
@@ -85,7 +91,7 @@ const Home = () => {
                 className="search-big"
                 type="text"
                 placeholder="¿Dónde te encuentras? Madrid, Barcelona…"
-                value={reserva.location ? reserva.location : ""}
+                defaultValue={reserva.locationString ? reserva.locationString : ""}
               />
             </div>
             <div className="form-search_div">
@@ -99,7 +105,7 @@ const Home = () => {
                 className="search-input"
                 type="text"
                 placeholder="Depósito"
-                defaultValue={reserva.date_in ? reserva.date_in : ""}
+                defaultValue={reserva.date_in ? formatDate(reserva.date_in) : ""}
               />
             </div>
             <div className="form-search_div">
@@ -113,7 +119,7 @@ const Home = () => {
                 className="search-input"
                 type="text"
                 placeholder="Retirada"
-                defaultValue={reserva.date_out ? reserva.date_out : ""}
+                defaultValue={reserva.date_out ? formatDate(reserva.date_out) : ""}
               />
             </div>
             <div className="form-search_div">
@@ -126,7 +132,8 @@ const Home = () => {
                 className="search-input"
                 type="number"
                 placeholder="Nº de piezas"
-                value={reserva.cuantity !== 0 ? reserva.cuantity : ""}
+                value={reserva.cuantity !== 0 ? reserva.cuantity : 1}
+                onChange={(e)=>setReserva({...reserva, cuantity : e.target.value})}
               />
             </div>
 

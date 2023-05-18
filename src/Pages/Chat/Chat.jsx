@@ -4,34 +4,38 @@ import "./chat.scss";
 import { api } from "../../Componentes/shared";
 import { VariablesContext } from "../../Shared/VariablesContext";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const socket = socketIO.connect(api);
+const socket = socketIO.connect(api); 
 const userInfo = JSON.parse(localStorage.getItem("user")) || { name : "pepe", _id : "12345" };
 
 
 export default function Chat() {
-    const {messages, setMessages} = useContext(VariablesContext);
+    const {messages, setMessages, setNotification} = useContext(VariablesContext);
     const [message, setMessage] = useState("");
     const lastMessageRef = useRef(null);
     const navigate = useNavigate();
-    const [users, setUsers] = useState({});
+    const [users, setUsers] = useState([]);
     if(!localStorage.getItem("user")) navigate("/bienvenida");
     const userInfo = JSON.parse(localStorage.getItem("user"));
-    const [userName, setUserName] = useState(userInfo.name);
 
     useEffect(()=> {
-        socket.emit('newUser', { userName, socketID: socket.id });
+        socket.emit('newUser', { userName: userInfo.name, userID: userInfo._id, userImage: userInfo.image, socketID: socket.id });
     }, [])
+
+    useEffect(()=>()=> {
+        setNotification(false);
+    })
 
     useEffect(() => {
         socket.on('messageResponse', (data) => {
-            setMessages([...messages, data])
+            setMessages([...messages, data]);
         });
     }, [socket, messages]);
 
     useEffect(() => {
         socket.on('newUserResponse', (data) => {
-            setUsers([data]);
+            setUsers(data);
             console.log("USERS:", data );
         });
     }, [socket, users]);
@@ -45,7 +49,8 @@ export default function Chat() {
         socket.emit('message', {
             text: message,
             name: userInfo.name,
-            id: `${userInfo._id}`,
+            userID: `${userInfo._id}`,
+            userImage: userInfo.image,
             socketID: socket.id,
         });
         setMessage("");
@@ -68,7 +73,8 @@ export default function Chat() {
                     ) : (
                         <div className="chat-conversation reverse" key={index}>
                             <div className="img__container">
-                                <img src={userInfo.image} alt="profile"/>
+                                {/* <img src={users.find((user)=> user.userID === message.userID).userImage} alt="profile"/> */}
+                                <img src={message.userImage} alt="profile"/>
                             </div>
                             <p className="texto__user02">{message.text}</p>
                         </div>

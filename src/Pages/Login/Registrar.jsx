@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import backI from '../../assets/icons8Back100Copy@2x.png'
-import './Register.scss';
+import './Login.scss';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { api } from '../../Componentes/shared';

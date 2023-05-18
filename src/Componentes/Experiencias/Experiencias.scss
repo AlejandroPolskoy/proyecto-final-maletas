@@ -3,7 +3,7 @@
 
 .experience-intro {
     text-align: start;
-    margin: 45px 0 0 15px;
+    margin: 45px 0 0 24px;
     font-family: "Catamaran", sans-serif;
     font-weight: 400;
     font-size: 28px;
@@ -11,10 +11,11 @@
 }
 
 .exp-container {
+    width: 90%;
+    margin: 0 auto;
+
     .exp-card {
-        width: 400px;
         height: 365px;
-        margin: 0 0 0 10px;;
         text-align: start;
 
         &_upper {

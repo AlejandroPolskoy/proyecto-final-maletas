@@ -13,7 +13,7 @@ export default function Footer() {
 
     const userInfo = JSON.parse(localStorage.getItem("user")) || {};
 
-    const {isNewMessage} = useContext(VariablesContext);
+    const {isNewMessages} = useContext(VariablesContext);
 
     return (
         <div className="footer">
@@ -27,7 +27,7 @@ export default function Footer() {
                 (<div className='footer_nav nav-1'>
                     <Link to="/"><img src="/assets/inicio@3x.png" alt="Icono inicio"/></Link>
                     <Link to="/maps"><img src="/assets/buscar@3x.png" alt="Icono buscar"/></Link>
-                    <Link to="/chat"><img src={isNewMessage ? "/assets/newmensaje@3x.png" :"/assets/mensaje@3x.png"} alt="Icono mensajes"/></Link>
+                    <Link to="/chat"><img src={isNewMessages ? "/assets/newmensaje@3x.png" : "/assets/mensaje@3x.png"} alt="Icono mensajes"/></Link>
                     <Link to={"/mi-perfil"}><img src="/assets/usuario@3x.png" alt="Icono usuario"/></Link>
                 </div>) }
             </nav>

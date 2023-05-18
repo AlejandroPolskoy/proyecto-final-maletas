@@ -2,7 +2,7 @@
 
 .home-content {
     max-width: 414px;
-    height: 736px;
+    // height: 736px;
     padding-bottom: 70px;
     overflow-y: hidden;
     position: relative;
@@ -11,12 +11,13 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        height: 736px;
-        overflow-y: scroll ;
+        // height: 736px;
+        // overflow-y: scroll ;
         position: relative;
 
         .search-title {
-            margin-left: 15px;
+            // margin-left: 15px;
+            margin: 0 auto;
             font-family: 'Catamaran', sans-serif; 
             font-weight: 400;
             font-size: 28px;
@@ -28,7 +29,8 @@
             justify-items: center;
             justify-content: center;
             align-items: center;
-            margin-left: 15px;
+            // margin-left: 15px;
+            margin: 0 auto;
             font-family: 'Noto Sans', sans-serif;
 
             &_big {

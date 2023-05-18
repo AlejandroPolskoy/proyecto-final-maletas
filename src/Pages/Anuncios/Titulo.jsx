@@ -39,7 +39,7 @@ export default function Titulo(props) {
                     <div className="inputs__container">
 
                         <div className="input__container">
-                            <label for="input01">Título de tu espacio</label>
+                            <label htmlFor="input01">Título de tu espacio</label>
                             <input
                                 type="text" id="input01" placeholder='Ej: El Hall de Marta'
                                 className="inputComponente"

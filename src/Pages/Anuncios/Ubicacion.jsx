@@ -39,11 +39,11 @@ export default function Ubicacion(props) {
                     <div className="inputs__container">
 
                         <div className="input__container">
-                            <label for="input01">Especifica tu ubicación</label>
+                            <label htmlFor="input01">Especifica tu ubicación</label>
                             <input
                                 type="text" id="input01" placeholder='Madrid'
                                 className="inputComponente"
-                                value={props.direccion}
+                                defaultValue={props.direccion}
                                 onChange={handleOnChange}
         
                             ></input>
