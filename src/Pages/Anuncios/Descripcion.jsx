@@ -64,23 +64,23 @@ export default function Anuncios(props) {
                     <div className="inputs__container">
 
                         <div className="input__container">
-                            <label for="input00">Especifica tu propiedad</label>
+                            <label htmlFor="input00">Especifica tu propiedad</label>
                             <input
                                 type='text' id="input00" placeholder='Selecciona una opción'
                                 className="inputComponente"
                                 onClick={handleInputClick}
-                                value={selectedOption}
+                                defaultValue={selectedOption}
                                 onChange={handleOnChange}
 
                             ></input>
 
 
                             <div className="input__container"></div>
-                            <label for="input01">¿Qué tipo de espacio?</label>
+                            <label htmlFor="input01">¿Qué tipo de espacio?</label>
                             <input type='text' id="input02" placeholder='Selecciona una opción'
                             className="inputComponente"
                             onClick = {handleInputClick02}
-                            value={selectedOption02}
+                            defaultValue={selectedOption02}
                             ></input>
                         </div>
                     </div>
@@ -93,15 +93,13 @@ export default function Anuncios(props) {
                         </div>
                     </div>
 
-                    <div className="modal__container02" style={{display: modalShow02 ? "block" : "none"}}>
-                        <div className="modal__content02">
+                    <div className="modal__container" style={{display: modalShow02 ? "block" : "none"}}>
+                        <div className="modal__content">
                             <p onClick={() => handleOptionClick02("Habitación")}>Habitación</p>
                             <p onClick={() => handleOptionClick02("Hall")}>Hall</p>
                             <p onClick={() => handleOptionClick02("Trastero")}>Trastero</p> 
                             <p onClick={() => handleOptionClick02("Buhardilla")}>Buhardilla</p>
                             <p onClick={() => handleOptionClick02("Garaje")}>Garaje</p> 
-        
-
                         </div>
                     </div>
                 </div>

@@ -3,8 +3,8 @@ import './Calendario.scss';
 import Calendar from 'react-calendar';
 import Footer from '../Footer/Footer';
 
-const Calendario = ({setReserva, reserva, closeCal}) => {
-
+const Calendario = ({setReserva, reserva, closeCal, dateKey}) => {
+    
     const months = Array.from({ length: 12 }, (_, i) => new Date(new Date().getFullYear(), i, 1));
 
     const selected = (e) => {
@@ -19,10 +19,6 @@ const Calendario = ({setReserva, reserva, closeCal}) => {
           selectedTile.classList.add('selected');
         }
     }
-
-    const formatDate = (date) => {
-        return date.toLocaleDateString('en-GB'); // Cambia el formato de la fecha
-    };
 
     useEffect(() => {
         const tiles = document.querySelectorAll('.react-calendar__tile');
@@ -41,20 +37,20 @@ const Calendario = ({setReserva, reserva, closeCal}) => {
         <div className='content'>
             <img className='cal-img' onClick={closeCal} src='/assets/icons8Back100Copy@2x.png' alt='back' />
             <div className='calendar-container'>
-                {months.map((month) => (
-                    <>
-                    <Calendar
-                        key={`${month.getMonth()}-${month.getFullYear()}`}
-                        onChange={(date) => setReserva({...reserva, date_in: formatDate(date)})}
-                        value={month}
-                        maxDetail="month"
-                        showNeighboringMonth={false}
-                        onClickDay={(e)=> selected(e)}
-                    />
-                    <div className='btn-div'>
-                        <button onClick={closeCal} className='calendar_btn'> Continuar </button> 
+                {months.map((month, index) => (
+                    <div key={index}>
+                        <Calendar
+                            key={`${month.getMonth()}-${month.getFullYear()}`}
+                            onChange={(date) => setReserva({...reserva, [dateKey]:date})}
+                            value={month}
+                            maxDetail="month"
+                            showNeighboringMonth={false}
+                            onClickDay={(e)=> selected(e)}
+                        />
+                        <div className='btn-div'>
+                            <button onClick={closeCal} className='calendar_btn'> Continuar </button> 
+                        </div>
                     </div>
-                    </>
                 ))}
                 
             </div>

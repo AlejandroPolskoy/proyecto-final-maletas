@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     font-family: "Catamaran", sans-serif;
-    padding: 18px 23px;
+    // padding: 18px 23px;
+    padding-bottom: 70px;
 
     &_selected{
         border: 4px solid rgb(246, 143, 36);

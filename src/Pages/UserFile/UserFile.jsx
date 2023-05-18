@@ -15,6 +15,7 @@ const UserFile = () => {
   const {reserva, setReserva} = useContext(VariablesContext);
  
   const precio = 6;
+  const precioAlDia = 4;
 
   const {id} = useParams();
   const [anuncio, setAnuncio] = useState([]);
@@ -22,10 +23,8 @@ const UserFile = () => {
   function getDetallesAnuncio(id) {
     axios.get( api + "/anuncios/getLocation/" + id).then( res => {
         if(res.status === 200) {
-            console.log( res );
+            //console.log( "Detalles anuncio:", res );
             setAnuncio({...res.data, stars: 4});
-        } else {
-            
         }
     })
   }
@@ -64,8 +63,8 @@ const UserFile = () => {
 
   const images = [{src: '/assets/room1.avif'}, {src: '/assets/room2.avif'}, {src: '/assets/room3.avif'},]
 
-    let pixelPercentage = anuncio.stars;
-    pixelPercentage = 100 / 5 * anuncio.stars;
+    let stars = anuncio.stars || 3;
+    let pixelPercentage = 100 / 5 * stars;
 
   return (
     <>
@@ -181,7 +180,7 @@ const UserFile = () => {
             {rules.map((rule, index)=> {
                 return (
                     <div className="rules-box" key={index}>
-                       <p className="rules-box_p">{rule}</p>
+                        <p className="rules-box_p">{rule}</p>
                     </div>
                 )
             })}
@@ -202,7 +201,7 @@ const UserFile = () => {
         {/* PRECIO */}
         <div className="file-container_reserve">
             <div className="file-container_reserve-price">
-                <h3 className="price-title"> Total: {reserva.cuantity * precio} € </h3>
+                <h3 className="price-title"> Total: {reserva.cuantity * precio + (Math.round((reserva.date_out - reserva.date_in) / (1000 * 60 * 60 * 24)) - 1) * reserva.cuantity * precioAlDia} € </h3>
             </div>
             <NavLink to='/detallesreserva'><button className="file-container_reserve-btn"> Reservar Ahora </button></NavLink>
         </div>

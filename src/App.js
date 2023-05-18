@@ -26,10 +26,11 @@ function App() {
   const [reserva, setReserva] = useState({
     time_in: "00:00",
     time_out: "00:00",
-    cuantity: 0,
+    cuantity: 1,
     date_in: "",
     date_out: "",
-    location: ""
+    location: "",
+    locationString: ""
   });
   const [messages, setMessages] = useState([]);
   const [isNewMessages, setNotification] = useState(false);

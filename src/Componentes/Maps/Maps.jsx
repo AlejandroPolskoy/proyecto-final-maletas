@@ -69,7 +69,9 @@ function Map() {
           <StandaloneSearchBox onLoad={setSearchBox}>
             <Search onPlacesChanged={handleOnPlacesChanged} setReserva={setReserva} reserva={reserva}/>
           </StandaloneSearchBox>
-          <img src="/assets/botonContinuar@3x.png" alt="continue" className="continue" onClick={()=> navigate('/')}/>
+          <div className="arrow-continue">
+            <img src="/assets/botonContinuar@3x.png" alt="continue" onClick={()=> navigate('/')}/>
+          </div>
         </GoogleMap>
         
       </div>

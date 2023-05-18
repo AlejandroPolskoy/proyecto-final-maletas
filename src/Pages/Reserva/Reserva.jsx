@@ -4,7 +4,7 @@ import backIcon from "../../assets/icons8Back100Copy@2x.png";
 import "./Reserva.scss"
 import axios from "axios";
 import { api } from "../../Componentes/shared";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Reserva() {
     const navigate = useNavigate();
@@ -37,7 +37,6 @@ export default function Reserva() {
     axios.get( api + "/anuncios/getReservas/" + userInfo._id).then( res => {
       if(res.status === 200) {
         setReservas(res.data);
-        console.log( res.data );
       }
     })
   }
@@ -45,9 +44,9 @@ export default function Reserva() {
   return (
     <>
       <div className="reserva">
-        <a href="javascript:history.back()">
+        <NavLink to="/">
           <img className="reserva_atras" src={backIcon} alt="back"></img>
-        </a>
+        </NavLink>
         <h2>Petición de reserva</h2>
         {reservas && reservas.map((ubicacion) => ubicacion.map((reserva,index) => <div key={index} className="reserva_user">
             <div className="reserva_user_all">

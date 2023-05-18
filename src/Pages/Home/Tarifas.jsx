@@ -2,8 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./Tarifas.scss"
 import backIcon from '../../assets/icons8Back100Copy@3x.png';
-
-
+import { NavLink } from "react-router-dom";
 
 export default function Tarifas() {
 
@@ -11,18 +10,15 @@ export default function Tarifas() {
 
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
-    
     }
 
     return(
-
         <div className="container">
             
-            <a href="javascript:history.back()">
+            <NavLink to="/bienvenida">
                 <img className="atras" src={backIcon} alt="back"></img>
-            </a>
+            </NavLink>
             
-
             <div className="selecciona__container">
                 <div>
                     <p className="subtitulo">Selecciona</p>
@@ -33,16 +29,12 @@ export default function Tarifas() {
                     <option className="select__item" value="opcion3">América</option>
                     <option className="select__item" value="opcion4">África</option>
                     <option className="select__item" value="opcion5">Oceanía</option>
-
                 </select>
             </div>
 
-
             <div className="tarifas__container">
 
-               
                 <p className="subtitulo">Nuestras tarifas fijas</p>
-                
 
                 <div className="tarifas__tarjetas">
 
@@ -57,15 +49,11 @@ export default function Tarifas() {
                         <p className="tarifas__tarjeta--numero">4€</p>
                         <p className="tarifas__tarjeta--texto">Por equipaje</p>
                     </div>
+
                 </div>
-            
-            
 
             </div>
 
         </div>
-
-
-
     )
 }
