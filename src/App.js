@@ -20,6 +20,7 @@ import MiPerfil from "./Pages/Usuarios/MiPerfil";
 import Reserva from "./Pages/Reserva/Reserva";
 import { api } from "./Componentes/shared";
 import ListaAnuncios from "./Pages/Anuncios/ListaAnuncios";
+import ChatList from "./Pages/Chat/ChatList";
 
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
   const [isNewMessages, setNotification] = useState(false);
 
   useEffect(()=> {
-    setNotification(true);
+    setNotification( messages.length > 0 ? true : false );
   }, [messages]);
 
   return (
@@ -58,7 +59,8 @@ function App() {
             <Route path="/user-file/:id" element={<UserFile />} />
             <Route path="/editar-perfil" element={<MiPerfil />} />
             <Route path="/reserva" element={<Reserva/>}/>
-            <Route path="/chat" element={<Chat/>}/>
+            <Route path="/chat/:id" element={<Chat/>}/>
+            <Route path="/chat" element={<ChatList/>}/>
             <Route path="/mi-perfil" element={<Usuario />} />
             <Route path="/lista-anuncios" element={<ListaAnuncios />} />
           </Routes>

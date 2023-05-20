@@ -3,24 +3,28 @@ import socketIO from 'socket.io-client';
 import "./chat.scss";
 import { api } from "../../Componentes/shared";
 import { VariablesContext } from "../../Shared/VariablesContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const socket = socketIO.connect(api); 
 const userInfo = JSON.parse(localStorage.getItem("user")) || { name : "pepe", _id : "12345" };
-
+const socket = socketIO(api, { autoConnect: false });
+socket.connect();
 
 export default function Chat() {
     const {messages, setMessages, setNotification} = useContext(VariablesContext);
     const [message, setMessage] = useState("");
-    const lastMessageRef = useRef(null);
+    const [users, setUsers] = useState([]); // ???
+    const lastMessageRef = useRef(null); // auto-scroll
     const navigate = useNavigate();
-    const [users, setUsers] = useState([]);
     if(!localStorage.getItem("user")) navigate("/bienvenida");
     const userInfo = JSON.parse(localStorage.getItem("user"));
-
+    const {id} = useParams();
+    
     useEffect(()=> {
-        socket.emit('newUser', { userName: userInfo.name, userID: userInfo._id, userImage: userInfo.image, socketID: socket.id });
+        socket.emit('newUser', { userName: userInfo.name, userID: userInfo._id, userImage: userInfo.image, roomID: id, socketID: socket.id });
+        axios.get(api + "/chat/getConversation/" + id).then((res)=>{
+            setMessages(res.data);
+        })
     }, [])
 
     useEffect(()=>()=> {
@@ -36,7 +40,6 @@ export default function Chat() {
     useEffect(() => {
         socket.on('newUserResponse', (data) => {
             setUsers(data);
-            console.log("USERS:", data );
         });
     }, [socket, users]);
 
@@ -46,19 +49,21 @@ export default function Chat() {
 
     function sendMessage(e) {
         e.preventDefault();
-        socket.emit('message', {
+        const newMessage = {
             text: message,
             name: userInfo.name,
-            userID: `${userInfo._id}`,
+            userID: userInfo._id,
             userImage: userInfo.image,
-            socketID: socket.id,
-        });
+            roomID: id,
+        }
+        socket.emit('message', newMessage);
         setMessage("");
+        setMessages([...messages, newMessage]);
     }
 
     return <>
         <header className="chat-header">
-            <img onClick={()=> navigate('/')} src="/assets/icons8Back100Copy@2x.png" alt="back" className="back-img"/>
+            <img onClick={()=> navigate('/chat')} src="/assets/icons8Back100Copy@2x.png" alt="back" className="back-img"/>
             <h2 className="chat-name"> {userInfo.name} </h2>
         </header>
         <div className="chat">
@@ -73,7 +78,6 @@ export default function Chat() {
                     ) : (
                         <div className="chat-conversation reverse" key={index}>
                             <div className="img__container">
-                                {/* <img src={users.find((user)=> user.userID === message.userID).userImage} alt="profile"/> */}
                                 <img src={message.userImage} alt="profile"/>
                             </div>
                             <p className="texto__user02">{message.text}</p>

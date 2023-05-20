@@ -43,9 +43,11 @@
 }
 .reserva_user_btn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 .reserva_user_btn button {
   background-color: rgb(246, 143, 36);

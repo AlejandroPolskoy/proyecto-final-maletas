@@ -43,7 +43,7 @@ const Home = () => {
   }
 
   const formatDate = (date) => {
-    return date.toLocaleDateString('en-GB'); // Cambia el formato de la fecha
+    return (typeof date) === "object" ? date.toLocaleDateString('en-GB') : "";
   };
 
   return (

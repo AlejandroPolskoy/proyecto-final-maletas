@@ -3,7 +3,7 @@ import Footer from "../../Componentes/Footer/Footer";
 import backIcon from "../../assets/icons8Back100Copy@2x.png";
 import "./Reserva.scss"
 import axios from "axios";
-import { api } from "../../Componentes/shared";
+import { api, formatDate } from "../../Componentes/shared";
 import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Reserva() {
@@ -16,7 +16,7 @@ export default function Reserva() {
     axios.put( api + "/anuncios/acceptReserva/" + id).then( res => {
       if(res.status === 200) {
         //getReservas();
-        navigate("/chat");
+        //navigate("/chat");
       }
     })
   }
@@ -27,6 +27,10 @@ export default function Reserva() {
         getReservas();
       }
     })
+  }
+
+  const chat = (id) => {
+    navigate("/chat/"+id);
   }
 
   useEffect(()=> {
@@ -50,17 +54,20 @@ export default function Reserva() {
         <h2>Petición de reserva</h2>
         {reservas && reservas.map((ubicacion) => ubicacion.map((reserva,index) => <div key={index} className="reserva_user">
             <div className="reserva_user_all">
-                <div className="reserva_user_img">
-                    <img src={reserva.user.image} alt={reserva.user.name} className="user_img"/>
-                </div>
-                <div className="reserva_user_detail">
-                    <h4 className="user_title">{reserva.name}</h4>
-                    <p>Depósito - {reserva.date_in} {reserva.time_in}</p>
-                    <p>Recogida - {reserva.date_out} {reserva.time_out}</p>
+                <div className="reserva_user_top">
+                  <div className="reserva_user_img">
+                      <img src={reserva.user.image} alt={reserva.user.name} className="user_img"/>
+                  </div>
+                  <div className="reserva_user_detail">
+                      <h4 className="user_title">{reserva.name}</h4>
+                      <p>Depósito - {formatDate(reserva.date_in)} {reserva.time_in}</p>
+                      <p>Recogida - {formatDate(reserva.date_out)} {reserva.time_out}</p>
+                  </div>
                 </div>
                 <div className="reserva_user_btn">
                     <button onClick={() => confirmar(reserva._id)}>Aceptar</button>
                     <p onClick={() => decline(reserva._id)}>Declinar</p>
+                    <button onClick={()=> chat(reserva._id)}>Chat</button>
                 </div>
             </div>
         </div>

@@ -9,16 +9,17 @@ export default function Footer() {
 
     const location = useLocation()
     
-    const isUserPage = /\/(usuario|reserva|hacerse-guardian|homeguardian)$/.test(location.pathname);
+    //const isUserPage = /\/(usuario|reserva|hacerse-guardian|homeguardian)$/.test(location.pathname);
+    const isUserPage = location.pathname == "/";
 
     const userInfo = JSON.parse(localStorage.getItem("user")) || {};
-
+    
     const {isNewMessages} = useContext(VariablesContext);
 
     return (
         <div className="footer">
             <nav>
-                { isUserPage ? (<div className='footer_nav nav-2'>
+                { isUserPage && userInfo.role === "guardian" ? (<div className='footer_nav nav-2'>
                     <Link to="/chat"><img src="/assets/mensaje@3x.png" alt="Icono mensajes"/></Link>
                     <Link to="/homeguardian"><img src="/assets/megaphone@3x.png" alt="Icono anuncio"/></Link>
                     <Link to="/reserva"><img src="/assets/calendar@3x.png" alt="Icono calendario"/></Link>
