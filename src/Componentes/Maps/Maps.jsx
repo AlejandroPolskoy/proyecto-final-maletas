@@ -11,7 +11,7 @@ const libraries = ["places"];
 
 export const Maps = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAEku8MYSQoLRi2aIAEyL-Qeu9U2xP_pJU",
+    googleMapsApiKey: ENV.process.googleMapsApiKey,
     libraries,
   });
 
