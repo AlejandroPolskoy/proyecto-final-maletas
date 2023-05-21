@@ -18,7 +18,6 @@ import DetallesReserva from "./Pages/Reserva/DetallesReserva";
 import UserFile from "./Pages/UserFile/UserFile";
 import MiPerfil from "./Pages/Usuarios/MiPerfil";
 import Reserva from "./Pages/Reserva/Reserva";
-import { api } from "./Componentes/shared";
 import ListaAnuncios from "./Pages/Anuncios/ListaAnuncios";
 import ChatList from "./Pages/Chat/ChatList";
 

@@ -8,10 +8,10 @@ import './MiPerfil.scss'
 import Footer from '../../Componentes/Footer/Footer';
 
 export default function MiPerfil() {
-    if(!localStorage.getItem("user")) navigate("/bienvenida");
     const navigate = useNavigate();
+    if(!localStorage.getItem("user")) navigate("/bienvenida");
     const userInfo = JSON.parse(localStorage.getItem("user")) || {};
-    const { register, handleSubmit, formState: { errors }, getValues } = useForm({defaultValues: userInfo});
+    const { register, handleSubmit, formState: { errors } } = useForm({defaultValues: userInfo});
     const [form, setForm] = useState([]);
 
     function updateUserData(formData) {
@@ -22,7 +22,7 @@ export default function MiPerfil() {
         data.append("image", formData.image[0]);
 
         axios.put( api + "/user/update/" + userInfo._id, data).then( res => {
-            if(res.status == 201 || res.status == 200) {
+            if(res.status === 201 || res.status === 200) {
                 localStorage.setItem('user', JSON.stringify(res.data));
                 setForm({...form, msg: "Los datos han sido actualizados"});
                 //navigate('/');

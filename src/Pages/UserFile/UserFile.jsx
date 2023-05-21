@@ -11,8 +11,7 @@ const UserFile = () => {
 
   const navigate = useNavigate();
   if(!localStorage.getItem("user")) navigate("/bienvenida");
-  const user = JSON.parse(localStorage.getItem("user"));
-  const {reserva, setReserva} = useContext(VariablesContext);
+  const {reserva} = useContext(VariablesContext);
  
   const precio = 6;
   const precioAlDia = 4;

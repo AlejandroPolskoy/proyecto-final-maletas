@@ -9,7 +9,6 @@ let selectedID;
 export default function ListaAnuncios() {
     const navigate = useNavigate();
     if(!localStorage.getItem("user")) navigate("/bienvenida");
-    const userInfo = JSON.parse(localStorage.getItem("user"));
     const {setReserva, reserva} = useContext(VariablesContext);
     const [listaAnuncios, setListaAnuncios] = useState([]);
 

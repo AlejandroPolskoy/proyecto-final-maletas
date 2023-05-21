@@ -6,7 +6,6 @@ import { VariablesContext } from "../../Shared/VariablesContext";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const userInfo = JSON.parse(localStorage.getItem("user")) || { name : "pepe", _id : "12345" };
 const socket = socketIO(api, { autoConnect: false });
 socket.connect();
 

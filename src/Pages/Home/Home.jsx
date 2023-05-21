@@ -4,7 +4,6 @@ import Novedades from "../../Componentes/Novedades/Novedades";
 import Experiencias from "../../Componentes/Experiencias/Experiencias";
 import Calendario from "../../Componentes/Calendario/Calendario";
 import ModalHorario from "../../Componentes/ModalHorario/ModalHorario";
-import Busqueda from "../../Componentes/Busqueda/Busqueda";
 import Footer from "../../Componentes/Footer/Footer";
 import { VariablesContext } from "../../Shared/VariablesContext";
 import { useNavigate } from "react-router-dom";
